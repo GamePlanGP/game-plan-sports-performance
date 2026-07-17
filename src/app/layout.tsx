@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Cormorant_Garamond } from "next/font/google";
+import { Montserrat, Cormorant_Garamond, Kaushan_Script } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -18,10 +18,18 @@ const cormorant = Cormorant_Garamond({
   weight: ["300", "400", "600"],
 });
 
+// Brand wordmark font — matches the "Game Plan" wordmark styling.
+const kaushanScript = Kaushan_Script({
+  variable: "--font-kaushan",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400"],
+});
+
 export const metadata: Metadata = {
   title: {
-    default: "Elysian Sports | Nootropic Hydration for Peak Performance",
-    template: "%s | Elysian Sports",
+    default: "Game Plan Sports Performance | Nootropic Hydration for Peak Performance",
+    template: "%s | Game Plan Sports Performance",
   },
   description:
     "Engineered for athletes who refuse to leave performance to chance. Nootropic hydration designed for the demands of elite competition.",
@@ -35,21 +43,21 @@ export const metadata: Metadata = {
     "mental clarity",
     "CognatiQ",
   ],
-  metadataBase: new URL("https://www.elysiansports.com"),
+  metadataBase: new URL("https://www.gameplansportsperformance.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.elysiansports.com",
-    siteName: "Elysian Sports",
-    title: "Elysian Sports | Nootropic Hydration for Peak Performance",
+    url: "https://www.gameplansportsperformance.com",
+    siteName: "Game Plan Sports Performance",
+    title: "Game Plan Sports Performance | Nootropic Hydration for Peak Performance",
     description:
       "Engineered for athletes who refuse to leave performance to chance. Nootropic hydration designed for the demands of elite competition.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Elysian Sports",
+    title: "Game Plan Sports Performance",
     description:
-      "Nootropic hydration engineered for elite performance. Enter your Elysian state.",
+      "Nootropic hydration engineered for elite performance. Find your Zone.",
   },
   robots: {
     index: true,
@@ -63,7 +71,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${cormorant.variable}`}>
+    <html
+      lang="en"
+      className={`${montserrat.variable} ${cormorant.variable} ${kaushanScript.variable}`}
+    >
       <body className="antialiased">
         <div className="fixed top-0 right-0 left-0 z-30">
           <AnnouncementBar />

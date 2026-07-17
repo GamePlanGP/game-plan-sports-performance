@@ -120,7 +120,7 @@ export function ReviewsSection() {
           <SectionHeading
             eyebrow="Customer Reviews"
             heading="What Athletes Are Saying"
-            subtitle="Real feedback from real athletes who have made Elysian Clarity part of their routine."
+            subtitle="Real feedback from real athletes who have made Clarity part of their routine."
           />
         </FadeIn>
 

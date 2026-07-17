@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { NAV_ITEMS } from "@/lib/constants";
+import { Logo } from "@/components/layout/Logo";
 import { MobileMenu } from "@/components/layout/MobileMenu";
 
 const SCROLL_THRESHOLD = 50;
@@ -42,14 +43,7 @@ export function Header() {
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:h-20 sm:px-6 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="group flex flex-col leading-none">
-          <span className="text-lg font-bold tracking-wide text-white sm:text-xl">
-            ELYSIAN
-          </span>
-          <span className="text-[0.625rem] font-medium tracking-[0.2em] text-gold-500 sm:text-xs">
-            SPORTS
-          </span>
-        </Link>
+        <Logo />
 
         {/* Desktop navigation */}
         <nav className="hidden items-center gap-1 lg:flex">
