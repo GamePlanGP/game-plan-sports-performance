@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SITE_CONFIG, FOOTER_LINKS } from "@/lib/constants";
 import { Container } from "@/components/ui/Container";
+import { Logo } from "@/components/layout/Logo";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -12,14 +13,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Column 1: Brand */}
           <div className="md:col-span-2 lg:col-span-1">
-            <Link href="/" className="inline-flex flex-col leading-none">
-              <span className="text-xl font-bold tracking-wide text-white">
-                ELYSIAN
-              </span>
-              <span className="text-[0.625rem] font-medium tracking-[0.2em] text-gold-500">
-                SPORTS
-              </span>
-            </Link>
+            <Logo />
             <p className="mt-3 font-display text-sm italic text-gold-400">
               {SITE_CONFIG.tagline}
             </p>
@@ -102,7 +96,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-16 flex flex-col items-center gap-4 border-t border-white/10 pt-8 sm:flex-row sm:justify-between">
           <p className="text-sm text-white/40">
-            &copy; {currentYear} Elysian Sports. All rights reserved.
+            &copy; {currentYear} Game Plan Sports Performance. All rights reserved.
           </p>
           <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             {FOOTER_LINKS.legal.map((link) => (

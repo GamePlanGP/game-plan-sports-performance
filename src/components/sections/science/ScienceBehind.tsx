@@ -77,7 +77,7 @@ export function ScienceBehind() {
         <SectionHeading
           eyebrow="The Science"
           heading="The Synergy Stack"
-          subtitle="Three pillars of performance, working together to unlock your Elysian state."
+          subtitle="Three pillars of performance, working together to unlock your zone."
           dark
         />
 
