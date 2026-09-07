@@ -60,7 +60,7 @@ export function ClinicalStudies() {
             </h3>
             <p className="mx-auto mt-3 max-w-lg text-base text-silver">
               Our team is happy to walk you through the science, sourcing, and
-              dosing behind every ingredient in Clarity.
+              dosing behind every ingredient in Clarity+.
             </p>
             <div className="mt-6">
               <Button variant="primary" size="lg" href="/contact">

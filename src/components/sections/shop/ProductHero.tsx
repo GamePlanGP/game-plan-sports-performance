@@ -5,11 +5,12 @@ import { cn } from "@/lib/utils";
 import { PRODUCT } from "@/lib/constants";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
-import { StarRating } from "@/components/ui/StarRating";
-import { QuantitySelector } from "@/components/ui/QuantitySelector";
 import { Button } from "@/components/ui/Button";
+import { StarRating } from "@/components/ui/StarRating";
+import { ProductName } from "@/components/ui/ProductName";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { FadeIn } from "@/components/animations/FadeIn";
+import { ShopifyBuyButton } from "@/components/sections/shop/ShopifyBuyButton";
 
 const THUMBNAIL_LABELS = [
   "Front View",
@@ -37,7 +38,6 @@ function CheckIcon({ className }: { className?: string }) {
 }
 
 export function ProductHero() {
-  const [quantity, setQuantity] = useState(1);
   const [activeThumb, setActiveThumb] = useState(0);
 
   return (
@@ -90,8 +90,8 @@ export function ProductHero() {
               </div>
 
               {/* Product Name */}
-              <h1 className="font-display text-3xl font-bold text-warm-white sm:text-4xl lg:text-5xl">
-                {PRODUCT.name}
+              <h1 className="text-3xl font-bold text-warm-white sm:text-4xl lg:text-5xl">
+                <ProductName />
               </h1>
 
               {/* Rating */}
@@ -105,16 +105,6 @@ export function ProductHero() {
                 </a>
               </div>
 
-              {/* Price */}
-              <div className="flex items-baseline gap-2">
-                <span className="text-3xl font-bold text-warm-white">
-                  {PRODUCT.priceFormatted}
-                </span>
-                <span className="text-sm text-silver">
-                  ({PRODUCT.pricePerServing} per serving)
-                </span>
-              </div>
-
               {/* Description */}
               <p className="text-base leading-relaxed text-silver">
                 {PRODUCT.shortDescription}
@@ -125,29 +115,11 @@ export function ProductHero() {
                 <span className="font-medium">
                   {PRODUCT.format} &middot; {PRODUCT.count}
                 </span>
-                <span className="text-silver">
-                  Flavor: {PRODUCT.flavor}
-                </span>
               </div>
 
-              {/* Quantity */}
-              <div className="flex items-center gap-4">
-                <label className="text-sm font-medium text-warm-white">
-                  Quantity:
-                </label>
-                <QuantitySelector value={quantity} onChange={setQuantity} />
-              </div>
-
-              {/* CTA Buttons */}
+              {/* Purchase — Shopify Buy Button (price & inventory from Shopify) */}
               <div className="flex flex-col gap-3">
-                <Button
-                  variant="cta"
-                  size="lg"
-                  disabled
-                  className="w-full cursor-not-allowed opacity-70"
-                >
-                  Coming Soon
-                </Button>
+                <ShopifyBuyButton />
                 <Button
                   variant="secondary"
                   size="md"
@@ -156,6 +128,9 @@ export function ProductHero() {
                 >
                   Join Waitlist for Early Access
                 </Button>
+                <p className="text-xs text-silver">
+                  Secure checkout powered by Shopify.
+                </p>
               </div>
 
               {/* Trust Badges */}

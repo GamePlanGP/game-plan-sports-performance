@@ -1,9 +1,10 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
-import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { SITE_CONFIG } from "@/lib/constants";
+import clarityBag from "@/assets/clarity-plus-bag.png";
 
 export function HeroSection() {
   return (
@@ -72,12 +73,11 @@ export function HeroSection() {
           {/* Right column: Product image */}
           <div className="order-2">
             <FadeIn direction="right" delay={0.4}>
-              <PlaceholderImage
-                label="Product Hero Shot"
-                icon="product"
-                aspectRatio="aspect-square"
-                className="mx-auto max-w-md lg:max-w-lg"
-                dark
+              <Image
+                src={clarityBag}
+                alt="Clarity+ Peak Performance Drink — Game Plan Sports Performance stick-pack pouch"
+                priority
+                className="mx-auto w-full max-w-[18rem] drop-shadow-2xl sm:max-w-xs lg:max-w-sm"
               />
             </FadeIn>
           </div>

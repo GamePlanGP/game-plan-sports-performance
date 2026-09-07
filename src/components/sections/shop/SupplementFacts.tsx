@@ -49,14 +49,10 @@ export function SupplementFacts() {
               <div className="border-b-4 border-charcoal" />
 
               {/* Main Ingredients */}
-              {SUPPLEMENT_FACTS.ingredients.map((ingredient, idx) => (
+              {SUPPLEMENT_FACTS.ingredients.map((ingredient) => (
                 <div
                   key={ingredient.name}
-                  className={
-                    idx < SUPPLEMENT_FACTS.ingredients.length - 1
-                      ? "flex justify-between border-b border-charcoal py-1"
-                      : "flex justify-between border-b-8 border-charcoal py-1"
-                  }
+                  className="flex justify-between border-b border-charcoal py-1"
                 >
                   <div className="flex items-baseline gap-1">
                     <span className="text-sm font-bold text-charcoal">
@@ -72,12 +68,39 @@ export function SupplementFacts() {
                 </div>
               ))}
 
-              {/* Proprietary Blend */}
+              {/* Electrolyte Blend */}
+              <div className="border-b border-charcoal py-1">
+                <div className="flex justify-between">
+                  <span className="text-sm font-bold text-charcoal">
+                    {SUPPLEMENT_FACTS.electrolyteBlend.name}
+                  </span>
+                  <span className="text-sm font-bold text-charcoal">**</span>
+                </div>
+              </div>
+
+              {/* Electrolyte Blend Ingredients */}
+              {SUPPLEMENT_FACTS.electrolyteBlend.ingredients.map(
+                (ingredient, idx) => (
+                  <div
+                    key={ingredient}
+                    className={
+                      idx <
+                      SUPPLEMENT_FACTS.electrolyteBlend.ingredients.length - 1
+                        ? "border-b border-charcoal py-1 pl-4"
+                        : "border-b-8 border-charcoal py-1 pl-4"
+                    }
+                  >
+                    <span className="text-xs text-charcoal">{ingredient}</span>
+                  </div>
+                )
+              )}
+
+              {/* Cognitive Performance Blend */}
               <div className="border-b border-charcoal py-1">
                 <div className="flex justify-between">
                   <div className="flex items-baseline gap-1">
                     <span className="text-sm font-bold text-charcoal">
-                      Cognitive Performance Blend
+                      {SUPPLEMENT_FACTS.proprietaryBlend.name}
                     </span>
                     <span className="text-sm text-charcoal">
                       {SUPPLEMENT_FACTS.proprietaryBlend.totalAmount}

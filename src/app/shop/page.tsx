@@ -8,7 +8,7 @@ import { ReviewsSection } from "@/components/sections/shop/ReviewsSection";
 
 export const metadata: Metadata = {
   title: "Shop",
-  description: `Shop ${PRODUCT.name} — ${PRODUCT.shortDescription} ${PRODUCT.count} for ${PRODUCT.priceFormatted}.`,
+  description: `Shop ${PRODUCT.name} — ${PRODUCT.shortDescription} ${PRODUCT.count}.`,
   openGraph: {
     title: `Shop ${PRODUCT.shortName} | ${SITE_CONFIG.name}`,
     description: PRODUCT.shortDescription,

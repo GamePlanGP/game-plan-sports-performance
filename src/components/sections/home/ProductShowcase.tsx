@@ -43,9 +43,9 @@ export function ProductShowcase() {
 
                 // Desktop positioning: cards float around the central image
                 const positionClasses = [
-                  "lg:absolute lg:left-0 lg:top-[10%] lg:w-64",
-                  "lg:absolute lg:right-0 lg:top-[5%] lg:w-64",
-                  "lg:absolute lg:right-0 lg:bottom-[15%] lg:w-64",
+                  "lg:absolute lg:left-0 lg:top-1/2 lg:w-64 lg:-translate-y-1/2",
+                  "lg:absolute lg:right-0 lg:top-0 lg:w-64",
+                  "lg:absolute lg:right-0 lg:bottom-0 lg:w-64",
                 ];
 
                 return (

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Cormorant_Garamond, Kaushan_Script } from "next/font/google";
+import { Montserrat, Cormorant_Garamond, Graduate } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -18,9 +18,10 @@ const cormorant = Cormorant_Garamond({
   weight: ["300", "400", "600"],
 });
 
-// Brand wordmark font — matches the "Game Plan" wordmark styling.
-const kaushanScript = Kaushan_Script({
-  variable: "--font-kaushan",
+// Product wordmark font — the "Clarity+" name renders in Graduate (matches the
+// Clarity+ bag artwork).
+const graduate = Graduate({
+  variable: "--font-graduate",
   subsets: ["latin"],
   display: "swap",
   weight: ["400"],
@@ -73,7 +74,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${montserrat.variable} ${cormorant.variable} ${kaushanScript.variable}`}
+      className={`${montserrat.variable} ${cormorant.variable} ${graduate.variable}`}
     >
       <body className="antialiased">
         <div className="fixed top-0 right-0 left-0 z-30">
