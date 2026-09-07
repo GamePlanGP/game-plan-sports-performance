@@ -4,12 +4,10 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { PRODUCT } from "@/lib/constants";
 import { Container } from "@/components/ui/Container";
-import { Badge } from "@/components/ui/Badge";
 import { StarRating } from "@/components/ui/StarRating";
-import { QuantitySelector } from "@/components/ui/QuantitySelector";
-import { Button } from "@/components/ui/Button";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { FadeIn } from "@/components/animations/FadeIn";
+import { ShopifyBuyButton } from "@/components/sections/shop/ShopifyBuyButton";
 
 const THUMBNAIL_LABELS = [
   "Front View",
@@ -37,7 +35,6 @@ function CheckIcon({ className }: { className?: string }) {
 }
 
 export function ProductHero() {
-  const [quantity, setQuantity] = useState(1);
   const [activeThumb, setActiveThumb] = useState(0);
 
   return (
@@ -84,11 +81,6 @@ export function ProductHero() {
           {/* Right Column — Product Info */}
           <FadeIn direction="right" delay={0.15}>
             <div className="flex flex-col gap-6">
-              {/* Coming Soon Badge */}
-              <div>
-                <Badge variant="gold">Coming Soon</Badge>
-              </div>
-
               {/* Product Name */}
               <h1 className="font-display text-3xl font-bold text-warm-white sm:text-4xl lg:text-5xl">
                 {PRODUCT.name}
@@ -127,32 +119,12 @@ export function ProductHero() {
                 </span>
               </div>
 
-              {/* Quantity */}
-              <div className="flex items-center gap-4">
-                <label className="text-sm font-medium text-warm-white">
-                  Quantity:
-                </label>
-                <QuantitySelector value={quantity} onChange={setQuantity} />
-              </div>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col gap-3">
-                <Button
-                  variant="cta"
-                  size="lg"
-                  disabled
-                  className="w-full cursor-not-allowed opacity-70"
-                >
-                  Coming Soon
-                </Button>
-                <Button
-                  variant="secondary"
-                  size="md"
-                  href="/waitlist"
-                  className="w-full"
-                >
-                  Join Waitlist for Early Access
-                </Button>
+              {/* Purchase — Shopify Buy Button */}
+              <div className="flex flex-col gap-2">
+                <ShopifyBuyButton />
+                <p className="text-xs text-silver">
+                  Secure checkout powered by Shopify.
+                </p>
               </div>
 
               {/* Trust Badges */}
