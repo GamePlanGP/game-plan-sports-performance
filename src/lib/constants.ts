@@ -172,7 +172,7 @@ export const BENEFITS = [
   {
     title: "Calm Energy",
     description:
-      "Rhodiola Rosea and a completely caffeine-free formula deliver steady, jitter-free drive through full competition — no stimulants, no crash.",
+      "Rhodiola Rosea and a caffeine-free formula deliver steady, jitter-free drive — no stimulants, no crash.",
     icon: "energy" as const,
   },
   {
