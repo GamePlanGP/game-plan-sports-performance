@@ -282,11 +282,6 @@ export const FAQS = [
       "Yes! All ingredients are generally recognized as safe (GRAS) and dosed within clinically studied ranges. Clarity is third-party tested for purity and potency. As with any supplement, consult your doctor if you have specific health concerns.",
   },
   {
-    question: "What does it taste like?",
-    answer:
-      'Our Citrus Greens flavor has a clean, refreshing citrus taste with subtle green tea notes. No artificial sweeteners, no chalky texture \u2014 just smooth, easy-drinking hydration. We\'ve heard "it actually tastes good" more times than we can count.',
-  },
-  {
     question: "Will this help my performance?",
     answer:
       "Clarity is designed to optimize the mental and physical factors that impact your performance: focus, energy, hydration, and stress management. While we can\u2019t guarantee results, our ingredients are clinically shown to enhance cognitive function, and our users consistently report feeling sharper and more focused during competition.",
