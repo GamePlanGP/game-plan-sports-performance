@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerChildren } from "@/components/animations/StaggerChildren";
-import { INGREDIENTS, ELECTROLYTE_PROFILE } from "@/lib/constants";
+import { INGREDIENTS } from "@/lib/constants";
 
 const categoryBadgeVariant: Record<string, "default" | "gold" | "green" | "outline"> = {
   nootropic: "green",
@@ -117,30 +117,6 @@ export function IngredientSpotlight() {
             </Card>
           ))}
         </StaggerChildren>
-
-        {/* Electrolyte profile */}
-        <FadeIn direction="up" delay={0.2}>
-          <div className="mt-16">
-            <h3 className="mb-6 text-center font-display text-xl font-bold text-white">
-              Electrolyte Profile
-            </h3>
-            <div className="mx-auto grid max-w-2xl grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-              {ELECTROLYTE_PROFILE.map((electrolyte) => (
-                <div
-                  key={electrolyte.mineral}
-                  className="rounded-xl bg-navy-900/60 p-4 text-center"
-                >
-                  <p className="text-2xl font-bold text-gold-400">
-                    {electrolyte.amount}
-                  </p>
-                  <p className="mt-1 text-sm font-medium text-white/60">
-                    {electrolyte.mineral}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </FadeIn>
       </Container>
     </section>
   );

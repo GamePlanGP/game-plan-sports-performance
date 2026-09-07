@@ -67,7 +67,7 @@ export const INGREDIENTS = [
   {
     name: "CognatiQ\u00AE",
     aka: "Coffee Fruit Extract",
-    amount: "100mg",
+    amount: "200mg",
     category: "nootropic" as const,
     highlight: true,
     description:
@@ -78,45 +78,12 @@ export const INGREDIENTS = [
   {
     name: "Alpha-GPC",
     aka: "L-Alpha Glycerylphosphorylcholine",
-    amount: "150mg",
+    amount: "50mg",
     category: "nootropic" as const,
     highlight: false,
     description:
       "A premium choline source that crosses the blood-brain barrier to support acetylcholine production \u2014 the neurotransmitter essential for focus and muscle coordination.",
     benefits: ["Mental clarity", "Mind-muscle connection", "Sustained attention"],
-    color: "gold",
-  },
-  {
-    name: "L-Theanine",
-    aka: "From Green Tea",
-    amount: "200mg",
-    category: "nootropic" as const,
-    highlight: false,
-    description:
-      "Promotes calm, focused attention without drowsiness. Works synergistically with caffeine to deliver smooth, jitter-free energy.",
-    benefits: ["Calm focus", "Reduced anxiety", "Smooth energy"],
-    color: "gold",
-  },
-  {
-    name: "Natural Caffeine",
-    aka: "From Green Tea",
-    amount: "100mg",
-    category: "nootropic" as const,
-    highlight: false,
-    description:
-      "Moderate caffeine dose (~1 cup of coffee) paired with L-Theanine for clean energy without the crash or jitters that can compromise your performance.",
-    benefits: ["Clean energy", "Alertness", "No crash"],
-    color: "gold",
-  },
-  {
-    name: "Lion\u2019s Mane",
-    aka: "Hericium erinaceus",
-    amount: "250mg",
-    category: "adaptogen" as const,
-    highlight: false,
-    description:
-      "A powerful medicinal mushroom that supports nerve growth factor (NGF) production. Promotes long-term brain health and acute cognitive performance.",
-    benefits: ["Neuroprotection", "Mental stamina", "Brain health"],
     color: "gold",
   },
   {
@@ -137,18 +104,10 @@ export const INGREDIENTS = [
     category: "electrolyte" as const,
     highlight: false,
     description:
-      "Optimally dosed electrolytes to prevent dehydration-related performance decline. Formulated for the unique demands of 4+ hours of competition.",
+      "A balanced blend of electrolytes to support hydration and help prevent the performance decline that comes with fluid loss during competition.",
     benefits: ["Hydration", "Muscle function", "Cramp prevention"],
     color: "gold",
   },
-];
-
-export const ELECTROLYTE_PROFILE = [
-  { mineral: "Sodium", amount: "500mg" },
-  { mineral: "Potassium", amount: "200mg" },
-  { mineral: "Magnesium", amount: "60mg" },
-  { mineral: "Calcium", amount: "40mg" },
-  { mineral: "Chloride", amount: "390mg" },
 ];
 
 export const SUPPLEMENT_FACTS = {
@@ -157,20 +116,23 @@ export const SUPPLEMENT_FACTS = {
   calories: 5,
   ingredients: [
     { name: "Total Carbohydrate", amount: "1g", dv: "<1%" },
-    { name: "Sodium (as Sodium Citrate)", amount: "500mg", dv: "22%" },
-    { name: "Potassium (as Potassium Citrate)", amount: "200mg", dv: "4%" },
-    { name: "Magnesium (as Magnesium Glycinate)", amount: "60mg", dv: "14%" },
-    { name: "Calcium (as Calcium Citrate)", amount: "40mg", dv: "3%" },
-    { name: "Chloride (as Pink Himalayan Salt)", amount: "390mg", dv: "17%" },
   ],
-  proprietaryBlend: {
-    totalAmount: "900mg",
+  electrolyteBlend: {
+    name: "Electrolyte Blend",
     ingredients: [
-      "Lion\u2019s Mane Extract (Hericium erinaceus)",
-      "L-Theanine",
-      "Alpha-GPC (L-Alpha Glycerylphosphorylcholine)",
+      "Sodium (as Sodium Citrate)",
+      "Potassium (as Potassium Citrate)",
+      "Magnesium (as Magnesium Glycinate)",
+      "Calcium (as Calcium Citrate)",
+      "Chloride (as Pink Himalayan Salt)",
+    ],
+  },
+  proprietaryBlend: {
+    name: "Cognitive Performance Blend",
+    totalAmount: "350mg",
+    ingredients: [
       "CognatiQ\u00AE (Coffee Fruit Extract)",
-      "Natural Caffeine (from Green Tea)",
+      "Alpha-GPC (L-Alpha Glycerylphosphorylcholine)",
       "Rhodiola Rosea Extract",
     ],
   },
@@ -211,13 +173,13 @@ export const BENEFITS = [
   {
     title: "Calm Energy",
     description:
-      "L-Theanine + natural caffeine deliver smooth, jitter-free energy that lasts through full competition.",
+      "Rhodiola Rosea and a completely caffeine-free formula deliver steady, jitter-free drive through full competition — no stimulants, no crash.",
     icon: "energy" as const,
   },
   {
     title: "Peak Hydration",
     description:
-      "Precision electrolytes prevent the mental fog and fatigue that comes with dehydration.",
+      "A balanced electrolyte blend helps prevent the mental fog and fatigue that come with dehydration.",
     icon: "hydration" as const,
   },
 ];
@@ -305,9 +267,9 @@ export const REVIEWS = [
 
 export const FAQS = [
   {
-    question: "How much caffeine is in Clarity?",
+    question: "Does Clarity contain caffeine?",
     answer:
-      "Each serving contains 100mg of natural caffeine from green tea \u2014 roughly equivalent to one cup of coffee. Paired with 200mg of L-Theanine, it delivers smooth, focused energy without jitters or crash.",
+      "No \u2014 Clarity is completely caffeine-free. We deliver sharp focus and mental clarity through clinically dosed nootropics (200mg CognatiQ\u00ae and 50mg Alpha-GPC) rather than stimulants, so there are no jitters and no crash.",
   },
   {
     question: "When should I drink it?",
@@ -337,7 +299,7 @@ export const FAQS = [
   {
     question: "What makes this different from regular electrolyte drinks?",
     answer:
-      "Most hydration mixes stop at electrolytes. Clarity combines premium electrolytes with clinically-backed nootropics (CognatiQ\u00AE, Alpha-GPC, L-Theanine) and adaptogens (Lion\u2019s Mane, Rhodiola Rosea) specifically chosen for the cognitive demands of elite competition. It\u2019s hydration + mental performance in one.",
+      "Most hydration mixes stop at electrolytes. Clarity pairs a balanced electrolyte blend with clinically-backed nootropics (CognatiQ\u00AE and Alpha-GPC) and the adaptogen Rhodiola Rosea, specifically chosen for the cognitive demands of elite competition. It\u2019s hydration + mental performance in one.",
   },
   {
     question: "Do you offer a subscription?",
@@ -362,22 +324,6 @@ export const CLINICAL_STUDIES = [
       "Demonstrated significant improvements in attention, memory, and cognitive processing in multiple clinical trials.",
     source: "Published in Journal of the International Society of Sports Nutrition",
     year: 2015,
-  },
-  {
-    ingredient: "L-Theanine + Caffeine",
-    title: "Synergistic Focus Enhancement",
-    finding:
-      "The combination improved both speed and accuracy of attention-switching tasks and reduced susceptibility to distracting information.",
-    source: "Published in Nutritional Neuroscience",
-    year: 2010,
-  },
-  {
-    ingredient: "Lion\u2019s Mane",
-    title: "Nerve Growth Factor Support",
-    finding:
-      "Shown to stimulate Nerve Growth Factor (NGF) synthesis and improve mild cognitive impairment in a double-blind, placebo-controlled trial.",
-    source: "Published in Phytotherapy Research",
-    year: 2009,
   },
   {
     ingredient: "Rhodiola Rosea",

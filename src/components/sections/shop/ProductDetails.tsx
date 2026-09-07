@@ -15,7 +15,7 @@ const BENEFITS = [
   "Clinically-backed nootropics for enhanced focus and mental clarity",
   "Premium electrolytes formulated for 4+ hours of competition",
   "Adaptogenic herbs for stress resilience and sustained energy",
-  "Clean, jitter-free energy from natural caffeine + L-Theanine",
+  "Clean, caffeine-free energy — no stimulants, no jitters, no crash",
   "Sugar-free with no artificial colors or sweeteners",
   "Convenient stick pack format — just mix and play",
 ];
