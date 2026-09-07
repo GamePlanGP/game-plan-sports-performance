@@ -16,8 +16,8 @@ export const NAV_ITEMS = [
 ] as const;
 
 export const PRODUCT = {
-  name: "Clarity",
-  shortName: "Clarity",
+  name: "Clarity+",
+  shortName: "Clarity+",
   format: "Stick Pack",
   count: "10ct Box",
   price: 24.99,
@@ -188,7 +188,7 @@ export const TESTIMONIALS = [
     name: "Mike R.",
     location: "Scottsdale, AZ",
     rating: 5,
-    text: "I've tried every golf supplement out there. Clarity is the first one that actually makes a noticeable difference on the back nine. My focus stays sharp through 18.",
+    text: "I've tried every golf supplement out there. Clarity+ is the first one that actually makes a noticeable difference on the back nine. My focus stays sharp through 18.",
     handicap: "8 handicap",
   },
   {
@@ -202,7 +202,7 @@ export const TESTIMONIALS = [
     name: "James K.",
     location: "Charlotte, NC",
     rating: 5,
-    text: "As a club pro, I need to be on point for 8+ hours a day. Clarity keeps me mentally sharp from the first lesson to the last. My students have noticed the difference too.",
+    text: "As a club pro, I need to be on point for 8+ hours a day. Clarity+ keeps me mentally sharp from the first lesson to the last. My students have noticed the difference too.",
     handicap: "PGA Professional",
   },
   {
@@ -228,7 +228,7 @@ export const REVIEWS = [
     title: "Best golf supplement I've tried",
     date: "2024-12-15",
     verified: true,
-    text: "After 20+ years of golf, I've tried everything from energy drinks to focus supplements. Clarity is the first product that genuinely improves my mental game without any jitters or crash. My back nine scores have improved noticeably.",
+    text: "After 20+ years of golf, I've tried everything from energy drinks to focus supplements. Clarity+ is the first product that genuinely improves my mental game without any jitters or crash. My back nine scores have improved noticeably.",
   },
   {
     name: "Sarah L.",
@@ -236,7 +236,7 @@ export const REVIEWS = [
     title: "Real results, round after round",
     date: "2024-12-10",
     verified: true,
-    text: "I was skeptical, but after a month of using Clarity before every round, I'm a believer. I feel focused and energized through all 18 holes.",
+    text: "I was skeptical, but after a month of using Clarity+ before every round, I'm a believer. I feel focused and energized through all 18 holes.",
   },
   {
     name: "James K.",
@@ -244,7 +244,7 @@ export const REVIEWS = [
     title: "A must for serious athletes",
     date: "2024-11-28",
     verified: true,
-    text: "As a PGA teaching pro, I need to stay sharp all day. Clarity has become part of my daily routine. The combination of nootropics and electrolytes is perfect for the demands of competition.",
+    text: "As a PGA teaching pro, I need to stay sharp all day. Clarity+ has become part of my daily routine. The combination of nootropics and electrolytes is perfect for the demands of competition.",
   },
   {
     name: "Tom W.",
@@ -260,15 +260,15 @@ export const REVIEWS = [
     title: "Changed my tournament game",
     date: "2024-11-01",
     verified: true,
-    text: "I play competitively and the mental side of the game is huge. Clarity gives me a calm, focused energy that helps me stay in the zone. No more mental fatigue in the final stretch.",
+    text: "I play competitively and the mental side of the game is huge. Clarity+ gives me a calm, focused energy that helps me stay in the zone. No more mental fatigue in the final stretch.",
   },
 ];
 
 export const FAQS = [
   {
-    question: "Does Clarity contain caffeine?",
+    question: "Does Clarity+ contain caffeine?",
     answer:
-      "No \u2014 Clarity is completely caffeine-free. We deliver sharp focus and mental clarity through clinically dosed nootropics (200mg CognatiQ\u00ae and 50mg Alpha-GPC) rather than stimulants, so there are no jitters and no crash.",
+      "No \u2014 Clarity+ is completely caffeine-free. We deliver sharp focus and mental clarity through clinically dosed nootropics (200mg CognatiQ\u00ae and 50mg Alpha-GPC) rather than stimulants, so there are no jitters and no crash.",
   },
   {
     question: "When should I drink it?",
@@ -278,22 +278,22 @@ export const FAQS = [
   {
     question: "Is it safe to take daily?",
     answer:
-      "Yes! All ingredients are generally recognized as safe (GRAS) and dosed within clinically studied ranges. Clarity is third-party tested for purity and potency. As with any supplement, consult your doctor if you have specific health concerns.",
+      "Yes! All ingredients are generally recognized as safe (GRAS) and dosed within clinically studied ranges. Clarity+ is third-party tested for purity and potency. As with any supplement, consult your doctor if you have specific health concerns.",
   },
   {
     question: "Will this help my performance?",
     answer:
-      "Clarity is designed to optimize the mental and physical factors that impact your performance: focus, energy, hydration, and stress management. While we can\u2019t guarantee results, our ingredients are clinically shown to enhance cognitive function, and our users consistently report feeling sharper and more focused during competition.",
+      "Clarity+ is designed to optimize the mental and physical factors that impact your performance: focus, energy, hydration, and stress management. While we can\u2019t guarantee results, our ingredients are clinically shown to enhance cognitive function, and our users consistently report feeling sharper and more focused during competition.",
   },
   {
     question: "Is it legal for tournament play?",
     answer:
-      "Absolutely. Clarity contains no banned substances under USGA, R&A, or WADA guidelines. All ingredients are naturally derived and commonly found in food and beverages.",
+      "Absolutely. Clarity+ contains no banned substances under USGA, R&A, or WADA guidelines. All ingredients are naturally derived and commonly found in food and beverages.",
   },
   {
     question: "What makes this different from regular electrolyte drinks?",
     answer:
-      "Most hydration mixes stop at electrolytes. Clarity pairs a balanced electrolyte blend with clinically-backed nootropics (CognatiQ\u00AE and Alpha-GPC) and the adaptogen Rhodiola Rosea, specifically chosen for the cognitive demands of elite competition. It\u2019s hydration + mental performance in one.",
+      "Most hydration mixes stop at electrolytes. Clarity+ pairs a balanced electrolyte blend with clinically-backed nootropics (CognatiQ\u00AE and Alpha-GPC) and the adaptogen Rhodiola Rosea, specifically chosen for the cognitive demands of elite competition. It\u2019s hydration + mental performance in one.",
   },
   {
     question: "Do you offer a subscription?",
@@ -334,7 +334,7 @@ export const BRAND_STORY = {
   paragraphs: [
     "Game Plan Sports Performance started with a simple observation: golf is as much a mental game as a physical one, yet most golfers fuel their rounds with sugary sports drinks or nothing at all.",
     "Our founders \u2014 a team of athletes, nutritional scientists, and product formulators \u2014 set out to create something different: a hydration product engineered specifically for the cognitive demands of elite competition.",
-    "After 18 months of formulation, testing, and real-world feedback from athletes of every level, Clarity was born. Every ingredient was chosen with intention. Every dose backed by clinical research. Every sip designed to help you perform at your best.",
+    "After 18 months of formulation, testing, and real-world feedback from athletes of every level, Clarity+ was born. Every ingredient was chosen with intention. Every dose backed by clinical research. Every sip designed to help you perform at your best.",
     "We believe that what you put in your body directly impacts what you get out of your game. Game Plan isn\u2019t just hydration \u2014 it\u2019s your competitive edge.",
   ],
 };

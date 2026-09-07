@@ -3,14 +3,15 @@
 import { useEffect, useRef } from "react";
 
 /**
- * Embeds the Shopify Buy Button for the Clarity product so visitors can add to
+ * Embeds the Shopify Buy Button for the Clarity+ product so visitors can add to
  * cart and check out through Shopify. This is the React equivalent of the
  * Shopify-generated snippet: it loads the Buy Button SDK once, then mounts a
  * "product" component into a ref'd node.
  *
- * The embedded card is configured to render only the Add to cart button (the
- * surrounding page already shows the product image, title, and price), and the
- * button / cart / toggle are styled in the site's gold-on-navy palette.
+ * Shopify is the source of truth for price and inventory, so the embedded card
+ * renders the price and Add to cart button (which reflects live availability,
+ * e.g. "Sold out") while the surrounding page supplies the image and title.
+ * The button / cart / toggle are styled in the site's gold-on-navy palette.
  */
 
 const SHOPIFY_DOMAIN = "uvds07-r1.myshopify.com";
@@ -48,10 +49,20 @@ const COMPONENT_OPTIONS = {
           "margin-bottom": "0",
         },
       },
+      // Price sits on the navy hero — render it in warm-white for contrast.
+      price: {
+        color: "#F8F6F0",
+        "font-size": "28px",
+        "font-weight": "700",
+        "margin-bottom": "12px",
+      },
+      compareAt: { color: "#A8B4BC", "font-size": "16px" },
+      unitPrice: { color: "#A8B4BC" },
       button: brandButton,
     },
-    // The page already shows the image, title, and price — keep only the button.
-    contents: { img: false, title: false, price: false },
+    // The page supplies the image and title; Shopify renders the live price
+    // and Add to cart / Sold out button.
+    contents: { img: false, title: false },
     text: { button: "Add to cart" },
   },
   productSet: {

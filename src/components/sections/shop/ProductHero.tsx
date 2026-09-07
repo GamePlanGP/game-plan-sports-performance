@@ -4,7 +4,10 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { PRODUCT } from "@/lib/constants";
 import { Container } from "@/components/ui/Container";
+import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
 import { StarRating } from "@/components/ui/StarRating";
+import { ProductName } from "@/components/ui/ProductName";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ShopifyBuyButton } from "@/components/sections/shop/ShopifyBuyButton";
@@ -81,9 +84,14 @@ export function ProductHero() {
           {/* Right Column — Product Info */}
           <FadeIn direction="right" delay={0.15}>
             <div className="flex flex-col gap-6">
+              {/* Coming Soon Badge */}
+              <div>
+                <Badge variant="gold">Coming Soon</Badge>
+              </div>
+
               {/* Product Name */}
-              <h1 className="font-display text-3xl font-bold text-warm-white sm:text-4xl lg:text-5xl">
-                {PRODUCT.name}
+              <h1 className="text-3xl font-bold text-warm-white sm:text-4xl lg:text-5xl">
+                <ProductName />
               </h1>
 
               {/* Rating */}
@@ -95,16 +103,6 @@ export function ProductHero() {
                 >
                   {PRODUCT.rating} ({PRODUCT.reviewCount} reviews)
                 </a>
-              </div>
-
-              {/* Price */}
-              <div className="flex items-baseline gap-2">
-                <span className="text-3xl font-bold text-warm-white">
-                  {PRODUCT.priceFormatted}
-                </span>
-                <span className="text-sm text-silver">
-                  ({PRODUCT.pricePerServing} per serving)
-                </span>
               </div>
 
               {/* Description */}
@@ -119,9 +117,17 @@ export function ProductHero() {
                 </span>
               </div>
 
-              {/* Purchase — Shopify Buy Button */}
-              <div className="flex flex-col gap-2">
+              {/* Purchase — Shopify Buy Button (price & inventory from Shopify) */}
+              <div className="flex flex-col gap-3">
                 <ShopifyBuyButton />
+                <Button
+                  variant="secondary"
+                  size="md"
+                  href="/waitlist"
+                  className="w-full"
+                >
+                  Join Waitlist for Early Access
+                </Button>
                 <p className="text-xs text-silver">
                   Secure checkout powered by Shopify.
                 </p>

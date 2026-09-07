@@ -20,7 +20,7 @@ export function FAQSection() {
                 className="mb-6"
               />
               <p className="mb-8 text-silver leading-relaxed">
-                Everything you need to know about Clarity.
+                Everything you need to know about Clarity+.
                 Can&apos;t find what you&apos;re looking for? Reach out to our
                 team and we&apos;ll get back to you within 24 hours.
               </p>
