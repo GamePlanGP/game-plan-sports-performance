@@ -24,7 +24,6 @@ export const PRODUCT = {
   priceFormatted: "$24.99",
   pricePerServing: "$2.50",
   servings: 10,
-  flavor: "Citrus Greens",
   rating: 4.8,
   reviewCount: 127,
   description:
@@ -210,7 +209,7 @@ export const TESTIMONIALS = [
     name: "David T.",
     location: "San Diego, CA",
     rating: 4,
-    text: "Love the clean energy \u2014 no crash at the turn like I used to get with energy drinks. The electrolytes actually work too. Huge fan of the citrus flavor.",
+    text: "Love the clean energy \u2014 no crash at the turn like I used to get with energy drinks. The electrolytes actually work too.",
     handicap: "12 handicap",
   },
   {
@@ -234,10 +233,10 @@ export const REVIEWS = [
   {
     name: "Sarah L.",
     rating: 5,
-    title: "Great taste, real results",
+    title: "Real results, round after round",
     date: "2024-12-10",
     verified: true,
-    text: "I was skeptical, but after a month of using Clarity before every round, I'm a believer. The citrus flavor is refreshing and not too sweet. More importantly, I feel focused and energized through all 18 holes.",
+    text: "I was skeptical, but after a month of using Clarity before every round, I'm a believer. I feel focused and energized through all 18 holes.",
   },
   {
     name: "James K.",
@@ -253,7 +252,7 @@ export const REVIEWS = [
     title: "Solid hydration with a mental edge",
     date: "2024-11-15",
     verified: true,
-    text: "Good product overall. The electrolyte balance is spot-on and I definitely notice better focus during my rounds. Only wish they offered a few more flavor options. Would buy again.",
+    text: "Good product overall. The electrolyte balance is spot-on and I definitely notice better focus during my rounds. Would buy again.",
   },
   {
     name: "Emily P.",

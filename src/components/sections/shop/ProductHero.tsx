@@ -125,9 +125,6 @@ export function ProductHero() {
                 <span className="font-medium">
                   {PRODUCT.format} &middot; {PRODUCT.count}
                 </span>
-                <span className="text-silver">
-                  Flavor: {PRODUCT.flavor}
-                </span>
               </div>
 
               {/* Quantity */}
