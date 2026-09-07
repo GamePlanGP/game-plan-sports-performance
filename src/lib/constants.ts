@@ -46,22 +46,6 @@ export const PRODUCT = {
   ],
 };
 
-export const SUBSCRIPTION_OPTIONS = [
-  {
-    label: "One-Time Purchase",
-    price: 24.99,
-    priceFormatted: "$24.99",
-    savings: null,
-  },
-  {
-    label: "Subscribe & Save 15%",
-    price: 21.24,
-    priceFormatted: "$21.24",
-    savings: "Save $3.75",
-    frequencies: ["Every 30 days", "Every 60 days", "Every 90 days"],
-  },
-];
-
 export const INGREDIENTS = [
   {
     name: "CognatiQ\u00AE",
@@ -298,7 +282,7 @@ export const FAQS = [
   {
     question: "Do you offer a subscription?",
     answer:
-      "We will! Subscribe & Save will be available at launch with a 15% discount on every order. Choose delivery every 30, 60, or 90 days. Cancel or modify anytime \u2014 no commitments.",
+      "We will! Subscribe & Save is coming soon \u2014 you'll be able to save on every order and choose a delivery schedule that fits your routine, with the freedom to skip, pause, or cancel anytime. Plans and pricing will be available through our store at launch.",
   },
 ];
 
