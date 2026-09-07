@@ -10,6 +10,10 @@ const nextConfig: NextConfig = {
   output: "export",
   basePath: useGithubPagesBasePath ? "/game-plan-sports-performance" : "",
   assetPrefix: useGithubPagesBasePath ? "/game-plan-sports-performance/" : undefined,
+  // `output: "export"` has no image optimization server, so images must be
+  // served unoptimized. next/image still applies basePath/assetPrefix to the
+  // logo asset so it resolves correctly on both Vercel and GitHub Pages.
+  images: { unoptimized: true },
 };
 
 export default nextConfig;
