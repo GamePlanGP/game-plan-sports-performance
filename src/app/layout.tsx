@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Cormorant_Garamond, Graduate } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -15,7 +12,7 @@ const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
   subsets: ["latin"],
   display: "swap",
-  weight: ["300", "400", "600"],
+  weight: ["300", "400", "500", "600"],
 });
 
 // Product wordmark font — the "Clarity+" name renders in Graduate (matches the
@@ -76,14 +73,7 @@ export default function RootLayout({
       lang="en"
       className={`${montserrat.variable} ${cormorant.variable} ${graduate.variable}`}
     >
-      <body className="antialiased">
-        <div className="fixed top-0 right-0 left-0 z-30">
-          <AnnouncementBar />
-          <Header />
-        </div>
-        <main className="min-h-screen">{children}</main>
-        <Footer />
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

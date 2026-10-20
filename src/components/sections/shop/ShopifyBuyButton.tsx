@@ -11,7 +11,8 @@ import { useEffect, useRef } from "react";
  * Shopify is the source of truth for price and inventory, so the embedded card
  * renders the price and Add to cart button (which reflects live availability,
  * e.g. "Sold out") while the surrounding page supplies the image and title.
- * The button / cart / toggle are styled in the site's gold-on-navy palette.
+ * The button / cart / toggle are styled in the Palette v2 look: silver fill,
+ * navy label, 1.5px outline, 2px radius.
  */
 
 const SHOPIFY_DOMAIN = "uvds07-r1.myshopify.com";
@@ -21,22 +22,26 @@ const MONEY_FORMAT = "%24%7B%7Bamount%7D%7D";
 const SDK_URL =
   "https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js";
 
-// Brand palette (mirrors globals.css tokens) applied to the Shopify UI.
-const GOLD = "#C9A84C";
-const GOLD_HOVER = "#E8C97A";
-const NAVY = "#08111A";
+// Palette v2 (mirrors the --navy / --silver tokens in globals.css) applied to
+// the Shopify UI.
+const SILVER = "#C4CED4";
+const WHITE = "#FFFFFF";
+const NAVY = "#002D62";
 
 const brandButton = {
   "font-family": "inherit",
   "font-weight": "600",
-  "font-size": "16px",
-  "padding-top": "16px",
-  "padding-bottom": "16px",
+  "font-size": "12px",
+  "letter-spacing": "0.16em",
+  "text-transform": "uppercase",
+  "padding-top": "17px",
+  "padding-bottom": "17px",
   color: NAVY,
-  "background-color": GOLD,
-  ":hover": { "background-color": GOLD_HOVER, color: NAVY },
-  ":focus": { "background-color": GOLD_HOVER },
-  "border-radius": "8px",
+  "background-color": SILVER,
+  border: `1.5px solid ${SILVER}`,
+  ":hover": { "background-color": WHITE, color: NAVY, border: `1.5px solid ${WHITE}` },
+  ":focus": { "background-color": WHITE, border: `1.5px solid ${WHITE}` },
+  "border-radius": "2px",
 };
 
 const COMPONENT_OPTIONS = {
@@ -49,15 +54,15 @@ const COMPONENT_OPTIONS = {
           "margin-bottom": "0",
         },
       },
-      // Price sits on the navy hero — render it in warm-white for contrast.
+      // Price sits on the navy hero — render it in white for contrast.
       price: {
-        color: "#F8F6F0",
+        color: WHITE,
         "font-size": "28px",
         "font-weight": "700",
         "margin-bottom": "12px",
       },
-      compareAt: { color: "#A8B4BC", "font-size": "16px" },
-      unitPrice: { color: "#A8B4BC" },
+      compareAt: { color: SILVER, "font-size": "16px" },
+      unitPrice: { color: SILVER },
       button: brandButton,
     },
     // The page supplies the image and title; Shopify renders the live price
@@ -97,9 +102,10 @@ const COMPONENT_OPTIONS = {
   toggle: {
     styles: {
       toggle: {
-        "background-color": GOLD,
-        ":hover": { "background-color": GOLD_HOVER },
-        ":focus": { "background-color": GOLD_HOVER },
+        "background-color": SILVER,
+        "border-radius": "2px",
+        ":hover": { "background-color": WHITE },
+        ":focus": { "background-color": WHITE },
       },
       count: { color: NAVY },
       iconPath: { fill: NAVY },
