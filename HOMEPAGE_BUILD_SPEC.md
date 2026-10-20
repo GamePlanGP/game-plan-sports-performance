@@ -48,7 +48,10 @@
 - **White** is the foundation. Light sections alternate between white and `--tint`.
 - **Navy** carries the brand: headlines, body text, logo, outlines, focus rings, the announcement bar, and exactly **three** full-width bands — Golf Moments, Founder's Note, and Sign-up + Footer.
 - **Silver** is every button fill, the section tint, all hairlines, the placebo chart bar, and secondary text, icons, and tags on navy.
-- **Burgundy** marks the clinical proof and nothing else: the CognatiQ® chart bar, the 80.7% label, and the 200mg figure on the CognatiQ® ingredient card. Never on buttons, badges, links, or icons.
+- **Burgundy** has two jobs.
+  - **Clinical proof (solid fills and text):** the CognatiQ® chart bar, the 80.7% label, and the 200mg figure on the CognatiQ® ingredient card. These are the only places burgundy is used as a fill or as text.
+  - **Accent lines (added Oct 20, 2026):** 2px rules along the top and bottom edge of every silver (`--tint`) band; the 2px × 40px accent bar above each heading on a light section; the rule above each How-to-use step; the frame around the FAQ list and the marker on the open question; the rule between the announcement bar and the header; and the underline on text links on light backgrounds.
+  - Never on buttons, badges, or icons, and never on navy (accent lines on light backgrounds only).
 
 ### Contrast rules (checked)
 | Pairing | Ratio | Use |
@@ -60,7 +63,7 @@
 | Burgundy on white / tint | 9.0:1 / 8.1:1 | Proof figures only |
 | `--ink-soft` on white / tint | 5.4:1 / 4.9:1 | Secondary text on light sections |
 | **Silver on white** | **1.6:1** | **Never as text.** Fills and hairlines only. A silver button on a light section always has its navy outline. |
-| **Burgundy on navy** | **1.5:1** | **Never.** Burgundy only sits on white or `--tint`. |
+| **Burgundy on navy** | **1.5:1** | **Never for text or fills.** Burgundy sits on white or `--tint`; the one rule beside navy is the 2px line under the announcement bar. |
 
 - Focus rings: 2px navy on light sections, 2px white on navy sections.
 
@@ -374,7 +377,7 @@ All sections, layout, brand styling, draft copy, visible placeholders. No integr
 - [ ] Earned-only flags hide rating, NSF badge, and pro voices when `false`.
 - [ ] Proof chart is CSS/SVG and animates (or not, under reduced motion).
 - [ ] Palette v2 only: no gold or warm-white anywhere. Section backgrounds match the table in Section 3.
-- [ ] Contrast rules hold: no silver text on white, no burgundy on navy, burgundy only on the three proof elements.
+- [ ] Contrast rules hold: no silver text on white, no burgundy text or fills on navy, burgundy fills and text only on the three proof elements (accent lines per Section 3 are allowed).
 - [ ] One button style everywhere (silver fill + navy outline); secondary actions are text links.
 - [ ] Buy box option cards and FAQ accordion work by keyboard.
 - [ ] `npm run check:placeholders` lists every open item.

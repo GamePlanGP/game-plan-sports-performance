@@ -1,5 +1,5 @@
 import { flags, hero } from "@/content/homepage";
-import { Eyebrow, Section } from "./ui/Section";
+import { AccentBar, Eyebrow, Section } from "./ui/Section";
 import { Txt } from "./ui/Txt";
 import { Media } from "./ui/Media";
 import { LaunchCta } from "./ui/LaunchCta";
@@ -27,6 +27,7 @@ export function Hero() {
       <div className="grid items-center gap-10 md:grid-cols-2 md:gap-12 lg:gap-20">
         <div>
           {flags.SHOW_RATING ? <RatingBadge /> : null}
+          <AccentBar />
           <Eyebrow>{hero.eyebrow}</Eyebrow>
           <h1
             id="hero-heading"

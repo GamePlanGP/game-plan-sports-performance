@@ -9,7 +9,7 @@ export function HowToUse() {
 
       <ol className="mt-10 grid gap-8 md:grid-cols-3 md:gap-10 lg:mt-14">
         {how.steps.map((step, i) => (
-          <li key={step.title} className="border-t border-hp-silver pt-5">
+          <li key={step.title} className="border-t-2 border-hp-burgundy pt-5">
             <span className="font-display [font-variant-numeric:lining-nums] text-6xl leading-none font-medium" aria-hidden="true">
               {i + 1}
             </span>

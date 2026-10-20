@@ -4,7 +4,7 @@ import { Txt } from "./Txt";
 
 const TONES = {
   white: "bg-hp-white text-hp-navy",
-  tint: "bg-hp-tint text-hp-navy",
+  tint: "border-y-2 border-hp-burgundy bg-hp-tint text-hp-navy",
   navy: "on-navy bg-hp-navy text-white",
 } as const;
 
@@ -42,6 +42,11 @@ export function Section({
   );
 }
 
+/** Short burgundy rule that opens a heading on a light section. */
+export function AccentBar({ className = "" }: { className?: string }) {
+  return <span aria-hidden="true" className={`mb-5 block h-[2px] w-10 bg-hp-burgundy ${className}`} />;
+}
+
 export function Eyebrow({ children, onDark = false, className = "" }: { children: ReactNode; onDark?: boolean; className?: string }) {
   return (
     <p
@@ -69,6 +74,7 @@ export function SectionHeading({
 }) {
   return (
     <div className={className}>
+      {onDark ? null : <AccentBar />}
       {eyebrow ? <Eyebrow onDark={onDark}>{eyebrow}</Eyebrow> : null}
       <h2
         id={id}

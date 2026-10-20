@@ -18,7 +18,7 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-hp-line bg-hp-white">
+    <header className="sticky top-0 z-40 border-t-2 border-b border-t-hp-burgundy border-b-hp-line bg-hp-white">
       <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between gap-4 px-5 md:px-8">
         <a href="#top" aria-label={`${brand.company} — top of page`} className="inline-flex shrink-0 items-center">
           <Image src={logo} alt={brand.logoAlt} priority className="h-12 w-auto" />

@@ -17,8 +17,10 @@ const EMAIL = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
  * placeholder, shows the label with the placeholder tag instead of a dead link.
  */
 export function TextLink({ href, children, onDark = false, onClick, className = "" }: Props) {
-  const cls = `text-[0.72rem] font-semibold tracking-[0.16em] uppercase underline decoration-1 underline-offset-[5px] transition-colors motion-reduce:transition-none ${
-    onDark ? "on-navy text-white hover:text-hp-silver" : "text-hp-navy hover:text-hp-ink-soft"
+  const cls = `text-[0.72rem] font-semibold tracking-[0.16em] uppercase underline decoration-[1.5px] underline-offset-[5px] transition-colors motion-reduce:transition-none ${
+    onDark
+      ? "on-navy text-white hover:text-hp-silver"
+      : "text-hp-navy decoration-hp-burgundy hover:text-hp-ink-soft"
   } ${className}`;
 
   if (isPlaceholder(href)) {

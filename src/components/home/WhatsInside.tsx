@@ -52,7 +52,7 @@ export function WhatsInside() {
           aria-expanded={labelOpen}
           aria-controls="hp-label-panel"
           onClick={() => setLabelOpen((o) => !o)}
-          className="text-[0.72rem] font-semibold tracking-[0.16em] text-hp-navy uppercase underline decoration-1 underline-offset-[5px] transition-colors hover:text-hp-ink-soft motion-reduce:transition-none"
+          className="text-[0.72rem] font-semibold tracking-[0.16em] text-hp-navy uppercase underline decoration-hp-burgundy decoration-[1.5px] underline-offset-[5px] transition-colors hover:text-hp-ink-soft motion-reduce:transition-none"
         >
           {labelOpen ? inside.label.close : inside.label.open}
         </button>

@@ -34,11 +34,16 @@ export function FAQ() {
           </p>
         </div>
 
-        <ul className="border-y border-hp-silver">
+        <ul className="border-y-2 border-hp-burgundy">
           {faq.items.map((item) => {
             const open = openId === item.id;
             return (
-              <li key={item.id} className="border-b border-hp-silver last:border-b-0">
+              <li
+                key={item.id}
+                className={`border-b border-hp-silver pl-5 transition-shadow last:border-b-0 motion-reduce:transition-none ${
+                  open ? "shadow-[inset_3px_0_0_var(--burgundy)]" : ""
+                }`}
+              >
                 <h3>
                   <button
                     type="button"
