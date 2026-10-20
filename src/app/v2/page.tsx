@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { faq, seo } from "@/content/homepage";
 import { isPlaceholder } from "@/lib/home";
+import { PageLabel } from "@/components/home/PageLabel";
 import { AnnouncementBar } from "@/components/home/AnnouncementBar";
 import { Header } from "@/components/home/Header";
 import { Hero } from "@/components/home/Hero";
@@ -48,6 +49,7 @@ export default function HomeV2() {
       >
         Skip to content
       </a>
+      <PageLabel />
       <AnnouncementBar />
       <Header />
       <main>

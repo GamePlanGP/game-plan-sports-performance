@@ -36,6 +36,9 @@ export const flags = {
   SHOW_PRO_TESTIMONIALS: false,
 };
 
+/** Review-only label across the top of /v2 so the page is easy to refer to. */
+export const pageLabel = { show: true, text: "Homepage 2" };
+
 /** Clean-label claims. Unconfirmed icons render grayed until set to `true`. */
 export const cleanLabelFlags = {
   nonStimulant: false,
