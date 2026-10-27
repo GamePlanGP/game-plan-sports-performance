@@ -79,3 +79,82 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-gold-500);
 }
+
+/* ------------------------------------------------------------------
+   Homepage v2 (/v2) — Palette v2: navy / silver / burgundy / white.
+   Token names are new, so nothing above (or any other page) is affected.
+   ------------------------------------------------------------------ */
+:root {
+  /* Brand */
+  --navy: #002d62;
+  --silver: #c4ced4;
+  --burgundy: #862633;
+  --white: #ffffff;
+
+  /* Derived tints of the brand colors (not new colors) */
+  --tint: #f0f3f4;
+  --tint-2: #e4e9ec;
+  --line: #d3dadf;
+  --ink-soft: #4c6c91;
+  --navy-2: #0a3a72;
+  --navy-line: rgba(196, 206, 212, 0.26);
+}
+
+@theme inline {
+  --color-hp-navy: var(--navy);
+  --color-hp-silver: var(--silver);
+  --color-hp-burgundy: var(--burgundy);
+  --color-hp-white: var(--white);
+  --color-hp-tint: var(--tint);
+  --color-hp-tint-2: var(--tint-2);
+  --color-hp-line: var(--line);
+  --color-hp-ink-soft: var(--ink-soft);
+  --color-hp-navy-2: var(--navy-2);
+  --color-hp-navy-line: var(--navy-line);
+
+  --font-wordmark: var(--font-graduate);
+  --radius-hp: 2px;
+}
+
+/* The page paints its own white/navy sections; keep the document chrome
+   (overscroll area, selection, scrollbar) on-palette while /v2 is mounted. */
+html:has(.hp) {
+  scrollbar-color: var(--silver) var(--white);
+}
+html:has(.hp) body {
+  background-color: var(--white);
+  color: var(--navy);
+}
+html:has(.hp) ::selection {
+  background-color: var(--silver);
+  color: var(--navy);
+}
+html:has(.hp) ::-webkit-scrollbar-track {
+  background: var(--tint);
+}
+html:has(.hp) ::-webkit-scrollbar-thumb {
+  background: var(--silver);
+}
+html:has(.hp) ::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-soft);
+}
+
+.hp {
+  background-color: var(--white);
+  color: var(--navy);
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+}
+.hp :focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 2px;
+}
+.hp .on-navy :focus-visible,
+.hp .on-navy:focus-visible {
+  outline-color: var(--white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:has(.hp) {
+    scroll-behavior: auto;
+  }
+}
