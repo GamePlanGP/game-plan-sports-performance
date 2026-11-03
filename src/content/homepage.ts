@@ -36,9 +36,6 @@ export const flags = {
   SHOW_PRO_TESTIMONIALS: false,
 };
 
-/** Review-only label across the top of the homepage so the page is easy to refer to. */
-export const pageLabel = { show: true, text: "Homepage 2" };
-
 /** Clean-label claims. Unconfirmed icons render grayed until set to `true`. */
 export const cleanLabelFlags = {
   nonStimulant: false,
@@ -123,7 +120,6 @@ export const offer = {
 /* -------------------------------------------------------------------------- */
 
 export const nav = [
-  { label: "The Science", href: "#science" },
   { label: "How to Use", href: "#how" },
   { label: "Ingredients", href: "#inside" },
   { label: "Reviews", href: "#reviews" },
@@ -148,7 +144,6 @@ export const hero = {
     draft: true,
     dependsOn: ["{{CONFIRM_DOSE_200MG}}", "{{CONFIRM_NON_STIMULANT}}"],
   } as Copy,
-  secondary: { label: "See the science", href: "#science" },
   trust: ["200mg CognatiQ®", "Non-stimulant", offer.guaranteeShort] as (string | Copy)[],
   rating: "{{JUDGEME_RATING}}",
   image: {
@@ -157,32 +152,6 @@ export const hero = {
     label: "Hero photo: product on the course, or a golfer over a putt",
     size: "1600×1200 desktop · 800×1000 mobile crop",
   },
-};
-
-export const proof = {
-  heading: { text: "Backed by a clinical study. Not a hunch.", draft: true } as Copy,
-  chartTitle: "CognatiQ® ingredient study · N-back test",
-  bars: [
-    { id: "placebo", label: "Placebo", value: 11.1, tone: "silver" },
-    { id: "cognatiq", label: "CognatiQ® 200mg", value: 80.7, tone: "burgundy" },
-  ] as const,
-  axisLabel: "% improvement in omission errors vs. baseline, 60 minutes after one dose",
-  plainEnglish: {
-    text: "Omission errors are missed responses caused by hesitation. Fewer misses means more decisive play.",
-    draft: true,
-  } as Copy,
-  stats: [
-    { value: "60 min", label: "Measured 60 minutes after a single dose" },
-    {
-      value: "200mg",
-      label: "The clinically studied dose, in every stick",
-      dependsOn: ["{{CONFIRM_DOSE_200MG}}"],
-    },
-    { value: "5", label: "Published clinical studies on CognatiQ®" },
-  ],
-  footnote:
-    "Results from a double-blind, placebo-controlled human clinical study of the CognatiQ® ingredient (N-back test). Clarity+ has not been studied as a finished product. {{STUDY_CITATION}}",
-  studyLink: { label: "Read the study", href: "{{STUDY_URL}}" },
 };
 
 export const moments = {
@@ -429,7 +398,6 @@ export const footer = {
     {
       heading: "Learn",
       links: [
-        { label: "The Science", href: "#science" },
         { label: "How to Use", href: "#how" },
         { label: "FAQ", href: "#faq" },
       ],

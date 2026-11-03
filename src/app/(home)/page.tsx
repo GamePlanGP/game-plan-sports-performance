@@ -3,11 +3,9 @@ import { brand, faq, seo } from "@/content/homepage";
 import { SITE_URL } from "@/lib/site";
 import logo from "@/assets/gp-wordmark-navy.png";
 import { isPlaceholder } from "@/lib/home";
-import { PageLabel } from "@/components/home/PageLabel";
 import { AnnouncementBar } from "@/components/home/AnnouncementBar";
 import { Header } from "@/components/home/Header";
 import { Hero } from "@/components/home/Hero";
-import { ProofStrip } from "@/components/home/ProofStrip";
 import { GolfMoments } from "@/components/home/GolfMoments";
 import { BuyBox } from "@/components/home/BuyBox";
 import { HowToUse } from "@/components/home/HowToUse";
@@ -78,12 +76,10 @@ export default function Home() {
       >
         Skip to content
       </a>
-      <PageLabel />
       <AnnouncementBar />
       <Header />
       <main>
         <Hero />
-        <ProofStrip />
         <GolfMoments />
         <BuyBox />
         <HowToUse />

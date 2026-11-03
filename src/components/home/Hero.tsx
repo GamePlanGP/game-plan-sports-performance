@@ -3,7 +3,6 @@ import { AccentBar, Eyebrow, Section } from "./ui/Section";
 import { Txt } from "./ui/Txt";
 import { Media } from "./ui/Media";
 import { LaunchCta } from "./ui/LaunchCta";
-import { TextLink } from "./ui/TextLink";
 import { StarIcon } from "./ui/Icons";
 
 /** Only rendered when SHOW_RATING is on. Values come from Judge.me in Phase 2. */
@@ -39,9 +38,8 @@ export function Hero() {
             <Txt v={hero.subhead} />
           </p>
 
-          <div className="mt-7 flex flex-wrap items-center gap-x-8 gap-y-4">
+          <div className="mt-7">
             <LaunchCta location="hero" />
-            <TextLink href={hero.secondary.href}>{hero.secondary.label} →</TextLink>
           </div>
 
           <ul className="mt-9 flex flex-wrap gap-x-6 gap-y-2 border-t border-hp-line pt-5">

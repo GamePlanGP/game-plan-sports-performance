@@ -217,6 +217,9 @@ export const hero = {
 - Layout: desktop two columns (copy left, image right). Mobile: copy + CTA first, image below. The CTA must be visible without scrolling on a 375×667 screen.
 
 ### 6.3 Proof strip — `#science`
+
+> **Removed from the homepage (Nov 3, 2026).** Ryan will rebuild this as a new CognatiQ® section covering the clinical trials. Until then: no `#science` section, no "The Science" nav or footer link, and no "See the science" link in the hero. The notes below are kept as reference for the rebuild.
+
 - Background: tint. Chart sits in a white card with a 1px `--line` border.
 - **Heading (DRAFT):** "Backed by a clinical study. Not a hunch."
 - **Chart:** two vertical bars, CSS/SVG. Animate bar growth on scroll (skip if reduced motion).
