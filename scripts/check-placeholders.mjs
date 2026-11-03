@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Lists every open `{{PLACEHOLDER}}` and every `draft: true` in the /v2
+ * Lists every open `{{PLACEHOLDER}}` and every `draft: true` in the homepage
  * homepage sources. Phase 3 (production deploy) requires zero of both.
  *
  *   npm run check:placeholders          report only (exit 0)
@@ -10,7 +10,7 @@ import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative } from "node:path";
 
 const root = new URL("..", import.meta.url).pathname;
-const targets = ["src/content", "src/components/home", "src/app/v2"];
+const targets = ["src/content", "src/components/home", "src/app/(home)"];
 const strict = process.argv.includes("--strict");
 
 const files = [];

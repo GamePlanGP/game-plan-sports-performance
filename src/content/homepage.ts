@@ -1,5 +1,5 @@
 /**
- * Homepage v2 content — every string, price, link and flag for /v2.
+ * Homepage v2 content — every string, price, link and flag for the homepage (/).
  *
  * Conventions (see HOMEPAGE_BUILD_SPEC.md):
  *  - Unresolved values are `"{{ID}}"` strings; <Placeholder> renders them as
@@ -36,7 +36,7 @@ export const flags = {
   SHOW_PRO_TESTIMONIALS: false,
 };
 
-/** Review-only label across the top of /v2 so the page is easy to refer to. */
+/** Review-only label across the top of the homepage so the page is easy to refer to. */
 export const pageLabel = { show: true, text: "Homepage 2" };
 
 /** Clean-label claims. Unconfirmed icons render grayed until set to `true`. */
@@ -459,7 +459,7 @@ export const footer = {
 };
 
 /**
- * Search and social-share text for /v2. Drafts replace {{SEO_TITLE}} and
+ * Search and social-share text for the homepage. Drafts replace {{SEO_TITLE}} and
  * {{SEO_DESCRIPTION}}; same guardrails as the page copy (no claims or
  * asterisks in the snippet). Title ~60 chars max, description ~155.
  */
@@ -470,7 +470,7 @@ export const seo = {
     draft: true,
     dependsOn: ["{{CONFIRM_DOSE_200MG}}", "{{CONFIRM_NON_STIMULANT}}"],
   } as Copy,
-  /** Until supplied, /v2 uses a generated navy card (src/app/v2/opengraph-image.tsx). */
+  /** Until supplied, the homepage uses a generated navy card (src/app/(home)/opengraph-image.tsx). */
   ogImage: "{{OG_IMAGE}}",
   shareImageAlt: "Clarity+ by Game Plan Sports Performance",
 };

@@ -5,9 +5,16 @@ import { IngredientSpotlight } from "@/components/sections/home/IngredientSpotli
 import { Testimonials } from "@/components/sections/home/Testimonials";
 import { FAQSection } from "@/components/sections/home/FAQSection";
 import { FinalCTA } from "@/components/sections/home/FinalCTA";
+import type { Metadata } from "next";
 import { SITE_CONFIG } from "@/lib/constants";
 
-export default function Home() {
+// The previous homepage, kept at /v1 for reference. Never indexed.
+export const metadata: Metadata = {
+  title: "Homepage 1 (reference)",
+  robots: { index: false, follow: false },
+};
+
+export default function HomepageV1() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
