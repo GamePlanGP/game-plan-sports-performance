@@ -3,8 +3,6 @@ import { brand, faq, seo } from "@/content/homepage";
 import { SITE_URL } from "@/lib/site";
 import logo from "@/assets/gp-wordmark-navy.png";
 import { isPlaceholder } from "@/lib/home";
-import { AnnouncementBar } from "@/components/home/AnnouncementBar";
-import { Header } from "@/components/home/Header";
 import { Hero } from "@/components/home/Hero";
 import { GolfMoments } from "@/components/home/GolfMoments";
 import { BuyBox } from "@/components/home/BuyBox";
@@ -15,7 +13,6 @@ import { Reviews } from "@/components/home/Reviews";
 import { Quality } from "@/components/home/Quality";
 import { FAQ } from "@/components/home/FAQ";
 import { Join } from "@/components/home/Join";
-import { Footer } from "@/components/home/Footer";
 import { StickyMobileCta } from "@/components/home/StickyMobileCta";
 
 const title = seo.title.text;
@@ -69,28 +66,17 @@ const orgJsonLd = {
 
 export default function Home() {
   return (
-    <div className="hp">
-      <a
-        href="#top"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-hp focus:bg-hp-navy focus:px-4 focus:py-3 focus:text-white"
-      >
-        Skip to content
-      </a>
-      <AnnouncementBar />
-      <Header />
-      <main>
-        <Hero />
-        <GolfMoments />
-        <BuyBox />
-        <HowToUse />
-        <WhatsInside />
-        <FoundersNote />
-        <Reviews />
-        <Quality />
-        <FAQ />
-        <Join />
-      </main>
-      <Footer />
+    <>
+      <Hero />
+      <GolfMoments />
+      <BuyBox />
+      <HowToUse />
+      <WhatsInside />
+      <FoundersNote />
+      <Reviews />
+      <Quality />
+      <FAQ />
+      <Join />
       <StickyMobileCta />
       <script
         type="application/ld+json"
@@ -100,6 +86,6 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
       />
-    </div>
+    </>
   );
 }

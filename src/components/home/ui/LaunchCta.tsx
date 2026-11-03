@@ -18,7 +18,7 @@ export function LaunchCta({ location, size, onDark, full, className }: Props) {
   const prelaunch = LAUNCH_MODE === "prelaunch";
   return (
     <Button
-      href={prelaunch ? "#join" : "#buy"}
+      href={prelaunch ? "/#join" : "/#buy"}
       size={size}
       onDark={onDark}
       full={full}

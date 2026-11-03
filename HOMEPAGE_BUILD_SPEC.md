@@ -240,9 +240,10 @@ export const hero = {
 - **Heading (DRAFT):** "Where rounds are won and lost."
 - Eyebrow: "On the course"
 - Three outline-only cards (1px `--navy-line`, no fill), each with: silver line icon, scorecard eyebrow, title, one line, benefit tag. Tags: silver outline, uppercase.
-  1. Eyebrow "Hole 1 · Tee box" — **The first tee.** (DRAFT) "Everyone's watching. Pick a target. Pull the trigger." — Tag: "Supports decisiveness*"
-  2. Eyebrow "Approach · Club select" — **Between clubs.** (DRAFT) "7 or 8? Choose, commit, swing." — Tag: "Supports accuracy under pressure*"
-  3. Eyebrow "Hole 17 · 3 ft" — **The 3-footer on 17.** (DRAFT) "Four hours in. Stay sharp to the last putt." — Tag: "Supports focus and mental stamina*"
+  *Revised Nov 3, 2026 (Ryan): Hole 1 = composure / no first-tee jitters; Between clubs = decisiveness; Hole 17 = performance under pressure (not stamina — a second stick will be promoted as optional).*
+  1. Eyebrow "Hole 1 · Tee box" — **The first tee.** (DRAFT) "Everyone's watching. Breathe, pick your target, and swing with a clear head — no stimulant jitters." — Tag: "Supports cognitive control*"
+  2. Eyebrow "Approach · Club select" — **Between clubs.** (DRAFT) "7 or 8? Read the yardage, make the call, and commit to it." — Tag: "Supports decisiveness*"
+  3. Eyebrow "Hole 17 · 3 ft" — **The 3-footer on 17.** (DRAFT) "Match on the line. Read the break, trust your line, and make a confident stroke." — Tag: "Supports accuracy under pressure*"
 - CTA under the cards: primary button **"Get Clarity+"** → `#buy` (silver border on navy).
 - **Why:** translates lab language into what golfers feel on the course.
 

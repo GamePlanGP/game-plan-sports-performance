@@ -5,7 +5,8 @@ import { ScienceBehind } from "@/components/sections/science/ScienceBehind";
 import { ClinicalStudies } from "@/components/sections/science/ClinicalStudies";
 
 export const metadata: Metadata = {
-  title: "The Science",
+  title: "The Science (old, reference)",
+  robots: { index: false, follow: false },
   description:
     "Discover the science behind Clarity+. Clinically dosed nootropics, premium electrolytes, and powerful adaptogens — every ingredient backed by research.",
 };

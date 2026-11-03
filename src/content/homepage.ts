@@ -119,17 +119,19 @@ export const offer = {
 /* Page chrome                                                                */
 /* -------------------------------------------------------------------------- */
 
+/** Hrefs are "/#id" so the header works from every page, not just the homepage. */
 export const nav = [
-  { label: "How to Use", href: "#how" },
-  { label: "Ingredients", href: "#inside" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "FAQ", href: "#faq" },
+  { label: "The Science", href: "/science" },
+  { label: "How to Use", href: "/#how" },
+  { label: "Ingredients", href: "/#inside" },
+  { label: "Reviews", href: "/#reviews" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export const announcement = {
   message: offer.guaranteeShort,
-  /** Opens this FAQ item. */
-  faqId: "guarantee",
+  /** Scrolls to and opens the guarantee FAQ item, from any page. */
+  href: "/#faq-guarantee",
 };
 
 /* -------------------------------------------------------------------------- */
@@ -162,22 +164,28 @@ export const moments = {
       icon: "tee",
       eyebrow: "Hole 1 · Tee box",
       title: "The first tee.",
-      body: { text: "Everyone's watching. Pick a target. Pull the trigger.", draft: true } as Copy,
-      tag: "Supports decisiveness*",
+      body: {
+        text: "Everyone's watching. Breathe, pick your target, and swing with a clear head — no stimulant jitters.",
+        draft: true,
+      } as Copy,
+      tag: "Supports cognitive control*",
     },
     {
       icon: "clubs",
       eyebrow: "Approach · Club select",
       title: "Between clubs.",
-      body: { text: "7 or 8? Choose, commit, swing.", draft: true } as Copy,
-      tag: "Supports accuracy under pressure*",
+      body: { text: "7 or 8? Read the yardage, make the call, and commit to it.", draft: true } as Copy,
+      tag: "Supports decisiveness*",
     },
     {
       icon: "hole",
       eyebrow: "Hole 17 · 3 ft",
       title: "The 3-footer on 17.",
-      body: { text: "Four hours in. Stay sharp to the last putt.", draft: true } as Copy,
-      tag: "Supports focus and mental stamina*",
+      body: {
+        text: "Match on the line. Read the break, trust your line, and make a confident stroke.",
+        draft: true,
+      } as Copy,
+      tag: "Supports accuracy under pressure*",
     },
   ],
 };
@@ -350,7 +358,7 @@ export const faq = {
       id: "inside",
       question: "What's in it?",
       answer: { text: "Every ingredient and dose is listed on the label.", draft: true },
-      link: { label: "See every ingredient", href: "#inside" },
+      link: { label: "See every ingredient", href: "/#inside" },
     },
     { id: "guarantee", question: "What's your guarantee?", answer: { text: "{{GUARANTEE_TERMS}}" } },
     {
@@ -394,12 +402,13 @@ export const join = {
 
 export const footer = {
   columns: [
-    { heading: "Shop", links: [{ label: "Clarity+", href: "#buy" }] },
+    { heading: "Shop", links: [{ label: "Clarity+", href: "/#buy" }] },
     {
       heading: "Learn",
       links: [
-        { label: "How to Use", href: "#how" },
-        { label: "FAQ", href: "#faq" },
+        { label: "The Science", href: "/science" },
+        { label: "How to Use", href: "/#how" },
+        { label: "FAQ", href: "/#faq" },
       ],
     },
     {
@@ -441,4 +450,74 @@ export const seo = {
   /** Until supplied, the homepage uses a generated navy card (src/app/(home)/opengraph-image.tsx). */
   ogImage: "{{OG_IMAGE}}",
   shareImageAlt: "Clarity+ by Game Plan Sports Performance",
+};
+
+/* -------------------------------------------------------------------------- */
+/* The Science page (/science)                                                */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * Skeleton for the CognatiQ® page. Every data slot is a placeholder until
+ * FutureCeuticals supplies the study details; nothing here is invented.
+ * Guardrails: stats belong to the CognatiQ® ingredient studies, not Clarity+,
+ * and 80.7% is always shown beside placebo (11.1%).
+ */
+export const science = {
+  seo: {
+    title: "The Science",
+    description: {
+      text: "The research behind CognatiQ®, the clinically studied coffee fruit extract in Clarity+.",
+      draft: true,
+    } as Copy,
+  },
+  intro: {
+    eyebrow: "The Science",
+    heading: { text: "The ingredient behind Clarity+.", draft: true } as Copy,
+    body: {
+      text: "Clarity+ is built around CognatiQ®, a whole coffee fruit extract from FutureCeuticals that has been studied in published human clinical trials. Here's what that research looked at, and what it found.",
+      draft: true,
+    } as Copy,
+  },
+  ingredient: {
+    heading: { text: "What is CognatiQ®?", draft: true } as Copy,
+    overview: "{{COGNATIQ_OVERVIEW}}",
+    source: "{{COGNATIQ_SOURCE}}",
+    mechanism: "{{COGNATIQ_MECHANISM}}",
+    image: {
+      src: "{{COGNATIQ_IMAGE}}",
+      alt: "Coffee fruit, the source of CognatiQ®",
+      label: "Coffee fruit / ingredient photo",
+      size: "1200×900",
+    },
+  },
+  keyResult: {
+    heading: { text: "The headline result.", draft: true } as Copy,
+    data: "{{COGNATIQ_KEY_RESULT_CHART}}",
+    note: "Placebo 11.1% vs. CognatiQ® 200mg 80.7% — % improvement in omission errors vs. baseline, 60 minutes after one dose (N-back test). Rebuild as a CSS/SVG chart, never an image.",
+  },
+  studies: {
+    heading: { text: "Published clinical studies.", draft: true } as Copy,
+    intro: "{{COGNATIQ_STUDIES_INTRO}}",
+    /** One card per published study (spec: 5). Fields stay placeholders until supplied. */
+    fields: ["Title", "Year · Journal", "Design", "Participants", "Dose", "Key finding", "Citation"],
+    items: [
+      "{{COGNATIQ_STUDY_1}}",
+      "{{COGNATIQ_STUDY_2}}",
+      "{{COGNATIQ_STUDY_3}}",
+      "{{COGNATIQ_STUDY_4}}",
+      "{{COGNATIQ_STUDY_5}}",
+    ],
+  },
+  dose: {
+    heading: { text: "Why 200mg.", draft: true } as Copy,
+    body: "{{COGNATIQ_DOSE_RATIONALE}}",
+    dependsOn: "{{CONFIRM_DOSE_200MG}}",
+  },
+  /** Fixed compliance copy (guardrail 3). */
+  ingredientNotProduct:
+    "These studies were conducted on the CognatiQ® ingredient. Clarity+ has not been studied as a finished product.",
+  trademark: "{{CONFIRM_TRADEMARK_LINE}}",
+  cta: {
+    heading: { text: "Ready to play with it?", draft: true } as Copy,
+  },
 };
