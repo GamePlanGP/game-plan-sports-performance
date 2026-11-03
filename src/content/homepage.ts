@@ -95,7 +95,12 @@ export const openItems = {
 /* -------------------------------------------------------------------------- */
 
 export const offer = {
-  guaranteeShort: "{{GUARANTEE_SHORT}}",
+  /** Replaces {{GUARANTEE_SHORT}}. Full terms (window, how to claim) are still {{GUARANTEE_TERMS}}. */
+  guaranteeShort: {
+    text: "Better decision-making or your money back",
+    draft: true,
+    dependsOn: ["{{GUARANTEE_TERMS}}", "{{FC_APPROVAL}}"],
+  } as Copy,
   guaranteeTerms: "{{GUARANTEE_TERMS}}",
   shippingShort: "{{SHIPPING_SHORT}}",
   shippingTerms: "{{SHIPPING_TERMS}}",
@@ -144,7 +149,7 @@ export const hero = {
     dependsOn: ["{{CONFIRM_DOSE_200MG}}", "{{CONFIRM_NON_STIMULANT}}"],
   } as Copy,
   secondary: { label: "See the science", href: "#science" },
-  trust: ["200mg CognatiQ®", "Non-stimulant", offer.guaranteeShort],
+  trust: ["200mg CognatiQ®", "Non-stimulant", offer.guaranteeShort] as (string | Copy)[],
   rating: "{{JUDGEME_RATING}}",
   image: {
     src: "{{HERO_IMAGE}}",
@@ -453,8 +458,19 @@ export const footer = {
   copyright: "© 2026 Game Plan Sports Performance, Inc.",
 };
 
+/**
+ * Search and social-share text for /v2. Drafts replace {{SEO_TITLE}} and
+ * {{SEO_DESCRIPTION}}; same guardrails as the page copy (no claims or
+ * asterisks in the snippet). Title ~60 chars max, description ~155.
+ */
 export const seo = {
-  title: "{{SEO_TITLE}}",
-  description: "{{SEO_DESCRIPTION}}",
+  title: { text: "Clarity+ | Decision-Making Drink Mix for Golfers", draft: true } as Copy,
+  description: {
+    text: "A non-stimulant drink mix for golfers, built around a clinically studied 200mg dose of CognatiQ®. One stick before you tee off.",
+    draft: true,
+    dependsOn: ["{{CONFIRM_DOSE_200MG}}", "{{CONFIRM_NON_STIMULANT}}"],
+  } as Copy,
+  /** Until supplied, /v2 uses a generated navy card (src/app/v2/opengraph-image.tsx). */
   ogImage: "{{OG_IMAGE}}",
+  shareImageAlt: "Clarity+ by Game Plan Sports Performance",
 };

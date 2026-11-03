@@ -47,7 +47,7 @@ export function Hero() {
           <ul className="mt-9 flex flex-wrap gap-x-6 gap-y-2 border-t border-hp-line pt-5">
             {hero.trust.map((item) => (
               <li
-                key={item}
+                key={typeof item === "string" ? item : item.text}
                 className="flex items-center gap-2.5 text-[0.66rem] font-semibold tracking-[0.16em] uppercase"
               >
                 <span aria-hidden="true" className="h-1.5 w-1.5 shrink-0 bg-hp-navy" />
