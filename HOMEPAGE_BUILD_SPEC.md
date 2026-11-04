@@ -200,7 +200,7 @@ export const hero = {
    - "5 published clinical studies on CognatiQ®."
 6. Every asterisked claim ties to the FDA disclaimer (footer, and small print under the proof charts).
 7. Write **CognatiQ®** with the ® on first mention in each section.
-8. **Game Plan Blend:** talk about effort and intent ("we didn't stop there," "built for a four-hour round"). Never claim the blend adds results. Banned: "next-level," "amplifies," "boosts CognatiQ®," "synergy." No benefit claims for individual blend ingredients. No individual blend doses.
+8. **Game Plan Blend:** talk about effort and intent ("we didn't stop there," "built to provide exactly what you need when you need it"). Never claim the blend adds results. Banned: "next-level," "amplifies," "boosts CognatiQ®," "synergy." No benefit claims for individual blend ingredients. No individual blend doses.
 9. **No full-disclosure language anywhere:** "No proprietary blends," "every dose," "every other dose," "mystery blend."
 10. **Electrolytes:** restraint, measured doses, a long round. Never lead with hydration. No benefit claims for magnesium or calcium.
 11. **Taste and mix:** show, don't claim. No "best on the market" or superiority line unless it comes from a documented test (6.7b). A taste or mix win never implies the product works better.
@@ -490,6 +490,8 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
 - **Burgundy accent lines (Oct 20) stay** on the other light sections. Per 9.4, none in `#taste`: it uses silver hairlines and a navy heading rule instead.
 - **NSF (Nov 4):** certification arrives at launch. The NSF hero badge and the new `#nsf` section (9.8) are built now behind `SHOW_NSF_BADGE` (off) and switch on with the certificate. The hero trust row keeps the guarantee, since NSF has its own hero badge (overrides 9.5 Hero). The Quality section's NSF tile is replaced by `#nsf`.
 - **NSF shown now (Nov 4, later):** Ryan wants NSF visible before launch. During prelaunch the hero badge and `#nsf` section render with a yellow "Certification pending" tag; the tag disappears when `SHOW_NSF_BADGE` is set at certification. Trust-row and FAQ certification statements still wait for the flag. This replaces the 9.6 rule that "certified" appears nowhere while the flag is off, for prelaunch only. In live mode with the flag off, nothing NSF renders.
+- **Usage story (Nov 4):** nothing may imply one stick per round or one stick for four hours. The story is still being built (likely one stick on arrival at the course, plus an optional second at the turn). Until it's final, timing copy is `{{USAGE_TIMING}}`. No "four-hour round," no "one stick before you tee off," and no per-round price anchors that assume one stick a round. The "Mix" step ("One stick in `{{WATER_OZ}}` oz of water") stays: it's per serving, not per round.
+- **Blend lines (Nov 4):** pull line "You don't publish the details to your game plan, neither do we." Body: "Our own formula, built to provide exactly what you need when you need it."
 - **Code paths:** the content file is `src/content/homepage.ts`. The homepage is `src/app/(home)/page.tsx` and the science page is `src/app/(home)/science/page.tsx`.
 
 ### 9.1 Positioning (replaces "Positioning" in Section 1)
@@ -498,7 +500,7 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
 - **Message order:**
   1. **The proof:** 200mg CognatiQ®, the full clinically studied dose, disclosed.
   2. **The playbook:** the Game Plan Blend. Proprietary on purpose.
-  3. **The +:** a measured electrolyte base for a four-hour round. Restraint is the message.
+  3. **The +:** a measured electrolyte base. Restraint is the message.
   4. **The finish:** taste, mix, color, aroma. Shown, not claimed.
 - Never position on "calm." Never lead with hydration.
 
@@ -529,7 +531,7 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
 ### 9.5 Page changes, top to bottom
 
 **Hero (6.2)**
-- **Subhead (DRAFT):** "Clarity+ supports faster, more accurate decisions under pressure.* Built on the full clinical 200mg dose of CognatiQ®, plus our Game Plan Blend and a measured electrolyte base. One stick before you tee off."
+- **Subhead (DRAFT):** "Clarity+ supports faster, more accurate decisions under pressure.* Built on the full clinical 200mg dose of CognatiQ®, plus our Game Plan Blend and a measured electrolyte base."
 - **Trust row:** unchanged. When `SHOW_NSF_BADGE` is true, the third item becomes "NSF Certified for Sport®." The guarantee stays in the announcement bar and buy box.
 
 **Proof strip (6.3) — built on `/science` per 9.0**
@@ -549,7 +551,7 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
 4. "Hole 17 · 3 ft" — **The 3-footer on 17.** (Nov 3 copy)
 
 **Buy box (6.5)**
-- **Price anchor (DRAFT):** under the prices, `{{PRICE_ANCHOR_LINE}}` (e.g., "Less per round than one premium ball."). Fill once pricing locks. Remove if it isn't true.
+- **Price anchor (DRAFT):** under the prices, `{{PRICE_ANCHOR_LINE}}` (must not assume one stick per round; see 9.0). Fill once pricing locks. Remove if it isn't true.
 
 **What's inside (6.7, rebuilt)**
 - **Heading (DRAFT):** "Studied first. Then stacked." **Subline (DRAFT):** "We could have stopped at the clinical dose. We didn't."
@@ -562,9 +564,9 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
   - **Tier 2 — The playbook.** Game Plan Blend card (white, 1px `--line`).
     - Name: `focusBlend.name` = "Game Plan Blend" (DRAFT, one field). Must match the label: `{{CONFIRM_BLEND_NAME_MATCHES_LABEL}}`.
     - Total weight: `{{BLEND_TOTAL_MG}}` mg, as declared on the label.
-    - Pull line (Cormorant Garamond, DRAFT): "You don't publish your game plan." Body (DRAFT): "Our own formula, built for a four-hour round."
+    - Pull line (Cormorant Garamond, DRAFT): "You don't publish the details to your game plan, neither do we." Body (DRAFT): "Our own formula, built to provide exactly what you need when you need it."
     - Roster cards: ingredient name + one-line descriptor. **No doses. No benefit claims.** 2 columns on mobile, 3 on desktop. Only ingredients confirmed in `{{FINAL_FORMULA}}`, in label order; until then, 6 placeholder cards. Descriptors (DRAFT, factual only): D-Ribose — A naturally occurring sugar · Alpha Lipoic Acid — A compound the body also makes on its own · N-Acetyl Cysteine — A form of the amino acid cysteine (`{{CONFIRM_NAC_STATUS}}`) · Beet root powder — A whole-food root powder · Alpha-GPC — A source of choline · Rhodiola rosea — A botanical root extract · L-Theanine — An amino acid found in tea.
-  - **Tier 3 — The +.** Electrolyte panel (white, 1px `--line`). Label "The +". Heading (DRAFT): "Dosed with restraint." Body (DRAFT): "A measured electrolyte base for a four-hour round. Enough to matter. No salt bomb. No megadoses." Table (name · mg · %DV) from `{{ELECTROLYTE_PANEL}}`, matching the Supplement Facts panel exactly.
+  - **Tier 3 — The +.** Electrolyte panel (white, 1px `--line`). Label "The +". Heading (DRAFT): "Dosed with restraint." Body (DRAFT): "A measured electrolyte base. Enough to matter. No salt bomb. No megadoses." Table (name · mg · %DV) from `{{ELECTROLYTE_PANEL}}`, matching the Supplement Facts panel exactly.
 - "View full label" and the clean-label icon row stay.
 
 **Taste & mix — `#taste` (6.7b, new · tint)**
@@ -582,7 +584,7 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
 >
 > I wanted something built for decision-making under pressure. Not caffeine. Not a guess. A clinically studied ingredient at its full studied dose.
 >
-> That could have been enough. I kept going: our own Game Plan Blend, and a measured electrolyte base for a four-hour round.
+> That could have been enough. I kept going: our own Game Plan Blend, and a measured electrolyte base.
 >
 > That's Clarity+. Try it for your next few rounds. If it's not for you, I'll make it right.
 
@@ -592,7 +594,7 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
 **FAQ (6.11)**
 - **"Is it safe for tournament play?"** When `SHOW_NSF_BADGE`: (DRAFT) "Clarity+ is NSF Certified for Sport®, tested for `{{NSF_SUBSTANCE_COUNT}}`+ substances banned in sport. Check the listing: `{{NSF_LISTING_URL}}`." Otherwise `{{COMPETITION_SAFE_STATEMENT}}`.
 - **"What's in it?"** (DRAFT) "The full clinical 200mg dose of CognatiQ®, our Game Plan Blend, and a measured electrolyte base. Every ingredient is on the label." + link to `#inside`.
-- **New, after "What's in it?": "Why is the Game Plan Blend proprietary?"** (DRAFT) "Every ingredient is on the label, along with the blend's total weight. The exact recipe stays ours. You don't publish your game plan. What we always publish: the full clinical 200mg dose of CognatiQ®." When `SHOW_NSF_BADGE`, append: "And NSF Certified for Sport® independently verifies what's in it."
+- **New, after "What's in it?": "Why is the Game Plan Blend proprietary?"** (DRAFT) "Every ingredient is on the label, along with the blend's total weight. The exact recipe stays ours. You don't publish the details to your game plan, neither do we. What we always publish: the full clinical 200mg dose of CognatiQ®." When `SHOW_NSF_BADGE`, append: "And NSF Certified for Sport® independently verifies what's in it."
 - **New: "How does it taste?"** (DRAFT) "`{{FLAVORS}}`, and not too sweet: `{{SUGAR_G}}`g sugar, sweetened with `{{SWEETENER}}`. Mixes in seconds in plain water."
 - "Round days only, or every day?" stays `{{USAGE_FREQUENCY_GUIDANCE}}`. Note: the study showed results within an hour of one dose *and* sustained improvement with daily use over 28 days. Daily use also supports the subscription.
 - FAQPage JSON-LD picks up the new questions automatically (answers still holding placeholders are left out until filled).
@@ -648,6 +650,7 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
 | `NSF_SUBSTANCE_COUNT` | Current number of substances screened, per NSF | Quality, FAQ | At certification |
 | `CONFIRM_NSF_PGA_WORDING` | Approved wording for the PGA / LPGA recommendation | Quality | At certification |
 
+| `USAGE_TIMING` | When to take it: the arrival-at-the-course / optional second-stick-at-the-turn story | How, FAQ | Phase 3 |
 | `CONFIRM_NSF_COPY` | NSF's sign-off on how the site describes the program | NSF section | At certification |
 | `NSF_MARK_ATTRIBUTION` | NSF's required trademark/attribution line for the mark | NSF section | At certification |
 

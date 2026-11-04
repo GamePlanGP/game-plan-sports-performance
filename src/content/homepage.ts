@@ -272,7 +272,7 @@ export const hero = {
   eyebrow: "Clarity+ by Game Plan Sports Performance",
   headline: { text: "Commit to every shot.", draft: true } as Copy,
   subhead: {
-    text: `Clarity+ supports faster, more accurate decisions under pressure.* Built on the full clinical 200mg dose of CognatiQ®, plus our ${focusBlend.name} and a measured electrolyte base. One stick before you tee off.`,
+    text: `Clarity+ supports faster, more accurate decisions under pressure.* Built on the full clinical 200mg dose of CognatiQ®, plus our ${focusBlend.name} and a measured electrolyte base.`,
     draft: true,
     dependsOn: ["{{CONFIRM_DOSE_200MG}}", "{{CONFIRM_NON_STIMULANT}}"],
   } as Copy,
@@ -360,12 +360,13 @@ export const buy = {
 };
 
 export const how = {
-  heading: { text: "One stick. Sixty minutes before you tee off.", draft: true } as Copy,
+  heading: { text: "Mix it. Drink it. Play.", draft: true } as Copy,
   steps: [
     { title: "Mix.", body: { text: "One stick in {{WATER_OZ}} oz of water." } as Copy },
     {
       title: "Drink.",
-      body: { text: "About 60 minutes before your tee time. That's when the study measured results.", draft: true } as Copy,
+      /** Usage story in progress (Ryan, Nov 4): likely one stick on arrival, a second at the turn if needed. */
+      body: { text: "{{USAGE_TIMING}}" } as Copy,
     },
     { title: "Play.", body: { text: "Commit to every shot.", draft: true } as Copy },
   ],
@@ -412,15 +413,15 @@ export const inside = {
   },
   playbook: {
     tier: "The playbook",
-    pull: { text: "You don't publish your game plan.", draft: true } as Copy,
-    body: { text: "Our own formula, built for a four-hour round.", draft: true } as Copy,
+    pull: { text: "You don't publish the details to your game plan, neither do we.", draft: true } as Copy,
+    body: { text: "Our own formula, built to provide exactly what you need when you need it.", draft: true } as Copy,
     totalLabel: "Total blend weight",
   },
   plus: {
     tier: "The +",
     heading: { text: "Dosed with restraint.", draft: true } as Copy,
     body: {
-      text: "A measured electrolyte base for a four-hour round. Enough to matter. No salt bomb. No megadoses.",
+      text: "A measured electrolyte base. Enough to matter. No salt bomb. No megadoses.",
       draft: true,
     } as Copy,
     columns: ["Electrolyte", "Amount", "% Daily Value"],
@@ -506,7 +507,7 @@ export const founder = {
     paragraphs: [
       "Golfers spend thousands on clubs, lessons, and range balls. Then they lose strokes standing over the ball — second-guessing the club, the line, the shot.",
       "I wanted something built for decision-making under pressure. Not caffeine. Not a guess. A clinically studied ingredient at its full studied dose.",
-      `That could have been enough. I kept going: our own ${focusBlend.name}, and a measured electrolyte base for a four-hour round.`,
+      `That could have been enough. I kept going: our own ${focusBlend.name}, and a measured electrolyte base.`,
       "That's Clarity+. Try it for your next few rounds. If it's not for you, I'll make it right.",
     ],
   },
@@ -550,7 +551,7 @@ export const faq = {
     {
       id: "when",
       question: "When should I take it?",
-      answer: { text: "Mix one stick about 60 minutes before your tee time.", draft: true },
+      answer: { text: "{{USAGE_TIMING}}" },
     },
     {
       id: "frequency",
@@ -589,7 +590,7 @@ export const faq = {
       question: `Why is the ${focusBlend.name} proprietary?`,
       answer: {
         text:
-          "Every ingredient is on the label, along with the blend's total weight. The exact recipe stays ours. You don't publish your game plan. What we always publish: the full clinical 200mg dose of CognatiQ®." +
+          "Every ingredient is on the label, along with the blend's total weight. The exact recipe stays ours. You don't publish the details to your game plan, neither do we. What we always publish: the full clinical 200mg dose of CognatiQ®." +
           (flags.SHOW_NSF_BADGE ? " And NSF Certified for Sport® independently verifies what's in it." : ""),
         draft: true,
       },
@@ -690,7 +691,7 @@ export const footer = {
 export const seo = {
   title: { text: "Clarity+ | Decision-Making Drink Mix for Golfers", draft: true } as Copy,
   description: {
-    text: "A non-stimulant drink mix for golfers, built around a clinically studied 200mg dose of CognatiQ®. One stick before you tee off.",
+    text: "A non-stimulant drink mix for golfers, built around a clinically studied 200mg dose of CognatiQ®.",
     draft: true,
     dependsOn: ["{{CONFIRM_DOSE_200MG}}", "{{CONFIRM_NON_STIMULANT}}"],
   } as Copy,
