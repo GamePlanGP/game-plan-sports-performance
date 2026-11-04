@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { FDA_DISCLAIMER, science } from "@/content/homepage";
+import { FDA_DISCLAIMER, footer, science, type Copy } from "@/content/homepage";
+import { DecisivenessChart, ImpulseChart } from "@/components/home/ProofCharts";
+import { TextLink } from "@/components/home/ui/TextLink";
 import { Section, SectionHeading, Eyebrow, AccentBar } from "@/components/home/ui/Section";
 import { Txt } from "@/components/home/ui/Txt";
 import { Media } from "@/components/home/ui/Media";
-import { ImagePlaceholder } from "@/components/home/ui/ImagePlaceholder";
 import { Placeholder } from "@/components/home/ui/Placeholder";
 import { LaunchCta } from "@/components/home/ui/LaunchCta";
-import { placeholderId } from "@/lib/home";
 
 export const metadata: Metadata = {
   title: science.seo.title,
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: { url: "/science", title: science.seo.title, description: science.seo.description.text },
 };
 
-function Block({ label, value }: { label: string; value: string }) {
+function Block({ label, value }: { label: string; value: string | Copy }) {
   return (
     <div className="border-t border-hp-line pt-4">
       <p className="text-[0.68rem] font-semibold tracking-[0.18em] text-hp-ink-soft uppercase">{label}</p>
@@ -28,7 +28,7 @@ function Block({ label, value }: { label: string; value: string }) {
 }
 
 export default function SciencePage() {
-  const { intro, ingredient, keyResult, studies, dose } = science;
+  const { intro, ingredient, results, studies, dose } = science;
   return (
     <>
       <Section tone="white" pad="pt-12 pb-16 md:py-24" labelledBy="science-heading">
@@ -44,7 +44,44 @@ export default function SciencePage() {
         </div>
       </Section>
 
-      <Section tone="tint" labelledBy="ingredient-heading">
+      <Section tone="tint" labelledBy="results-heading">
+        <SectionHeading id="results-heading" heading={results.heading} className="max-w-2xl" />
+        <p className="mt-4 max-w-2xl text-base md:text-lg">
+          <Txt v={results.subline} />
+        </p>
+        <div className="mt-10 grid gap-5 lg:grid-cols-2">
+          <div className="rounded-hp border border-hp-line bg-hp-white p-5 sm:p-8">
+            <DecisivenessChart />
+          </div>
+          <div className="rounded-hp border border-hp-line bg-hp-white p-5 sm:p-8">
+            <ImpulseChart />
+          </div>
+        </div>
+        <dl className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {results.stats.map((stat) => (
+            <div key={stat.value} className="border-t border-hp-navy pt-4">
+              <dt className="font-display text-5xl leading-none font-medium [font-variant-numeric:lining-nums]">{stat.value}</dt>
+              <dd className="mt-2 text-sm leading-relaxed text-hp-ink-soft">
+                <Txt v={stat.label} />
+              </dd>
+            </div>
+          ))}
+        </dl>
+        <div className="mt-10 max-w-4xl space-y-2 text-[0.72rem] leading-relaxed text-hp-ink-soft">
+          <p>
+            <Txt v={results.footnote} />
+          </p>
+          <p>
+            <Txt v={results.citation} />
+          </p>
+          <p>{FDA_DISCLAIMER}</p>
+          <p className="pt-2">
+            <TextLink href={results.studyLink.href}>{results.studyLink.label}</TextLink>
+          </p>
+        </div>
+      </Section>
+
+      <Section tone="white" labelledBy="ingredient-heading">
         <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
             <SectionHeading id="ingredient-heading" heading={ingredient.heading} />
@@ -58,17 +95,6 @@ export default function SciencePage() {
         </div>
       </Section>
 
-      <Section tone="white" labelledBy="result-heading">
-        <SectionHeading id="result-heading" heading={keyResult.heading} className="max-w-2xl" />
-        <div className="mt-10 rounded-hp border border-hp-line bg-hp-white p-5 sm:p-8">
-          <ImagePlaceholder
-            id={placeholderId(keyResult.data) ?? keyResult.data}
-            label="Key result chart (CSS/SVG)"
-            ratio="16 / 7"
-            size={keyResult.note}
-          />
-        </div>
-      </Section>
 
       <Section tone="tint" labelledBy="studies-heading">
         <SectionHeading id="studies-heading" heading={studies.heading} className="max-w-2xl" />
@@ -113,7 +139,7 @@ export default function SciencePage() {
           <p>{science.ingredientNotProduct}</p>
           <p>{FDA_DISCLAIMER}</p>
           <p>
-            <Txt v={science.trademark} />
+            <Txt v={footer.trademark} />
           </p>
         </div>
       </Section>

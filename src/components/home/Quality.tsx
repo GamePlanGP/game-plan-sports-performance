@@ -1,4 +1,5 @@
-import { flags, quality } from "@/content/homepage";
+import { flags, nsf, quality } from "@/content/homepage";
+import { Media } from "./ui/Media";
 import { Section, SectionHeading } from "./ui/Section";
 import { Txt } from "./ui/Txt";
 import { TextLink } from "./ui/TextLink";
@@ -17,11 +18,29 @@ export function Quality() {
           const Icon = ICONS[tile.icon];
           return (
             <li key={tile.id} className="border-t border-hp-line pt-6">
-              <Icon className="h-9 w-9 text-hp-navy" />
+              {tile.id === "nsf" ? (
+                <div className="w-20">
+                  <Media {...nsf.mark} ratio="1 / 1" />
+                </div>
+              ) : (
+                <Icon className="h-9 w-9 text-hp-navy" />
+              )}
               <h3 className="font-display mt-5 text-2xl font-semibold">{tile.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-hp-ink-soft">
-                {tile.detail ? <Txt v={tile.detail} /> : null}
-              </p>
+              {tile.id === "nsf" ? (
+                <div className="mt-2 space-y-3 text-sm leading-relaxed text-hp-ink-soft">
+                  <p>
+                    <Txt v={nsf.detail} />
+                  </p>
+                  <p>
+                    <Txt v={nsf.pgaLine} />
+                  </p>
+                  <TextLink href={nsf.listing.href}>{nsf.listing.label}</TextLink>
+                </div>
+              ) : (
+                <p className="mt-2 text-sm leading-relaxed text-hp-ink-soft">
+                  {tile.detail ? <Txt v={tile.detail} /> : null}
+                </p>
+              )}
             </li>
           );
         })}

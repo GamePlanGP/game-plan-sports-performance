@@ -8,6 +8,7 @@ import { GolfMoments } from "@/components/home/GolfMoments";
 import { BuyBox } from "@/components/home/BuyBox";
 import { HowToUse } from "@/components/home/HowToUse";
 import { WhatsInside } from "@/components/home/WhatsInside";
+import { TasteMix } from "@/components/home/TasteMix";
 import { FoundersNote } from "@/components/home/FoundersNote";
 import { Reviews } from "@/components/home/Reviews";
 import { Quality } from "@/components/home/Quality";
@@ -72,6 +73,7 @@ export default function Home() {
       <BuyBox />
       <HowToUse />
       <WhatsInside />
+      <TasteMix />
       <FoundersNote />
       <Reviews />
       <Quality />

@@ -66,6 +66,15 @@ export const ClubsIcon = (p: P) => (
     <path d="M15 24c-.9 1.6-3.2 1.9-5.1.8" />
   </svg>
 );
+export const SplitIcon = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M16 28V17" />
+    <path d="M16 17 9 9" />
+    <path d="M16 17l7-8" />
+    <path d="M6 9.5 9 6l1.5 4.2" />
+    <path d="m22 6 4 1-2.2 3.6" />
+  </svg>
+);
 export const HoleIcon = (p: P) => (
   <svg {...base} {...p}>
     <path d="M16 4v17" />

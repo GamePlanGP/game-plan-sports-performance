@@ -290,6 +290,10 @@ export function BuyBox() {
             </div>
           </fieldset>
 
+          <p className="mt-4 text-[0.82rem] text-hp-ink-soft">
+            <Txt v={buy.priceAnchor} />
+          </p>
+
           <div className="mt-6">
             {prelaunch ? (
               <Button
