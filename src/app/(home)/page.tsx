@@ -10,6 +10,7 @@ import { HowToUse } from "@/components/home/HowToUse";
 import { WhatsInside } from "@/components/home/WhatsInside";
 import { TasteMix } from "@/components/home/TasteMix";
 import { FoundersNote } from "@/components/home/FoundersNote";
+import { NsfSection } from "@/components/home/NsfSection";
 import { Reviews } from "@/components/home/Reviews";
 import { Quality } from "@/components/home/Quality";
 import { FAQ } from "@/components/home/FAQ";
@@ -75,6 +76,7 @@ export default function Home() {
       <WhatsInside />
       <TasteMix />
       <FoundersNote />
+      <NsfSection />
       <Reviews />
       <Quality />
       <FAQ />

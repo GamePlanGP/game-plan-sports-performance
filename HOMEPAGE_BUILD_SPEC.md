@@ -488,6 +488,7 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
 - **Golf moments copy:** "The first tee" and "The 3-footer on 17" keep the Nov 3 copy in 6.4, **not** the v1.0 lines the update repeated. "Four hours in" is out. The new "Go or lay up" card and the new "Between clubs" line come from 9.5. "Between clubs" is tagged "Supports working memory*" so it doesn't duplicate Hole 17's accuracy tag.
 - **Guarantee:** "Better decision-making or your money back" stays as DRAFT pending FutureCeuticals' review.
 - **Burgundy accent lines (Oct 20) stay** on the other light sections. Per 9.4, none in `#taste`: it uses silver hairlines and a navy heading rule instead.
+- **NSF (Nov 4):** certification arrives at launch. The NSF hero badge and the new `#nsf` section (9.8) are built now behind `SHOW_NSF_BADGE` (off) and switch on with the certificate. The hero trust row keeps the guarantee, since NSF has its own hero badge (overrides 9.5 Hero). The Quality section's NSF tile is replaced by `#nsf`.
 - **Code paths:** the content file is `src/content/homepage.ts`. The homepage is `src/app/(home)/page.tsx` and the science page is `src/app/(home)/science/page.tsx`.
 
 ### 9.1 Positioning (replaces "Positioning" in Section 1)
@@ -598,6 +599,16 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
 **Footer (6.13)**
 - **Trademark line (prefilled, DRAFT):** "CognatiQ® is a registered trademark of VDF FutureCeuticals, Inc. Pat. fcpatent.com" — from FutureCeuticals' claims sheet. Confirm it's their required wording.
 
+### 9.8 NSF Certified for Sport® (Nov 4, gated by `SHOW_NSF_BADGE`)
+- **Hero:** under the primary CTA, a badge: NSF mark `{{NSF_MARK}}` + "NSF Certified for Sport®" + (DRAFT) "Independently tested for substances banned in sport." + text link "What that means" → `#nsf`.
+- **Section `#nsf`** (white, after Founder's note, before Reviews). All copy DRAFT, pending `{{CONFIRM_NSF_COPY}}`:
+  - Eyebrow "Independently verified." Heading: "Our recipe is private. What's in it is verified." Intro: "The Game Plan Blend stays our recipe. NSF Certified for Sport® means an independent lab knows exactly what's in Clarity+, and checks it on your behalf." Mark + "Look us up" → `{{NSF_LISTING_URL}}`.
+  - **Why it matters on the course:** "If you play competitively, what goes in your bottle matters as much as what's in your bag. NSF Certified for Sport® is the supplement standard athletes and sports organizations look for when banned substances are on the line." + optional "Recommended by `{{CONFIRM_NSF_PGA_WORDING}}`."
+  - **What the testing checks** (4 tiles): Banned substances — "Screened for `{{NSF_SUBSTANCE_COUNT}}`+ substances banned in sport." · Label accuracy — "What's on the label is what's in the stick." · Contaminants — "Tested for contaminants such as heavy metals." · Ongoing audits — "The facility is audited and the product is retested on an ongoing basis."
+  - **What that says about Clarity+** (navy-outline panel): "Clean: nothing in it that shouldn't be." · "Honest: the label matches the product." · "Consistent: checked again, not just once."
+  - **Small print:** "Certification verifies what's in the product and screens for banned substances. It doesn't evaluate how well a product works." + `{{NSF_MARK_ATTRIBUTION}}`.
+  - Never present certification as evidence that Clarity+ works. Never show any of this before the certificate is issued.
+
 ### 9.6 Acceptance checklist additions (Phase 1)
 - [ ] `npm run check:claims` passes with zero fails.
 - [ ] No full-disclosure language renders anywhere on the page.
@@ -635,5 +646,8 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
 | `NSF_LISTING_URL` | Your listing on nsfsport.com | Quality, FAQ | At certification |
 | `NSF_SUBSTANCE_COUNT` | Current number of substances screened, per NSF | Quality, FAQ | At certification |
 | `CONFIRM_NSF_PGA_WORDING` | Approved wording for the PGA / LPGA recommendation | Quality | At certification |
+
+| `CONFIRM_NSF_COPY` | NSF's sign-off on how the site describes the program | NSF section | At certification |
+| `NSF_MARK_ATTRIBUTION` | NSF's required trademark/attribution line for the mark | NSF section | At certification |
 
 **Now prefilled (still DRAFT):** `STUDY_CITATION`, `CONFIRM_TRADEMARK_LINE` (FutureCeuticals' sheet wording).

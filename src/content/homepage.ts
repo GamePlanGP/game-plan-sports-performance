@@ -175,6 +175,65 @@ export const nsf = {
   } as Copy,
   listing: { label: "Look us up", href: "{{NSF_LISTING_URL}}" },
   pgaLine: { text: "Recommended by {{CONFIRM_NSF_PGA_WORDING}}.", draft: true } as Copy,
+  /** NSF reviews marketing use of the program; every line below waits on it. */
+  copyApproval: "{{CONFIRM_NSF_COPY}}",
+  hero: {
+    detail: { text: "Independently tested for substances banned in sport.", draft: true } as Copy,
+    link: { label: "What that means", href: "/#nsf" },
+  },
+  /** The #nsf section. Describes what the program checks; no invented test results. */
+  section: {
+    eyebrow: "Independently verified",
+    heading: { text: "Our recipe is private. What's in it is verified.", draft: true } as Copy,
+    intro: {
+      text: "The Game Plan Blend stays our recipe. NSF Certified for Sport® means an independent lab knows exactly what's in Clarity+, and checks it on your behalf.",
+      draft: true,
+    } as Copy,
+    why: {
+      heading: { text: "Why it matters on the course.", draft: true } as Copy,
+      body: {
+        text: "If you play competitively, what goes in your bottle matters as much as what's in your bag. NSF Certified for Sport® is the supplement standard athletes and sports organizations look for when banned substances are on the line.",
+        draft: true,
+      } as Copy,
+    },
+    checksHeading: { text: "What the testing checks.", draft: true } as Copy,
+    checks: [
+      {
+        icon: "flag",
+        title: "Banned substances",
+        body: { text: "Screened for {{NSF_SUBSTANCE_COUNT}}+ substances banned in sport.", draft: true } as Copy,
+      },
+      {
+        icon: "seal",
+        title: "Label accuracy",
+        body: { text: "What's on the label is what's in the stick.", draft: true } as Copy,
+      },
+      {
+        icon: "flask",
+        title: "Contaminants",
+        body: { text: "Tested for contaminants such as heavy metals.", draft: true } as Copy,
+      },
+      {
+        icon: "factory",
+        title: "Ongoing audits",
+        body: { text: "The facility is audited and the product is retested on an ongoing basis.", draft: true } as Copy,
+      },
+    ] as const,
+    meaning: {
+      heading: { text: "What that says about Clarity+.", draft: true } as Copy,
+      points: [
+        { text: "Clean: nothing in it that shouldn't be.", draft: true },
+        { text: "Honest: the label matches the product.", draft: true },
+        { text: "Consistent: checked again, not just once.", draft: true },
+      ] as Copy[],
+    },
+    /** Keeps certification separate from performance claims. */
+    scope: {
+      text: "Certification verifies what's in the product and screens for banned substances. It doesn't evaluate how well a product works.",
+      draft: true,
+    } as Copy,
+    markNote: "{{NSF_MARK_ATTRIBUTION}}",
+  },
 };
 
 /* -------------------------------------------------------------------------- */
@@ -209,11 +268,8 @@ export const hero = {
     draft: true,
     dependsOn: ["{{CONFIRM_DOSE_200MG}}", "{{CONFIRM_NON_STIMULANT}}"],
   } as Copy,
-  /** Third item becomes the NSF line once certified; the guarantee stays in the bar and buy box. */
-  trust: ["200mg CognatiQ®", "Non-stimulant", flags.SHOW_NSF_BADGE ? nsf.name : offer.guaranteeShort] as (
-    | string
-    | Copy
-  )[],
+  /** NSF has its own hero badge (gated), so the trust row keeps the guarantee. */
+  trust: ["200mg CognatiQ®", "Non-stimulant", offer.guaranteeShort] as (string | Copy)[],
   rating: "{{JUDGEME_RATING}}",
   image: {
     src: "{{HERO_IMAGE}}",
@@ -466,7 +522,6 @@ export const quality = {
     { id: "tested", icon: "flask", title: "Third-party tested", detail: "{{TESTING_DETAILS}}" },
     { id: "manufacturing", icon: "factory", title: "Manufacturing standard", detail: "{{MANUFACTURING_CLAIM}}" },
     { id: "competition", icon: "flag", title: "Competition safe", detail: "{{COMPETITION_SAFE_STATEMENT}}" },
-    { id: "nsf", icon: "seal", title: nsf.name, detail: "", requiresFlag: "SHOW_NSF_BADGE" },
   ] as const,
   coa: { label: "Certificate of Analysis", href: "{{COA_URL}}" },
 };

@@ -1,5 +1,4 @@
-import { flags, nsf, quality } from "@/content/homepage";
-import { Media } from "./ui/Media";
+import { quality } from "@/content/homepage";
 import { Section, SectionHeading } from "./ui/Section";
 import { Txt } from "./ui/Txt";
 import { TextLink } from "./ui/TextLink";
@@ -8,39 +7,20 @@ import { FactoryIcon, FlagIcon, FlaskIcon, SealIcon } from "./ui/Icons";
 const ICONS = { flask: FlaskIcon, factory: FactoryIcon, flag: FlagIcon, seal: SealIcon } as const;
 
 export function Quality() {
-  const tiles = quality.tiles.filter((t) => !("requiresFlag" in t) || flags[t.requiresFlag]);
   return (
     <Section id="quality" tone="white" labelledBy="quality-heading">
       <SectionHeading id="quality-heading" heading={quality.heading} className="max-w-2xl" />
 
-      <ul className="mt-10 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4">
-        {tiles.map((tile) => {
+      <ul className="mt-10 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:mt-14 lg:grid-cols-3">
+        {quality.tiles.map((tile) => {
           const Icon = ICONS[tile.icon];
           return (
             <li key={tile.id} className="border-t border-hp-line pt-6">
-              {tile.id === "nsf" ? (
-                <div className="w-20">
-                  <Media {...nsf.mark} ratio="1 / 1" />
-                </div>
-              ) : (
-                <Icon className="h-9 w-9 text-hp-navy" />
-              )}
+              <Icon className="h-9 w-9 text-hp-navy" />
               <h3 className="font-display mt-5 text-2xl font-semibold">{tile.title}</h3>
-              {tile.id === "nsf" ? (
-                <div className="mt-2 space-y-3 text-sm leading-relaxed text-hp-ink-soft">
-                  <p>
-                    <Txt v={nsf.detail} />
-                  </p>
-                  <p>
-                    <Txt v={nsf.pgaLine} />
-                  </p>
-                  <TextLink href={nsf.listing.href}>{nsf.listing.label}</TextLink>
-                </div>
-              ) : (
-                <p className="mt-2 text-sm leading-relaxed text-hp-ink-soft">
-                  {tile.detail ? <Txt v={tile.detail} /> : null}
-                </p>
-              )}
+              <p className="mt-2 text-sm leading-relaxed text-hp-ink-soft">
+                {tile.detail ? <Txt v={tile.detail} /> : null}
+              </p>
             </li>
           );
         })}
