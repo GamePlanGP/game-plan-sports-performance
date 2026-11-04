@@ -489,6 +489,7 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
 - **Guarantee:** "Better decision-making or your money back" stays as DRAFT pending FutureCeuticals' review.
 - **Burgundy accent lines (Oct 20) stay** on the other light sections. Per 9.4, none in `#taste`: it uses silver hairlines and a navy heading rule instead.
 - **NSF (Nov 4):** certification arrives at launch. The NSF hero badge and the new `#nsf` section (9.8) are built now behind `SHOW_NSF_BADGE` (off) and switch on with the certificate. The hero trust row keeps the guarantee, since NSF has its own hero badge (overrides 9.5 Hero). The Quality section's NSF tile is replaced by `#nsf`.
+- **NSF shown now (Nov 4, later):** Ryan wants NSF visible before launch. During prelaunch the hero badge and `#nsf` section render with a yellow "Certification pending" tag; the tag disappears when `SHOW_NSF_BADGE` is set at certification. Trust-row and FAQ certification statements still wait for the flag. This replaces the 9.6 rule that "certified" appears nowhere while the flag is off, for prelaunch only. In live mode with the flag off, nothing NSF renders.
 - **Code paths:** the content file is `src/content/homepage.ts`. The homepage is `src/app/(home)/page.tsx` and the science page is `src/app/(home)/science/page.tsx`.
 
 ### 9.1 Positioning (replaces "Positioning" in Section 1)

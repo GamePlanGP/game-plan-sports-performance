@@ -160,8 +160,16 @@ export const electrolytes = {
   placeholderRows: 4,
 };
 
-/** NSF Certified for Sport® copy. Renders only when flags.SHOW_NSF_BADGE is true. */
+/**
+ * NSF Certified for Sport® copy. The hero badge and #nsf section show during
+ * prelaunch with a "pending" tag (Ryan, Nov 4) and without it once
+ * flags.SHOW_NSF_BADGE is true (certificate issued). Trust-row and FAQ
+ * certification statements still wait for the flag.
+ */
 export const nsf = {
+  visible: flags.SHOW_NSF_BADGE || LAUNCH_MODE === "prelaunch",
+  pending: !flags.SHOW_NSF_BADGE,
+  pendingLabel: "Certification pending",
   name: "NSF Certified for Sport®",
   mark: {
     src: "{{NSF_MARK}}",

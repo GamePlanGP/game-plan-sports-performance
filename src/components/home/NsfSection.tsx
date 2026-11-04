@@ -1,4 +1,5 @@
-import { flags, nsf } from "@/content/homepage";
+import { nsf } from "@/content/homepage";
+import { PendingPill } from "./ui/Placeholder";
 import { Section, SectionHeading, Eyebrow } from "./ui/Section";
 import { Txt } from "./ui/Txt";
 import { Media } from "./ui/Media";
@@ -8,16 +9,21 @@ import { CheckIcon, FactoryIcon, FlagIcon, FlaskIcon, SealIcon } from "./ui/Icon
 const ICONS = { flag: FlagIcon, seal: SealIcon, flask: FlaskIcon, factory: FactoryIcon } as const;
 
 /**
- * Why NSF Certified for Sport® matters (#nsf). Renders only once the
- * certificate is issued (flags.SHOW_NSF_BADGE).
+ * Why NSF Certified for Sport® matters (#nsf). Shown with a "pending" tag
+ * until the certificate is issued (flags.SHOW_NSF_BADGE).
  */
 export function NsfSection() {
-  if (!flags.SHOW_NSF_BADGE) return null;
+  if (!nsf.visible) return null;
   const { section } = nsf;
   return (
     <Section id="nsf" tone="white" labelledBy="nsf-heading">
       <div className="grid items-start gap-10 lg:grid-cols-[1.3fr_0.7fr] lg:gap-16">
         <div>
+          {nsf.pending ? (
+            <p className="mb-4">
+              <PendingPill label={`${nsf.pendingLabel} · shows without this tag at launch`} />
+            </p>
+          ) : null}
           <SectionHeading id="nsf-heading" eyebrow={section.eyebrow} heading={section.heading} className="max-w-3xl" />
           <p className="mt-5 max-w-2xl text-base leading-relaxed md:text-lg">
             <Txt v={section.intro} />
