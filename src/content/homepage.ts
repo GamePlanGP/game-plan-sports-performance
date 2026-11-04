@@ -1,5 +1,5 @@
 /**
- * Homepage v2 content — every string, price, link and flag for /v2.
+ * Homepage v2 content — every string, price, link and flag for the homepage (/).
  *
  * Conventions (see HOMEPAGE_BUILD_SPEC.md):
  *  - Unresolved values are `"{{ID}}"` strings; <Placeholder> renders them as
@@ -32,12 +32,14 @@ export const LAUNCH_MODE: LaunchMode = "prelaunch";
 /** Earned-only: never flip these on until the thing is real. */
 export const flags = {
   SHOW_RATING: false,
+  /** True only once the NSF certificate is issued. */
   SHOW_NSF_BADGE: false,
   SHOW_PRO_TESTIMONIALS: false,
+  /** True only after Ryan's documented taste and mix tests (spec v1.1, 6.7b). */
+  SHOW_COMPARISONS: false,
+  /** False shows competitors as "Brand A / Brand B". */
+  NAME_COMPETITORS: false,
 };
-
-/** Review-only label across the top of /v2 so the page is easy to refer to. */
-export const pageLabel = { show: true, text: "Homepage 2" };
 
 /** Clean-label claims. Unconfirmed icons render grayed until set to `true`. */
 export const cleanLabelFlags = {
@@ -95,7 +97,12 @@ export const openItems = {
 /* -------------------------------------------------------------------------- */
 
 export const offer = {
-  guaranteeShort: "{{GUARANTEE_SHORT}}",
+  /** Replaces {{GUARANTEE_SHORT}}. Full terms (window, how to claim) are still {{GUARANTEE_TERMS}}. */
+  guaranteeShort: {
+    text: "Better decision-making or your money back",
+    draft: true,
+    dependsOn: ["{{GUARANTEE_TERMS}}", "{{FC_APPROVAL}}"],
+  } as Copy,
   guaranteeTerms: "{{GUARANTEE_TERMS}}",
   shippingShort: "{{SHIPPING_SHORT}}",
   shippingTerms: "{{SHIPPING_TERMS}}",
@@ -114,21 +121,147 @@ export const offer = {
 };
 
 /* -------------------------------------------------------------------------- */
+/* Formula                                                                    */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * The Game Plan Blend. Names and one-line factual descriptors only: no doses,
+ * no per-ingredient benefits. `confirmed` lists label names in label order once
+ * {{FINAL_FORMULA}} is final; until then the page shows placeholder cards.
+ */
+export const focusBlend = {
+  /** One field so the blend name is a one-line swap. Must match the label. */
+  name: "Game Plan Blend",
+  nameMatchesLabel: "{{CONFIRM_BLEND_NAME_MATCHES_LABEL}}",
+  totalMg: "{{BLEND_TOTAL_MG}}" as Value,
+  formula: "{{FINAL_FORMULA}}",
+  confirmed: [] as string[],
+  placeholderCount: 6,
+  descriptors: {
+    "D-Ribose": { text: "A naturally occurring sugar", draft: true },
+    "Alpha Lipoic Acid": { text: "A compound the body also makes on its own", draft: true },
+    "N-Acetyl Cysteine": {
+      text: "A form of the amino acid cysteine",
+      draft: true,
+      dependsOn: ["{{CONFIRM_NAC_STATUS}}"],
+    },
+    "Beet root powder": { text: "A whole-food root powder", draft: true },
+    "Alpha-GPC": { text: "A source of choline", draft: true },
+    "Rhodiola rosea": { text: "A botanical root extract", draft: true },
+    "L-Theanine": { text: "An amino acid found in tea", draft: true },
+  } as Record<string, Copy>,
+};
+
+/** The "+": each electrolyte as declared on the Supplement Facts panel. */
+export const electrolytes = {
+  panel: "{{ELECTROLYTE_PANEL}}",
+  /** Fill from the label exactly; empty renders placeholder rows. */
+  rows: [] as { name: string; mg: number; dv: string }[],
+  placeholderRows: 4,
+};
+
+/**
+ * NSF Certified for Sport® copy. The hero badge and #nsf section show during
+ * prelaunch with a "pending" tag (Ryan, Nov 4) and without it once
+ * flags.SHOW_NSF_BADGE is true (certificate issued). Trust-row and FAQ
+ * certification statements still wait for the flag.
+ */
+export const nsf = {
+  visible: flags.SHOW_NSF_BADGE || LAUNCH_MODE === "prelaunch",
+  pending: !flags.SHOW_NSF_BADGE,
+  pendingLabel: "Certification pending",
+  name: "NSF Certified for Sport®",
+  mark: {
+    src: "{{NSF_MARK}}",
+    alt: "NSF Certified for Sport® mark",
+    label: "Official NSF mark (per NSF usage rules)",
+    size: "per NSF",
+  },
+  detail: {
+    text: "Tested for {{NSF_SUBSTANCE_COUNT}}+ substances banned in sport, with repeat audits. Our recipe is private. What's in it is verified.",
+    draft: true,
+  } as Copy,
+  listing: { label: "Look us up", href: "{{NSF_LISTING_URL}}" },
+  pgaLine: { text: "Recommended by {{CONFIRM_NSF_PGA_WORDING}}.", draft: true } as Copy,
+  /** NSF reviews marketing use of the program; every line below waits on it. */
+  copyApproval: "{{CONFIRM_NSF_COPY}}",
+  hero: {
+    detail: { text: "Independently tested for substances banned in sport.", draft: true } as Copy,
+    link: { label: "What that means", href: "/#nsf" },
+  },
+  /** The #nsf section. Describes what the program checks; no invented test results. */
+  section: {
+    eyebrow: "Independently verified",
+    heading: { text: "Our recipe is private. What's in it is verified.", draft: true } as Copy,
+    intro: {
+      text: "The Game Plan Blend stays our recipe. NSF Certified for Sport® means an independent lab knows exactly what's in Clarity+, and checks it on your behalf.",
+      draft: true,
+    } as Copy,
+    why: {
+      heading: { text: "Why it matters on the course.", draft: true } as Copy,
+      body: {
+        text: "If you play competitively, what goes in your bottle matters as much as what's in your bag. NSF Certified for Sport® is the supplement standard athletes and sports organizations look for when banned substances are on the line.",
+        draft: true,
+      } as Copy,
+    },
+    checksHeading: { text: "What the testing checks.", draft: true } as Copy,
+    checks: [
+      {
+        icon: "flag",
+        title: "Banned substances",
+        body: { text: "Screened for {{NSF_SUBSTANCE_COUNT}}+ substances banned in sport.", draft: true } as Copy,
+      },
+      {
+        icon: "seal",
+        title: "Label accuracy",
+        body: { text: "What's on the label is what's in the stick.", draft: true } as Copy,
+      },
+      {
+        icon: "flask",
+        title: "Contaminants",
+        body: { text: "Tested for contaminants such as heavy metals.", draft: true } as Copy,
+      },
+      {
+        icon: "factory",
+        title: "Ongoing audits",
+        body: { text: "The facility is audited and the product is retested on an ongoing basis.", draft: true } as Copy,
+      },
+    ] as const,
+    meaning: {
+      heading: { text: "What that says about Clarity+.", draft: true } as Copy,
+      points: [
+        { text: "Clean: nothing in it that shouldn't be.", draft: true },
+        { text: "Honest: the label matches the product.", draft: true },
+        { text: "Consistent: checked again, not just once.", draft: true },
+      ] as Copy[],
+    },
+    /** Keeps certification separate from performance claims. */
+    scope: {
+      text: "Certification verifies what's in the product and screens for banned substances. It doesn't evaluate how well a product works.",
+      draft: true,
+    } as Copy,
+    markNote: "{{NSF_MARK_ATTRIBUTION}}",
+  },
+};
+
+/* -------------------------------------------------------------------------- */
 /* Page chrome                                                                */
 /* -------------------------------------------------------------------------- */
 
+/** Hrefs are "/#id" so the header works from every page, not just the homepage. */
 export const nav = [
-  { label: "The Science", href: "#science" },
-  { label: "How to Use", href: "#how" },
-  { label: "Ingredients", href: "#inside" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "FAQ", href: "#faq" },
+  { label: "The Science", href: "/science" },
+  { label: "How to Use", href: "/#how" },
+  { label: "Ingredients", href: "/#inside" },
+  { label: "Taste", href: "/#taste" },
+  { label: "Reviews", href: "/#reviews" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export const announcement = {
   message: offer.guaranteeShort,
-  /** Opens this FAQ item. */
-  faqId: "guarantee",
+  /** Scrolls to and opens the guarantee FAQ item, from any page. */
+  href: "/#faq-guarantee",
 };
 
 /* -------------------------------------------------------------------------- */
@@ -139,12 +272,12 @@ export const hero = {
   eyebrow: "Clarity+ by Game Plan Sports Performance",
   headline: { text: "Commit to every shot.", draft: true } as Copy,
   subhead: {
-    text: "Clarity+ supports faster, more accurate decisions under pressure* — with a clinically studied 200mg dose of CognatiQ®. Non-stimulant. One stick before you tee off.",
+    text: `Clarity+ supports faster, more accurate decisions under pressure.* Built on the full clinical 200mg dose of CognatiQ®, plus our ${focusBlend.name} and a measured electrolyte base.`,
     draft: true,
     dependsOn: ["{{CONFIRM_DOSE_200MG}}", "{{CONFIRM_NON_STIMULANT}}"],
   } as Copy,
-  secondary: { label: "See the science", href: "#science" },
-  trust: ["200mg CognatiQ®", "Non-stimulant", offer.guaranteeShort],
+  /** NSF has its own hero badge (gated), so the trust row keeps the guarantee. */
+  trust: ["200mg CognatiQ®", "Non-stimulant", offer.guaranteeShort] as (string | Copy)[],
   rating: "{{JUDGEME_RATING}}",
   image: {
     src: "{{HERO_IMAGE}}",
@@ -152,32 +285,6 @@ export const hero = {
     label: "Hero photo: product on the course, or a golfer over a putt",
     size: "1600×1200 desktop · 800×1000 mobile crop",
   },
-};
-
-export const proof = {
-  heading: { text: "Backed by a clinical study. Not a hunch.", draft: true } as Copy,
-  chartTitle: "CognatiQ® ingredient study · N-back test",
-  bars: [
-    { id: "placebo", label: "Placebo", value: 11.1, tone: "silver" },
-    { id: "cognatiq", label: "CognatiQ® 200mg", value: 80.7, tone: "burgundy" },
-  ] as const,
-  axisLabel: "% improvement in omission errors vs. baseline, 60 minutes after one dose",
-  plainEnglish: {
-    text: "Omission errors are missed responses caused by hesitation. Fewer misses means more decisive play.",
-    draft: true,
-  } as Copy,
-  stats: [
-    { value: "60 min", label: "Measured 60 minutes after a single dose" },
-    {
-      value: "200mg",
-      label: "The clinically studied dose, in every stick",
-      dependsOn: ["{{CONFIRM_DOSE_200MG}}"],
-    },
-    { value: "5", label: "Published clinical studies on CognatiQ®" },
-  ],
-  footnote:
-    "Results from a double-blind, placebo-controlled human clinical study of the CognatiQ® ingredient (N-back test). Clarity+ has not been studied as a finished product. {{STUDY_CITATION}}",
-  studyLink: { label: "Read the study", href: "{{STUDY_URL}}" },
 };
 
 export const moments = {
@@ -188,22 +295,35 @@ export const moments = {
       icon: "tee",
       eyebrow: "Hole 1 · Tee box",
       title: "The first tee.",
-      body: { text: "Everyone's watching. Pick a target. Pull the trigger.", draft: true } as Copy,
-      tag: "Supports decisiveness*",
+      body: {
+        text: "Everyone's watching. Breathe, pick your target, and swing with a clear head — no stimulant jitters.",
+        draft: true,
+      } as Copy,
+      tag: "Supports cognitive control*",
+    },
+    {
+      icon: "split",
+      eyebrow: "Par 5 · Second shot",
+      title: "Go or lay up.",
+      body: { text: "The hero shot is calling. Stick to the game plan.", draft: true } as Copy,
+      tag: "Supports cognitive impulse control*",
     },
     {
       icon: "clubs",
       eyebrow: "Approach · Club select",
       title: "Between clubs.",
-      body: { text: "7 or 8? Choose, commit, swing.", draft: true } as Copy,
-      tag: "Supports accuracy under pressure*",
+      body: { text: "Hold the number, the wind, the line. Choose, commit, swing.", draft: true } as Copy,
+      tag: "Supports working memory*",
     },
     {
       icon: "hole",
       eyebrow: "Hole 17 · 3 ft",
       title: "The 3-footer on 17.",
-      body: { text: "Four hours in. Stay sharp to the last putt.", draft: true } as Copy,
-      tag: "Supports focus and mental stamina*",
+      body: {
+        text: "Match on the line. Read the break, trust your line, and make a confident stroke.",
+        draft: true,
+      } as Copy,
+      tag: "Supports accuracy under pressure*",
     },
   ],
 };
@@ -221,6 +341,8 @@ export const buy = {
       { alt: "Clarity+ on the course", label: "Lifestyle" },
     ],
   },
+  /** Under the prices. Fill once pricing locks; remove if it isn't true. */
+  priceAnchor: { text: "{{PRICE_ANCHOR_LINE}}", draft: true } as Copy,
   options: {
     trial: { name: "Trial", unit: "sticks", badge: "Try it first" },
     bag: { name: "One bag", unit: "servings" },
@@ -238,12 +360,13 @@ export const buy = {
 };
 
 export const how = {
-  heading: { text: "One stick. Sixty minutes before you tee off.", draft: true } as Copy,
+  heading: { text: "Mix it. Drink it. Play.", draft: true } as Copy,
   steps: [
     { title: "Mix.", body: { text: "One stick in {{WATER_OZ}} oz of water." } as Copy },
     {
       title: "Drink.",
-      body: { text: "About 60 minutes before your tee time. That's when the study measured results.", draft: true } as Copy,
+      /** Usage story in progress (Ryan, Nov 4): likely one stick on arrival, a second at the turn if needed. */
+      body: { text: "{{USAGE_TIMING}}" } as Copy,
     },
     { title: "Play.", body: { text: "Commit to every shot.", draft: true } as Copy },
   ],
@@ -259,18 +382,50 @@ export const how = {
 };
 
 export const inside = {
-  heading: { text: "Every ingredient. Every dose. No proprietary blends.", draft: true } as Copy,
-  featured: {
+  heading: { text: "Studied first. Then stacked.", draft: true } as Copy,
+  subline: { text: "We could have stopped at the clinical dose. We didn't.", draft: true } as Copy,
+  ask: {
+    eyebrow: "Ask any focus mix",
+    rows: [
+      {
+        question: "Was it tested in humans?",
+        answer: {
+          text: "Yes. A randomized, double-blind, placebo-controlled trial of CognatiQ®.",
+          draft: true,
+        } as Copy,
+      },
+      { question: "At what dose?", answer: { text: "200mg.", draft: true } as Copy },
+      {
+        question: "Is that dose in the stick?",
+        answer: { text: "All of it. Every stick.", draft: true, dependsOn: ["{{CONFIRM_DOSE_200MG}}"] } as Copy,
+      },
+    ],
+  },
+  proof: {
+    tier: "The proof",
     name: "CognatiQ®",
     kind: "Whole coffee fruit extract",
     dose: "200mg",
-    reason: {
-      text: "The clinically studied ingredient behind decisiveness and accuracy under pressure.*",
+    body: {
+      text: "The full clinically studied dose. Disclosed. Never shorted to make room for anything else.",
       draft: true,
     } as Copy,
   },
-  /** Rendered as skeleton cards until the final formula is provided. */
-  others: ["{{FINAL_FORMULA}}", "{{FINAL_FORMULA}}", "{{FINAL_FORMULA}}", "{{FINAL_FORMULA}}"],
+  playbook: {
+    tier: "The playbook",
+    pull: { text: "You don't publish the details to your game plan, neither do we.", draft: true } as Copy,
+    body: { text: "Our own formula, built to provide exactly what you need when you need it.", draft: true } as Copy,
+    totalLabel: "Total blend weight",
+  },
+  plus: {
+    tier: "The +",
+    heading: { text: "Dosed with restraint.", draft: true } as Copy,
+    body: {
+      text: "A measured electrolyte base. Enough to matter. No salt bomb. No megadoses.",
+      draft: true,
+    } as Copy,
+    columns: ["Electrolyte", "Amount", "% Daily Value"],
+  },
   label: {
     open: "View full label",
     close: "Hide full label",
@@ -295,6 +450,50 @@ export const inside = {
   },
 };
 
+export const taste = {
+  heading: { text: "Premium you can taste.", draft: true } as Copy,
+  subline: { text: "Not too sweet. Mixes in seconds.", draft: true } as Copy,
+  sensory: [
+    { label: "Flavor", value: "{{FLAVORS}}" },
+    { label: "Color", value: "{{SENSORY_COLOR}}" },
+    { label: "Aroma", value: "{{SENSORY_AROMA}}" },
+    { label: "Sweetness", value: "{{SUGAR_G}}g sugar · sweetened with {{SWEETENER}}" },
+  ],
+  video: {
+    src: "{{MIX_VIDEO}}",
+    poster: "{{MIX_VIDEO_POSTER}}",
+    label: "Mix video: one unedited take, about 10 seconds",
+    size: "1080×1350 (4:5) + poster image",
+    alt: "A Clarity+ stick mixed into a water bottle",
+  },
+  comparisonLabels: {
+    tasteHeading: "Blind taste test",
+    mixHeading: "Side-by-side mix",
+    mixVideoLabel: "Side-by-side mix video",
+  },
+};
+
+/**
+ * Comparison data. Headlines and footnotes are generated from these fields,
+ * never written freeform. Shown only when flags.SHOW_COMPARISONS is true.
+ */
+export const comparisons = {
+  tasteTest: {
+    testDate: "{{TASTE_TEST_DATE}}",
+    sampleSize: "{{TASTE_SAMPLE_SIZE}}" as Value,
+    results: [
+      { competitor: "{{COMPETITOR_1}}", anonLabel: "Brand A", preferred: "{{TASTE_PREFERRED_1}}" as Value },
+      { competitor: "{{COMPETITOR_2}}", anonLabel: "Brand B", preferred: "{{TASTE_PREFERRED_2}}" as Value },
+    ],
+  },
+  mixTest: {
+    testDate: "{{MIX_TEST_DATE}}",
+    video: "{{MIX_COMPARISON_VIDEO}}",
+    competitors: ["{{COMPETITOR_1}}", "{{COMPETITOR_2}}"],
+    anonLabels: ["Brand A", "Brand B"],
+  },
+};
+
 export const founder = {
   heading: { text: "Why I built Clarity+", draft: true } as Copy,
   photo: {
@@ -307,7 +506,8 @@ export const founder = {
     draft: true,
     paragraphs: [
       "Golfers spend thousands on clubs, lessons, and range balls. Then they lose strokes standing over the ball — second-guessing the club, the line, the shot.",
-      "I wanted something that targets decision-making under pressure. Not caffeine. Not a mystery blend. A clinically studied ingredient at the studied dose, with every other dose on the label.",
+      "I wanted something built for decision-making under pressure. Not caffeine. Not a guess. A clinically studied ingredient at its full studied dose.",
+      `That could have been enough. I kept going: our own ${focusBlend.name}, and a measured electrolyte base.`,
       "That's Clarity+. Try it for your next few rounds. If it's not for you, I'll make it right.",
     ],
   },
@@ -331,7 +531,6 @@ export const quality = {
     { id: "tested", icon: "flask", title: "Third-party tested", detail: "{{TESTING_DETAILS}}" },
     { id: "manufacturing", icon: "factory", title: "Manufacturing standard", detail: "{{MANUFACTURING_CLAIM}}" },
     { id: "competition", icon: "flag", title: "Competition safe", detail: "{{COMPETITION_SAFE_STATEMENT}}" },
-    { id: "nsf", icon: "seal", title: "NSF Certified for Sport®", detail: "", requiresFlag: "SHOW_NSF_BADGE" },
   ] as const,
   coa: { label: "Certificate of Analysis", href: "{{COA_URL}}" },
 };
@@ -352,7 +551,7 @@ export const faq = {
     {
       id: "when",
       question: "When should I take it?",
-      answer: { text: "Mix one stick about 60 minutes before your tee time.", draft: true },
+      answer: { text: "{{USAGE_TIMING}}" },
     },
     {
       id: "frequency",
@@ -370,13 +569,39 @@ export const faq = {
     {
       id: "competition",
       question: "Is it safe for tournament play?",
-      answer: { text: "{{COMPETITION_SAFE_STATEMENT}}" },
+      answer: flags.SHOW_NSF_BADGE
+        ? {
+            text: "Clarity+ is NSF Certified for Sport®, tested for {{NSF_SUBSTANCE_COUNT}}+ substances banned in sport. Check the listing: {{NSF_LISTING_URL}}",
+            draft: true,
+          }
+        : { text: "{{COMPETITION_SAFE_STATEMENT}}" },
     },
     {
       id: "inside",
       question: "What's in it?",
-      answer: { text: "Every ingredient and dose is listed on the label.", draft: true },
-      link: { label: "See every ingredient", href: "#inside" },
+      answer: {
+        text: `The full clinical 200mg dose of CognatiQ®, our ${focusBlend.name}, and a measured electrolyte base. Every ingredient is on the label.`,
+        draft: true,
+      },
+      link: { label: "See what's inside", href: "/#inside" },
+    },
+    {
+      id: "blend",
+      question: `Why is the ${focusBlend.name} proprietary?`,
+      answer: {
+        text:
+          "Every ingredient is on the label, along with the blend's total weight. The exact recipe stays ours. You don't publish the details to your game plan, neither do we. What we always publish: the full clinical 200mg dose of CognatiQ®." +
+          (flags.SHOW_NSF_BADGE ? " And NSF Certified for Sport® independently verifies what's in it." : ""),
+        draft: true,
+      },
+    },
+    {
+      id: "taste",
+      question: "How does it taste?",
+      answer: {
+        text: "{{FLAVORS}}, and not too sweet: {{SUGAR_G}}g sugar, sweetened with {{SWEETENER}}. Mixes in seconds in plain water.",
+        draft: true,
+      },
     },
     { id: "guarantee", question: "What's your guarantee?", answer: { text: "{{GUARANTEE_TERMS}}" } },
     {
@@ -420,13 +645,13 @@ export const join = {
 
 export const footer = {
   columns: [
-    { heading: "Shop", links: [{ label: "Clarity+", href: "#buy" }] },
+    { heading: "Shop", links: [{ label: "Clarity+", href: "/#buy" }] },
     {
       heading: "Learn",
       links: [
-        { label: "The Science", href: "#science" },
-        { label: "How to Use", href: "#how" },
-        { label: "FAQ", href: "#faq" },
+        { label: "The Science", href: "/science" },
+        { label: "How to Use", href: "/#how" },
+        { label: "FAQ", href: "/#faq" },
       ],
     },
     {
@@ -449,12 +674,145 @@ export const footer = {
     },
   ],
   social: "{{SOCIAL_URLS}}",
-  trademark: "{{CONFIRM_TRADEMARK_LINE}}",
+  /** From FutureCeuticals' claims sheet; confirm it's their required wording. */
+  trademark: {
+    text: "CognatiQ® is a registered trademark of VDF FutureCeuticals, Inc. Pat. fcpatent.com",
+    draft: true,
+    dependsOn: ["{{CONFIRM_TRADEMARK_LINE}}"],
+  } as Copy,
   copyright: "© 2026 Game Plan Sports Performance, Inc.",
 };
 
+/**
+ * Search and social-share text for the homepage. Drafts replace {{SEO_TITLE}} and
+ * {{SEO_DESCRIPTION}}; same guardrails as the page copy (no claims or
+ * asterisks in the snippet). Title ~60 chars max, description ~155.
+ */
 export const seo = {
-  title: "{{SEO_TITLE}}",
-  description: "{{SEO_DESCRIPTION}}",
+  title: { text: "Clarity+ | Decision-Making Drink Mix for Golfers", draft: true } as Copy,
+  description: {
+    text: "A non-stimulant drink mix for golfers, built around a clinically studied 200mg dose of CognatiQ®.",
+    draft: true,
+    dependsOn: ["{{CONFIRM_DOSE_200MG}}", "{{CONFIRM_NON_STIMULANT}}"],
+  } as Copy,
+  /** Until supplied, the homepage uses a generated navy card (src/app/(home)/opengraph-image.tsx). */
   ogImage: "{{OG_IMAGE}}",
+  shareImageAlt: "Clarity+ by Game Plan Sports Performance",
+};
+
+/* -------------------------------------------------------------------------- */
+/* The Science page (/science)                                                */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * Skeleton for the CognatiQ® page. Every data slot is a placeholder until
+ * FutureCeuticals supplies the study details; nothing here is invented.
+ * Guardrails: stats belong to the CognatiQ® ingredient studies, not Clarity+,
+ * and 80.7% is always shown beside placebo (11.1%).
+ */
+export const science = {
+  seo: {
+    title: "The Science",
+    description: {
+      text: "The research behind CognatiQ®, the clinically studied coffee fruit extract in Clarity+.",
+      draft: true,
+    } as Copy,
+  },
+  intro: {
+    eyebrow: "The Science",
+    heading: { text: "The ingredient behind Clarity+.", draft: true } as Copy,
+    body: {
+      text: "Clarity+ is built around CognatiQ®, a whole coffee fruit extract from FutureCeuticals that has been studied in published human clinical trials. Here's what that research looked at, and what it found.",
+      draft: true,
+    } as Copy,
+  },
+  ingredient: {
+    heading: { text: "What is CognatiQ®?", draft: true } as Copy,
+    overview: "{{COGNATIQ_OVERVIEW}}",
+    source: "{{COGNATIQ_SOURCE}}",
+    mechanism: {
+      text: "CognatiQ® increases BDNF, a key neuroprotein that supports the protection, growth, and connections of brain cells.*",
+      draft: true,
+    } as Copy,
+    image: {
+      src: "{{COGNATIQ_IMAGE}}",
+      alt: "Coffee fruit, the source of CognatiQ®",
+      label: "Coffee fruit / ingredient photo",
+      size: "1200×900",
+    },
+  },
+  results: {
+    heading: { text: "Backed by a clinical study. Not a hunch.", draft: true } as Copy,
+    subline: {
+      text: "Five published clinical studies on CognatiQ®. Here's what the latest one showed.",
+      draft: true,
+    } as Copy,
+    decisiveness: {
+      title: "Decisiveness · N-back test",
+      bars: [
+        { id: "placebo", label: "Placebo", value: 11.1, tone: "silver" },
+        { id: "cognatiq", label: "CognatiQ® 200mg", value: 80.7, tone: "burgundy" },
+      ] as const,
+      axisLabel: "% improvement in omission errors vs. baseline, 60 minutes after one dose",
+      plainEnglish: {
+        text: "Omission errors are missed responses caused by hesitation. Fewer misses means more decisive play.",
+        draft: true,
+      } as Copy,
+    },
+    impulse: {
+      title: "Impulse control · Response-inhibition test",
+      /** Change in errors vs. baseline; placebo rose more than 55%. */
+      bars: [
+        { id: "placebo", label: "Placebo", value: 55, display: ">+55%", tone: "silver" },
+        { id: "cognatiq", label: "CognatiQ® 200mg", value: -41, display: "−41%", tone: "burgundy" },
+      ] as const,
+      axisLabel: "Change in errors vs. baseline, response-inhibition test, {{CONFIRM_IMPULSE_TIMEPOINT}}",
+      plainEnglish: {
+        text: "Response inhibition is holding back the wrong move. Errors went down with CognatiQ®. They went up with placebo.",
+        draft: true,
+      } as Copy,
+    },
+    stats: [
+      { value: "60 min", label: "Measured 60 minutes after a single dose" },
+      { value: "28 days", label: "Sustained improvement with daily use" },
+      {
+        value: "200mg",
+        label: { text: "The full clinically studied dose, in every stick", dependsOn: ["{{CONFIRM_DOSE_200MG}}"] } as Copy,
+      },
+      { value: "40–65", label: "Age range of the study participants" },
+    ],
+    footnote: {
+      text: "Results from a randomized, double-blind, placebo-controlled human clinical trial of the CognatiQ® ingredient in adults 40–65. Clarity+ has not been studied as a finished product.",
+      draft: true,
+    } as Copy,
+    citation: {
+      text: "Robinson J., et al. (2024). Whole Coffee Cherry Extract Improves Working Memory and Response Inhibition: Acute and Longitudinal Results from a Remote, Randomized, Double-Blind, Placebo-Controlled Clinical Trial.",
+      draft: true,
+    } as Copy,
+    studyLink: { label: "Read the study", href: "{{STUDY_URL}}" },
+  },
+  studies: {
+    heading: { text: "Published clinical studies.", draft: true } as Copy,
+    intro: "{{COGNATIQ_STUDIES_INTRO}}",
+    /** One card per published study (spec: 5). Fields stay placeholders until supplied. */
+    fields: ["Title", "Year · Journal", "Design", "Participants", "Dose", "Key finding", "Citation"],
+    items: [
+      "{{COGNATIQ_STUDY_1}}",
+      "{{COGNATIQ_STUDY_2}}",
+      "{{COGNATIQ_STUDY_3}}",
+      "{{COGNATIQ_STUDY_4}}",
+      "{{COGNATIQ_STUDY_5}}",
+    ],
+  },
+  dose: {
+    heading: { text: "Why 200mg.", draft: true } as Copy,
+    body: "{{COGNATIQ_DOSE_RATIONALE}}",
+    dependsOn: "{{CONFIRM_DOSE_200MG}}",
+  },
+  /** Fixed compliance copy (guardrail 3). */
+  ingredientNotProduct:
+    "These studies were conducted on the CognatiQ® ingredient. Clarity+ has not been studied as a finished product.",
+  cta: {
+    heading: { text: "Ready to play with it?", draft: true } as Copy,
+  },
 };

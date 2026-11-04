@@ -2,9 +2,9 @@ import { moments } from "@/content/homepage";
 import { Section, SectionHeading } from "./ui/Section";
 import { Txt } from "./ui/Txt";
 import { LaunchCta } from "./ui/LaunchCta";
-import { ClubsIcon, HoleIcon, TeeIcon } from "./ui/Icons";
+import { ClubsIcon, HoleIcon, SplitIcon, TeeIcon } from "./ui/Icons";
 
-const ICONS = { tee: TeeIcon, clubs: ClubsIcon, hole: HoleIcon } as const;
+const ICONS = { tee: TeeIcon, split: SplitIcon, clubs: ClubsIcon, hole: HoleIcon } as const;
 
 export function GolfMoments() {
   return (
@@ -17,7 +17,7 @@ export function GolfMoments() {
         className="max-w-2xl"
       />
 
-      <ul className="mt-10 grid gap-5 md:grid-cols-3 lg:mt-14">
+      <ul className="mt-10 grid gap-5 md:grid-cols-2 lg:mt-14 xl:grid-cols-4">
         {moments.cards.map((card) => {
           const Icon = ICONS[card.icon as keyof typeof ICONS];
           return (

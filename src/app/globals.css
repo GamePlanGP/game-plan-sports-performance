@@ -81,7 +81,7 @@ html {
 }
 
 /* ------------------------------------------------------------------
-   Homepage v2 (/v2) — Palette v2: navy / silver / burgundy / white.
+   Homepage (/) — Palette v2: navy / silver / burgundy / white.
    Token names are new, so nothing above (or any other page) is affected.
    ------------------------------------------------------------------ */
 :root {
@@ -117,7 +117,7 @@ html {
 }
 
 /* The page paints its own white/navy sections; keep the document chrome
-   (overscroll area, selection, scrollbar) on-palette while /v2 is mounted. */
+   (overscroll area, selection, scrollbar) on-palette while the homepage is mounted. */
 html:has(.hp) {
   scrollbar-color: var(--silver) var(--white);
 }

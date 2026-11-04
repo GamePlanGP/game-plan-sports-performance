@@ -1,9 +1,11 @@
-import { flags, hero } from "@/content/homepage";
+import { flags, hero, nsf } from "@/content/homepage";
+import { TextLink } from "./ui/TextLink";
+import { PendingPill, Placeholder } from "./ui/Placeholder";
+import { isPlaceholder } from "@/lib/home";
 import { AccentBar, Eyebrow, Section } from "./ui/Section";
 import { Txt } from "./ui/Txt";
 import { Media } from "./ui/Media";
 import { LaunchCta } from "./ui/LaunchCta";
-import { TextLink } from "./ui/TextLink";
 import { StarIcon } from "./ui/Icons";
 
 /** Only rendered when SHOW_RATING is on. Values come from Judge.me in Phase 2. */
@@ -39,15 +41,43 @@ export function Hero() {
             <Txt v={hero.subhead} />
           </p>
 
-          <div className="mt-7 flex flex-wrap items-center gap-x-8 gap-y-4">
+          <div className="mt-7">
             <LaunchCta location="hero" />
-            <TextLink href={hero.secondary.href}>{hero.secondary.label} →</TextLink>
           </div>
+
+          {nsf.visible ? (
+            <div className="mt-7 flex items-center gap-4">
+              <div className="w-14 shrink-0">
+                {isPlaceholder(nsf.mark.src) ? (
+                  <div
+                    role="img"
+                    aria-label={`Placeholder: ${nsf.mark.label}`}
+                    className="flex aspect-square items-center justify-center rounded-hp border border-hp-line bg-hp-tint-2 text-[0.58rem] font-semibold tracking-[0.12em] text-hp-ink-soft uppercase"
+                  >
+                    Mark
+                  </div>
+                ) : (
+                  <Media {...nsf.mark} ratio="1 / 1" />
+                )}
+              </div>
+              <div>
+                <p className="text-[0.7rem] font-semibold tracking-[0.16em] uppercase">
+                  {nsf.name}
+                  {nsf.pending ? <PendingPill label={nsf.pendingLabel} /> : null}
+                  {isPlaceholder(nsf.mark.src) ? <Placeholder id={nsf.mark.src} /> : null}
+                </p>
+                <p className="mt-1 text-sm text-hp-ink-soft">
+                  <Txt v={nsf.hero.detail} />{" "}
+                  <TextLink href={nsf.hero.link.href}>{nsf.hero.link.label}</TextLink>
+                </p>
+              </div>
+            </div>
+          ) : null}
 
           <ul className="mt-9 flex flex-wrap gap-x-6 gap-y-2 border-t border-hp-line pt-5">
             {hero.trust.map((item) => (
               <li
-                key={item}
+                key={typeof item === "string" ? item : item.text}
                 className="flex items-center gap-2.5 text-[0.66rem] font-semibold tracking-[0.16em] uppercase"
               >
                 <span aria-hidden="true" className="h-1.5 w-1.5 shrink-0 bg-hp-navy" />

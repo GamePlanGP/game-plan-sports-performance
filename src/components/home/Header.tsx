@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { brand, nav } from "@/content/homepage";
 import logo from "@/assets/gp-wordmark-navy.png";
 import { LaunchCta } from "./ui/LaunchCta";
@@ -20,9 +21,9 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-t-2 border-b border-t-hp-burgundy border-b-hp-line bg-hp-white">
       <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between gap-4 px-5 md:px-8">
-        <a href="#top" aria-label={`${brand.company} — top of page`} className="inline-flex shrink-0 items-center">
+        <Link href="/" aria-label={`${brand.company} — home`} className="inline-flex shrink-0 items-center">
           <Image src={logo} alt={brand.logoAlt} priority className="h-12 w-auto" />
-        </a>
+        </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-8 min-[1080px]:flex">
           {nav.map((item) => (

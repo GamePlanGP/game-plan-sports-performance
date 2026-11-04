@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { faq } from "@/content/homepage";
-import { OPEN_FAQ_EVENT } from "@/lib/home";
 import { track } from "@/lib/track";
 import { Section, SectionHeading } from "./ui/Section";
 import { Txt } from "./ui/Txt";
@@ -13,9 +12,14 @@ export function FAQ() {
   const [openId, setOpenId] = useState<string | null>(null);
 
   useEffect(() => {
-    const onOpen = (e: Event) => setOpenId((e as CustomEvent<string>).detail);
-    window.addEventListener(OPEN_FAQ_EVENT, onOpen);
-    return () => window.removeEventListener(OPEN_FAQ_EVENT, onOpen);
+    // "#faq-<id>" (e.g. the announcement bar's guarantee link) opens that question.
+    const openFromHash = () => {
+      const id = window.location.hash.replace(/^#faq-/, "");
+      if (id !== window.location.hash && faq.items.some((item) => item.id === id)) setOpenId(id);
+    };
+    openFromHash();
+    window.addEventListener("hashchange", openFromHash);
+    return () => window.removeEventListener("hashchange", openFromHash);
   }, []);
 
   const toggle = (id: string) => {
@@ -40,7 +44,8 @@ export function FAQ() {
             return (
               <li
                 key={item.id}
-                className={`border-b border-hp-silver pl-5 transition-shadow last:border-b-0 motion-reduce:transition-none ${
+                id={`faq-${item.id}`}
+                className={`scroll-mt-24 border-b border-hp-silver pl-5 transition-shadow last:border-b-0 motion-reduce:transition-none ${
                   open ? "shadow-[inset_3px_0_0_var(--burgundy)]" : ""
                 }`}
               >

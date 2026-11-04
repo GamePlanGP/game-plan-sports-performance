@@ -1,10 +1,12 @@
+import { SITE_URL } from "@/lib/site";
+
 export const SITE_CONFIG = {
   name: "Game Plan Sports Performance",
   tagline: "Perform at the highest level.",
   secondaryTagline: "Find your Zone.",
   description:
     "Engineered for athletes who refuse to leave performance to chance. Every formulation is built on clinical science, designed for the demands of elite competition.",
-  domain: "https://www.gameplansportsperformance.com",
+  domain: SITE_URL,
   email: "hello@gameplansportsperformance.com",
 };
 

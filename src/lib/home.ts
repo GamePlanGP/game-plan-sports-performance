@@ -50,10 +50,3 @@ export function subscriptionPrice(bagPrice: Value, discountPct: Value): Value {
   if (p === null || d === null) return "{{SUB_PRICE}}";
   return Math.round(p * (1 - d / 100) * 100) / 100;
 }
-
-/** Opens a FAQ item (announcement bar -> guarantee answer). */
-export const OPEN_FAQ_EVENT = "hp:open-faq";
-
-export function openFaq(id: string): void {
-  window.dispatchEvent(new CustomEvent(OPEN_FAQ_EVENT, { detail: id }));
-}

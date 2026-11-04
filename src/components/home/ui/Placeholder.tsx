@@ -23,3 +23,12 @@ export function DraftPill({ dependsOn }: { dependsOn?: string[] }) {
     </span>
   );
 }
+
+/** Marks content that isn't true yet (e.g. a certification still pending). */
+export function PendingPill({ label }: { label: string }) {
+  return (
+    <span className="mx-1.5 inline-block rounded-hp border border-dashed border-yellow-700 bg-yellow-100 px-1.5 py-px align-middle font-sans text-[0.55rem] leading-snug font-bold tracking-[0.12em] text-yellow-950 uppercase not-italic">
+      {label}
+    </span>
+  );
+}

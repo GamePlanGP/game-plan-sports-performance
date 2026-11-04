@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Cormorant_Garamond, Graduate } from "next/font/google";
 import "./globals.css";
+import { SEARCH_INDEXING, SITE_URL } from "@/lib/site";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -41,11 +42,11 @@ export const metadata: Metadata = {
     "mental clarity",
     "CognatiQ",
   ],
-  metadataBase: new URL("https://www.gameplansportsperformance.com"),
+  metadataBase: new URL(SITE_URL),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.gameplansportsperformance.com",
+    url: "/",
     siteName: "Game Plan Sports Performance",
     title: "Game Plan Sports Performance | Nootropic Hydration for Peak Performance",
     description:
@@ -58,8 +59,8 @@ export const metadata: Metadata = {
       "Nootropic hydration engineered for elite performance. Find your Zone.",
   },
   robots: {
-    index: true,
-    follow: true,
+    index: SEARCH_INDEXING,
+    follow: SEARCH_INDEXING,
   },
 };
 
