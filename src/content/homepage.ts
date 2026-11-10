@@ -125,13 +125,13 @@ export const offer = {
 /* -------------------------------------------------------------------------- */
 
 /**
- * The Game Plan Blend. Names and one-line factual descriptors only: no doses,
+ * The Game Plan Focus Blend. Names and one-line factual descriptors only: no doses,
  * no per-ingredient benefits. `confirmed` lists label names in label order once
  * {{FINAL_FORMULA}} is final; until then the page shows placeholder cards.
  */
 export const focusBlend = {
   /** One field so the blend name is a one-line swap. Must match the label. */
-  name: "Game Plan Blend",
+  name: "Game Plan Focus Blend",
   nameMatchesLabel: "{{CONFIRM_BLEND_NAME_MATCHES_LABEL}}",
   totalMg: "{{BLEND_TOTAL_MG}}" as Value,
   formula: "{{FINAL_FORMULA}}",
@@ -194,7 +194,7 @@ export const nsf = {
     eyebrow: "Independently verified",
     heading: { text: "Our recipe is private. What's in it is verified.", draft: true } as Copy,
     intro: {
-      text: "The Game Plan Blend stays our recipe. NSF Certified for Sport® means an independent lab knows exactly what's in Clarity+, and checks it on your behalf.",
+      text: "The Game Plan Focus Blend stays our recipe. NSF Certified for Sport® means an independent lab knows exactly what's in Clarity+, and checks it on your behalf.",
       draft: true,
     } as Copy,
     why: {
@@ -271,8 +271,12 @@ export const announcement = {
 export const hero = {
   eyebrow: "Clarity+ by Game Plan Sports Performance",
   headline: { text: "Commit to every shot.", draft: true } as Copy,
+  lead: {
+    text: "Remember the round where everything clicked? Clear target. No second-guessing. That’s the zone. Clarity+ supports the focus and decisiveness it’s built on.*",
+    draft: true,
+  } as Copy,
   subhead: {
-    text: `Clarity+ supports faster, more accurate decisions under pressure.* Built on the full clinical 200mg dose of CognatiQ®, plus our ${focusBlend.name} and a measured electrolyte base.`,
+    text: `Built on the full clinical 200mg dose of CognatiQ®, plus our proprietary ${focusBlend.name} with a measured electrolyte foundation.`,
     draft: true,
     dependsOn: ["{{CONFIRM_DOSE_200MG}}", "{{CONFIRM_NON_STIMULANT}}"],
   } as Copy,
@@ -296,7 +300,7 @@ export const moments = {
       eyebrow: "Hole 1 · Tee box",
       title: "The first tee.",
       body: {
-        text: "Everyone's watching. Breathe, pick your target, and swing with a clear head — no stimulant jitters.",
+        text: "Everyone's watching, but you are calm and focused without any jitters. Execute your confident swing.",
         draft: true,
       } as Copy,
       tag: "Supports cognitive control*",
@@ -304,23 +308,23 @@ export const moments = {
     {
       icon: "split",
       eyebrow: "Par 5 · Second shot",
-      title: "Go or lay up.",
-      body: { text: "The hero shot is calling. Stick to the game plan.", draft: true } as Copy,
+      title: "Feel like you can reach in 2 but not positive?",
+      body: { text: "No indecision, stick to the Game Plan easily and execute the correct shot.", draft: true } as Copy,
       tag: "Supports cognitive impulse control*",
     },
     {
       icon: "clubs",
       eyebrow: "Approach · Club select",
-      title: "Between clubs.",
-      body: { text: "Hold the number, the wind, the line. Choose, commit, swing.", draft: true } as Copy,
+      title: "Between clubs?",
+      body: { text: "Every yardage feels great. Choose the club and commit easily.", draft: true } as Copy,
       tag: "Supports working memory*",
     },
     {
       icon: "hole",
       eyebrow: "Hole 17 · 3 ft",
-      title: "The 3-footer on 17.",
+      title: "That 3-footer on 17 for birdie.",
       body: {
-        text: "Match on the line. Read the break, trust your line, and make a confident stroke.",
+        text: "See the line clearly, trust the read and make your confident stroke.",
         draft: true,
       } as Copy,
       tag: "Supports accuracy under pressure*",

@@ -25,7 +25,7 @@ export function Card({
         "bg-white/5 rounded-2xl border border-white/10",
         paddingClasses[padding],
         hover &&
-          "hover:border-gold-500/30 hover:-translate-y-1 transition-all duration-300",
+          "hover:border-silver-500/30 hover:-translate-y-1 transition-all duration-300",
         className,
       )}
     >

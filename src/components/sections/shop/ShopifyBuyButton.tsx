@@ -26,7 +26,7 @@ const SDK_URL =
 // the Shopify UI.
 const SILVER = "#C4CED4";
 const WHITE = "#FFFFFF";
-const NAVY = "#002D62";
+const NAVY = "#0C234B";
 
 const brandButton = {
   "font-family": "inherit",

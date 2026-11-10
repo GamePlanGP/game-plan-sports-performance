@@ -8,11 +8,11 @@ export default function NotFound() {
       <section className="py-24 sm:py-32">
         <Container>
           <div className="flex flex-col items-center text-center">
-            <p className="font-display text-[10rem] leading-none font-bold text-gold-500/20 select-none sm:text-[14rem]">
+            <p className="font-display text-[10rem] leading-none font-bold text-silver-500/20 select-none sm:text-[14rem]">
               404
             </p>
 
-            <h1 className="font-display mt-2 text-3xl font-bold text-warm-white sm:text-4xl">
+            <h1 className="font-display mt-2 text-3xl font-bold text-white sm:text-4xl">
               Page Not Found
             </h1>
 

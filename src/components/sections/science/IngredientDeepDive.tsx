@@ -41,7 +41,7 @@ export function IngredientDeepDive() {
                 >
                   {/* Highlight glow effect */}
                   {isHighlight && (
-                    <div className="pointer-events-none absolute -inset-6 rounded-3xl border-2 border-gold-500/20 bg-gold-500/5 sm:-inset-8" />
+                    <div className="pointer-events-none absolute -inset-6 rounded-3xl border-2 border-silver-500/20 bg-silver-500/5 sm:-inset-8" />
                   )}
 
                   {/* Image side */}
@@ -58,7 +58,7 @@ export function IngredientDeepDive() {
                       aspectRatio="aspect-[4/3]"
                       className={cn(
                         "rounded-2xl",
-                        isHighlight && "ring-2 ring-gold-500/40",
+                        isHighlight && "ring-2 ring-silver-500/40",
                       )}
                     />
                   </div>
@@ -72,14 +72,14 @@ export function IngredientDeepDive() {
                   >
                     {/* Star ingredient badge */}
                     {isHighlight && (
-                      <Badge variant="gold" className="mb-4">
+                      <Badge variant="accent" className="mb-4">
                         Star Ingredient
                       </Badge>
                     )}
 
                     {/* Category badge */}
                     <Badge
-                      variant={isHighlight ? "gold" : "default"}
+                      variant={isHighlight ? "accent" : "default"}
                       className={cn(!isHighlight && "mb-4", isHighlight && "mb-4 ml-2")}
                     >
                       {categoryLabels[ingredient.category] ?? ingredient.category}
@@ -88,7 +88,7 @@ export function IngredientDeepDive() {
                     {/* Ingredient name */}
                     <h3
                       className={cn(
-                        "font-display font-bold text-warm-white",
+                        "font-display font-bold text-white",
                         isHighlight
                           ? "text-3xl sm:text-4xl"
                           : "text-2xl sm:text-3xl",
@@ -109,14 +109,14 @@ export function IngredientDeepDive() {
                       className={cn(
                         "mt-6 inline-flex flex-col rounded-xl px-5 py-3",
                         isHighlight
-                          ? "bg-gold-500/10 border border-gold-500/20"
+                          ? "bg-silver-500/10 border border-silver-500/20"
                           : "bg-navy-800 border border-white/10",
                       )}
                     >
                       <span
                         className={cn(
                           "text-2xl font-bold sm:text-3xl",
-                          isHighlight ? "text-gold-600" : "text-gold-500",
+                          isHighlight ? "text-silver-600" : "text-silver-500",
                         )}
                       >
                         {ingredient.amount}
@@ -139,8 +139,8 @@ export function IngredientDeepDive() {
                           className={cn(
                             "inline-flex items-center rounded-full px-3 py-1 text-xs font-medium",
                             isHighlight
-                              ? "bg-gold-500/10 text-gold-600"
-                              : "bg-gold-500/10 text-gold-400",
+                              ? "bg-silver-500/10 text-silver-600"
+                              : "bg-silver-500/10 text-silver-400",
                           )}
                         >
                           {benefit}

@@ -34,7 +34,7 @@ export function HeroSection() {
           {/* Left column: Copy */}
           <div className="order-1">
             <FadeIn direction="up" delay={0}>
-              <Badge variant="gold" className="mb-6">
+              <Badge variant="accent" className="mb-6">
                 Coming Soon
               </Badge>
             </FadeIn>

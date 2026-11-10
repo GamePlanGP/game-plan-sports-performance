@@ -3,11 +3,11 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 const variantClasses = {
-  primary: "bg-gold-500 hover:bg-gold-400 text-navy-950",
+  primary: "bg-silver-500 hover:bg-silver-400 text-navy-950",
   secondary:
-    "border-2 border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-navy-950",
-  cta: "bg-gold-500 hover:bg-gold-400 text-navy-950 font-bold",
-  ghost: "text-gold-500 hover:text-gold-400 hover:bg-white/5",
+    "border-2 border-silver-500 text-silver-500 hover:bg-silver-500 hover:text-navy-950",
+  cta: "bg-silver-500 hover:bg-silver-400 text-navy-950 font-bold",
+  ghost: "text-silver-500 hover:text-silver-400 hover:bg-white/5",
 } as const;
 
 const sizeClasses = {

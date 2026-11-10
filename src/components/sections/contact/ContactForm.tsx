@@ -59,9 +59,9 @@ export function ContactForm() {
     return (
       <Card padding="lg" className="text-center">
         <div className="flex flex-col items-center gap-4 py-8">
-          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gold-500/10">
+          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-silver-500/10">
             <svg
-              className="h-8 w-8 text-gold-500"
+              className="h-8 w-8 text-silver-500"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={2.5}
@@ -75,7 +75,7 @@ export function ContactForm() {
               />
             </svg>
           </div>
-          <h3 className="font-display text-2xl font-bold text-warm-white">
+          <h3 className="font-display text-2xl font-bold text-white">
             Message Sent!
           </h3>
           <p className="text-silver">
@@ -117,7 +117,7 @@ export function ContactForm() {
         <div className="w-full">
           <label
             htmlFor="subject"
-            className="mb-2 block text-sm font-medium text-warm-white"
+            className="mb-2 block text-sm font-medium text-white"
           >
             Subject
           </label>
@@ -125,7 +125,7 @@ export function ContactForm() {
             id="subject"
             {...register("subject")}
             className={cn(
-              "w-full appearance-none rounded-lg border border-white/20 bg-white/5 px-4 py-3 outline-none transition-all focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20",
+              "w-full appearance-none rounded-lg border border-white/20 bg-white/5 px-4 py-3 outline-none transition-all focus:border-silver-500 focus:ring-2 focus:ring-silver-500/20",
               errors.subject &&
                 "border-red-500 focus:border-red-500 focus:ring-red-500/20",
             )}
@@ -152,7 +152,7 @@ export function ContactForm() {
         <div className="w-full">
           <label
             htmlFor="message"
-            className="mb-2 block text-sm font-medium text-warm-white"
+            className="mb-2 block text-sm font-medium text-white"
           >
             Message
           </label>
@@ -162,7 +162,7 @@ export function ContactForm() {
             placeholder="How can we help you?"
             {...register("message")}
             className={cn(
-              "min-h-[150px] w-full resize-y rounded-lg border border-white/20 bg-white/5 px-4 py-3 outline-none transition-all focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20",
+              "min-h-[150px] w-full resize-y rounded-lg border border-white/20 bg-white/5 px-4 py-3 outline-none transition-all focus:border-silver-500 focus:ring-2 focus:ring-silver-500/20",
               errors.message &&
                 "border-red-500 focus:border-red-500 focus:ring-red-500/20",
             )}

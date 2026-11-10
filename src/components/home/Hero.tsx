@@ -38,6 +38,9 @@ export function Hero() {
             <Txt v={hero.headline} />
           </h1>
           <p className="mt-5 max-w-xl text-[0.95rem] leading-relaxed md:text-base">
+            <Txt v={hero.lead} />
+          </p>
+          <p className="mt-4 max-w-xl text-[0.95rem] leading-relaxed md:text-base">
             <Txt v={hero.subhead} />
           </p>
 

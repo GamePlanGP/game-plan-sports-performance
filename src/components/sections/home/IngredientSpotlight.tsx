@@ -6,7 +6,7 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerChildren } from "@/components/animations/StaggerChildren";
 import { INGREDIENTS } from "@/lib/constants";
 
-const categoryBadgeVariant: Record<string, "default" | "gold" | "green" | "outline"> = {
+const categoryBadgeVariant: Record<string, "default" | "accent" | "green" | "outline"> = {
   nootropic: "green",
   adaptogen: "outline",
   electrolyte: "default",
@@ -33,12 +33,12 @@ export function IngredientSpotlight() {
           <FadeIn direction="up" delay={0.1}>
             <Card
               padding="lg"
-              className="mb-12 border-2 border-gold-500/30 bg-gradient-to-br from-navy-900 to-navy-800"
+              className="mb-12 border-2 border-silver-500/30 bg-gradient-to-br from-navy-900 to-navy-800"
             >
               <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-10">
                 <div className="flex-1">
                   <div className="mb-4 flex flex-wrap items-center gap-3">
-                    <Badge variant="gold">Star Ingredient</Badge>
+                    <Badge variant="accent">Star Ingredient</Badge>
                     <span className="text-sm font-medium text-white/50">
                       {highlightIngredient.amount}
                     </span>
@@ -47,7 +47,7 @@ export function IngredientSpotlight() {
                     {highlightIngredient.name}
                   </h3>
                   {highlightIngredient.aka && (
-                    <p className="mt-1 text-sm text-gold-400">
+                    <p className="mt-1 text-sm text-silver-400">
                       {highlightIngredient.aka}
                     </p>
                   )}
@@ -56,7 +56,7 @@ export function IngredientSpotlight() {
                   </p>
                 </div>
                 <div className="shrink-0 lg:w-64">
-                  <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-gold-400">
+                  <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-silver-400">
                     Key Benefits
                   </h4>
                   <ul className="space-y-2">
@@ -66,7 +66,7 @@ export function IngredientSpotlight() {
                         className="flex items-center gap-2 text-white/80"
                       >
                         <svg
-                          className="h-4 w-4 shrink-0 text-gold-500"
+                          className="h-4 w-4 shrink-0 text-silver-500"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"

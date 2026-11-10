@@ -20,8 +20,8 @@ const BENEFITS = [
   "Convenient stick pack format — just mix and play",
 ];
 
-const CATEGORY_BADGE_VARIANT: Record<string, "default" | "gold" | "green" | "outline"> = {
-  nootropic: "gold",
+const CATEGORY_BADGE_VARIANT: Record<string, "default" | "accent" | "green" | "outline"> = {
+  nootropic: "accent",
   adaptogen: "green",
   electrolyte: "default",
 };
@@ -33,14 +33,14 @@ function DescriptionTab() {
         {PRODUCT.description}
       </p>
       <div>
-        <h3 className="mb-4 text-lg font-semibold text-warm-white">
+        <h3 className="mb-4 text-lg font-semibold text-white">
           Key Benefits
         </h3>
         <ul className="space-y-3">
           {BENEFITS.map((benefit) => (
             <li key={benefit} className="flex items-start gap-3">
               <svg
-                className="mt-0.5 h-5 w-5 shrink-0 text-gold-500"
+                className="mt-0.5 h-5 w-5 shrink-0 text-silver-500"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -67,19 +67,19 @@ function HowToUseTab() {
       <ol className="space-y-6">
         {PRODUCT.howToUse.map((step, idx) => (
           <li key={idx} className="flex items-start gap-4">
-            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold-500 text-sm font-bold text-navy-950">
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-silver-500 text-sm font-bold text-navy-950">
               {idx + 1}
             </span>
             <div className="pt-1">
-              <p className="text-base leading-relaxed text-warm-white">
+              <p className="text-base leading-relaxed text-white">
                 {step}
               </p>
             </div>
           </li>
         ))}
       </ol>
-      <div className="mt-8 rounded-xl bg-gold-500/10 p-6">
-        <p className="text-sm font-medium text-gold-400">
+      <div className="mt-8 rounded-xl bg-silver-500/10 p-6">
+        <p className="text-sm font-medium text-silver-400">
           Pro tip: For tournament play, mix one pack 15 minutes before your
           round and keep a second pack in your bag for the back nine.
         </p>
@@ -95,7 +95,7 @@ function IngredientsTab() {
         <Card key={ingredient.name} padding="md" hover>
           <div className="space-y-3">
             <div className="flex items-start justify-between gap-2">
-              <h4 className="font-semibold text-warm-white">
+              <h4 className="font-semibold text-white">
                 {ingredient.name}
               </h4>
               <Badge
@@ -108,7 +108,7 @@ function IngredientsTab() {
             {ingredient.aka && (
               <p className="text-xs text-silver">{ingredient.aka}</p>
             )}
-            <p className="text-sm font-medium text-gold-500">
+            <p className="text-sm font-medium text-silver-500">
               {ingredient.amount}
             </p>
             <p className="text-sm leading-relaxed text-silver">
@@ -139,8 +139,8 @@ export function ProductDetails() {
                   className={cn(
                     "whitespace-nowrap border-b-2 pb-4 text-sm font-medium transition-colors sm:text-base",
                     activeTab === tab
-                      ? "border-gold-500 font-bold text-gold-500"
-                      : "border-transparent text-silver hover:border-white/20 hover:text-warm-white"
+                      ? "border-silver-500 font-bold text-silver-500"
+                      : "border-transparent text-silver hover:border-white/20 hover:text-white"
                   )}
                 >
                   {tab}

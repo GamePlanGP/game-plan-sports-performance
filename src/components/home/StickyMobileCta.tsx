@@ -46,7 +46,7 @@ export function StickyMobileCta() {
     <div
       aria-hidden={!show}
       inert={!show}
-      className={`fixed inset-x-0 bottom-0 z-40 border-t border-hp-line bg-hp-white shadow-[0_-4px_14px_rgba(0,45,98,0.08)] transition-transform duration-300 motion-reduce:transition-none md:hidden ${
+      className={`fixed inset-x-0 bottom-0 z-40 border-t border-hp-line bg-hp-white shadow-[0_-4px_14px_rgba(12,35,75,0.08)] transition-transform duration-300 motion-reduce:transition-none md:hidden ${
         show ? "translate-y-0" : "translate-y-full"
       }`}
       style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}

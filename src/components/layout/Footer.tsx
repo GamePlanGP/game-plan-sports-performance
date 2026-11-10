@@ -14,7 +14,7 @@ export function Footer() {
           {/* Column 1: Brand */}
           <div className="md:col-span-2 lg:col-span-1">
             <Logo />
-            <p className="mt-3 font-display text-sm italic text-gold-400">
+            <p className="mt-3 font-display text-sm italic text-silver-400">
               {SITE_CONFIG.tagline}
             </p>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
@@ -33,7 +33,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/70 transition-colors hover:text-gold-500"
+                    className="text-sm text-white/70 transition-colors hover:text-silver-500"
                   >
                     {link.label}
                   </Link>
@@ -52,7 +52,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/70 transition-colors hover:text-gold-500"
+                    className="text-sm text-white/70 transition-colors hover:text-silver-500"
                   >
                     {link.label}
                   </Link>
@@ -81,11 +81,11 @@ export function Footer() {
                 id="footer-email"
                 type="email"
                 placeholder="you@email.com"
-                className="min-w-0 flex-1 rounded-lg border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-white placeholder:text-white/30 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 focus:outline-none"
+                className="min-w-0 flex-1 rounded-lg border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-white placeholder:text-white/30 focus:border-silver-500 focus:ring-1 focus:ring-silver-500 focus:outline-none"
               />
               <button
                 type="submit"
-                className="shrink-0 rounded-lg bg-gold-500 px-4 py-2.5 text-sm font-semibold text-navy-950 transition-colors hover:bg-gold-400"
+                className="shrink-0 rounded-lg bg-silver-500 px-4 py-2.5 text-sm font-semibold text-navy-950 transition-colors hover:bg-silver-400"
               >
                 Subscribe
               </button>

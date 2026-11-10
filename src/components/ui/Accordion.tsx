@@ -32,7 +32,7 @@ export function Accordion({ items }: AccordionProps) {
               className="flex w-full items-center justify-between py-5 text-left"
               aria-expanded={isOpen}
             >
-              <span className="pr-4 text-base font-semibold text-warm-white">
+              <span className="pr-4 text-base font-semibold text-white">
                 {item.question}
               </span>
               <svg

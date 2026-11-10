@@ -39,7 +39,7 @@ function WaitlistForm() {
     return (
       <FadeIn direction="up">
         <div className="flex flex-col items-center gap-3 text-center">
-          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gold-500">
+          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-silver-500">
             <svg
               className="h-7 w-7 text-white"
               fill="none"
@@ -79,7 +79,7 @@ function WaitlistForm() {
             aria-label="Email address"
             className={cn(
               "border-white/20 bg-white/5 text-white placeholder:text-white/40",
-              "focus:border-gold-500 focus:ring-gold-500/20",
+              "focus:border-silver-500 focus:ring-silver-500/20",
             )}
             {...register("email")}
             error={errors.email?.message}

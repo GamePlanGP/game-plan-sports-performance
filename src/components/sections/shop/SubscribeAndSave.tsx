@@ -12,7 +12,7 @@ const SUBSCRIPTION_PERKS = [
 function CheckIcon() {
   return (
     <svg
-      className="mt-0.5 h-5 w-5 shrink-0 text-gold-500"
+      className="mt-0.5 h-5 w-5 shrink-0 text-silver-500"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
@@ -35,7 +35,7 @@ export function SubscribeAndSave() {
           <Card padding="lg" className="relative overflow-hidden">
             {/* Coming Soon Overlay Banner */}
             <div className="absolute right-0 top-0 z-10">
-              <div className="bg-gold-500 px-4 py-1.5 text-xs font-bold text-navy-950">
+              <div className="bg-silver-500 px-4 py-1.5 text-xs font-bold text-navy-950">
                 Coming Soon
               </div>
             </div>
@@ -43,7 +43,7 @@ export function SubscribeAndSave() {
             <div className="space-y-8">
               {/* Heading */}
               <div>
-                <h2 className="font-display text-2xl font-bold text-warm-white sm:text-3xl">
+                <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">
                   Subscribe &amp; Save
                 </h2>
                 <p className="mt-2 text-sm text-silver">
