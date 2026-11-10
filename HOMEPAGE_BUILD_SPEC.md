@@ -77,7 +77,7 @@
 - Load all three with `next/font/google`.
 
 ### Logos
-> **Update (Nov 2026):** final wordmark supplied as SVG and now live: `src/assets/gp-wordmark-navy.svg` (white header) and `src/assets/gp-wordmark-white.svg` (navy footer, legacy pages, OG image). Both are transparent; the notch between the P and "lan" is a mask cut-out, so no white fill is baked in. The GP mark for the favicon is still outstanding.
+> **Update (Nov 2026):** final wordmark supplied as SVG and now live: `src/assets/gp-wordmark-navy.svg` (white header) and `src/assets/gp-wordmark-white.svg` (navy footer, legacy pages, OG image). Both are transparent; the notch between the P and "lan" is a mask cut-out, so no white fill is baked in. The GP mark is also live: `src/app/icon.svg`, `src/app/favicon.ico` (16/32/48) and `src/app/apple-icon.png` (180).
 
 Ryan will provide final logo exports later: `{{LOGO_WORDMARK_NAVY}}` (script wordmark, #0C234B, transparent, for the white header), `{{LOGO_WORDMARK_WHITE}}` (script wordmark, #FFFFFF, transparent, for the navy footer), and `{{LOGO_MARK}}` (GP mark for the favicon). SVG preferred.
 
