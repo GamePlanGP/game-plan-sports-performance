@@ -262,7 +262,7 @@ export const hero = {
 - Eyebrow: "On the course"
 - Three outline-only cards (1px `--navy-line`, no fill), each with: silver line icon, scorecard eyebrow, title, one line, benefit tag. Tags: silver outline, uppercase.
   *Revised Nov 3, 2026 (Ryan): Hole 1 = composure / no first-tee jitters; Between clubs = decisiveness; Hole 17 = performance under pressure (not stamina — a second stick will be promoted as optional).*
-  1. Eyebrow "Hole 1 · Tee box" — **The first tee.** (DRAFT) "Everyone's watching. Breathe, pick your target, and swing with a clear head — no stimulant jitters." — Tag: "Supports cognitive control*"
+  1. Eyebrow "Hole 1 · Tee box" — **The first tee.** (DRAFT) "Everyone's watching, but you are calm and focused without any jitters. Execute your confident swing." — Tag: "Supports cognitive control*"
   2. Eyebrow "Approach · Club select" — **Between clubs?** (DRAFT) "7 or 8? Read the yardage, make the call, and commit to it." — Tag: "Supports decisiveness*"
   3. Eyebrow "Hole 17 · 3 ft" — **That 3-footer on 17 for birdie.** (DRAFT) "See the line clearly, trust the read and make your confident stroke." — Tag: "Supports accuracy under pressure*"
 - CTA under the cards: primary button **"Get Clarity+"** → `#buy` (silver border on navy).

@@ -300,7 +300,7 @@ export const moments = {
       eyebrow: "Hole 1 · Tee box",
       title: "The first tee.",
       body: {
-        text: "Everyone's watching. Breathe, pick your target, and swing with a clear head — no stimulant jitters.",
+        text: "Everyone's watching, but you are calm and focused without any jitters. Execute your confident swing.",
         draft: true,
       } as Copy,
       tag: "Supports cognitive control*",
