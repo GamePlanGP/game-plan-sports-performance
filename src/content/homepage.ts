@@ -125,13 +125,13 @@ export const offer = {
 /* -------------------------------------------------------------------------- */
 
 /**
- * The Game Plan Blend. Names and one-line factual descriptors only: no doses,
+ * The Game Plan Focus Blend. Names and one-line factual descriptors only: no doses,
  * no per-ingredient benefits. `confirmed` lists label names in label order once
  * {{FINAL_FORMULA}} is final; until then the page shows placeholder cards.
  */
 export const focusBlend = {
   /** One field so the blend name is a one-line swap. Must match the label. */
-  name: "Game Plan Blend",
+  name: "Game Plan Focus Blend",
   nameMatchesLabel: "{{CONFIRM_BLEND_NAME_MATCHES_LABEL}}",
   totalMg: "{{BLEND_TOTAL_MG}}" as Value,
   formula: "{{FINAL_FORMULA}}",
@@ -194,7 +194,7 @@ export const nsf = {
     eyebrow: "Independently verified",
     heading: { text: "Our recipe is private. What's in it is verified.", draft: true } as Copy,
     intro: {
-      text: "The Game Plan Blend stays our recipe. NSF Certified for Sport® means an independent lab knows exactly what's in Clarity+, and checks it on your behalf.",
+      text: "The Game Plan Focus Blend stays our recipe. NSF Certified for Sport® means an independent lab knows exactly what's in Clarity+, and checks it on your behalf.",
       draft: true,
     } as Copy,
     why: {
@@ -276,7 +276,7 @@ export const hero = {
     draft: true,
   } as Copy,
   subhead: {
-    text: "Built on the full clinical 200mg dose of CognatiQ®, plus our proprietary Game Plan Focus Blend with a measured electrolyte foundation.",
+    text: `Built on the full clinical 200mg dose of CognatiQ®, plus our proprietary ${focusBlend.name} with a measured electrolyte foundation.`,
     draft: true,
     dependsOn: ["{{CONFIRM_DOSE_200MG}}", "{{CONFIRM_NON_STIMULANT}}"],
   } as Copy,

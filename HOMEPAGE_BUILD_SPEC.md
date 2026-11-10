@@ -200,7 +200,7 @@ export const hero = {
    - "5 published clinical studies on CognatiQ®."
 6. Every asterisked claim ties to the FDA disclaimer (footer, and small print under the proof charts).
 7. Write **CognatiQ®** with the ® on first mention in each section.
-8. **Game Plan Blend:** talk about effort and intent ("we didn't stop there," "built to provide exactly what you need when you need it"). Never claim the blend adds results. Banned: "next-level," "amplifies," "boosts CognatiQ®," "synergy." No benefit claims for individual blend ingredients. No individual blend doses.
+8. **Game Plan Focus Blend:** talk about effort and intent ("we didn't stop there," "built to provide exactly what you need when you need it"). Never claim the blend adds results. Banned: "next-level," "amplifies," "boosts CognatiQ®," "synergy." No benefit claims for individual blend ingredients. No individual blend doses.
 9. **No full-disclosure language anywhere:** "No proprietary blends," "every dose," "every other dose," "mystery blend."
 10. **Electrolytes:** restraint, measured doses, a long round. Never lead with hydration. No benefit claims for magnesium or calcium.
 11. **Taste and mix:** show, don't claim. No "best on the market" or superiority line unless it comes from a documented test (6.7b). A taste or mix win never implies the product works better.
@@ -499,13 +499,13 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
 - **Master line:** *Studied first. Then stacked.* Most focus mixes stack instead of study. Clarity+ starts with the full clinical dose, then adds more.
 - **Message order:**
   1. **The proof:** 200mg CognatiQ®, the full clinically studied dose, disclosed.
-  2. **The playbook:** the Game Plan Blend. Proprietary on purpose.
+  2. **The playbook:** the Game Plan Focus Blend. Proprietary on purpose.
   3. **The +:** a measured electrolyte base. Restraint is the message.
   4. **The finish:** taste, mix, color, aroma. Shown, not claimed.
 - Never position on "calm." Never lead with hydration.
 
 ### 9.2 What changed
-- The Focus Blend stays proprietary and becomes the **Game Plan Blend**. All full-disclosure language comes out.
+- The Focus Blend stays proprietary and becomes the **Game Plan Focus Blend**. All full-disclosure language comes out.
 - Expanded claims from FutureCeuticals' Structure/Function Claims sheet and 200mg Dose Claims Dossier. New second proof chart: impulse control.
 - The "+" is the electrolyte base.
 - New Taste & mix section (`#taste`), with competitor comparisons behind a flag.
@@ -531,7 +531,7 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
 ### 9.5 Page changes, top to bottom
 
 **Hero (6.2)**
-- **Subhead (DRAFT):** "Clarity+ supports faster, more accurate decisions under pressure.* Built on the full clinical 200mg dose of CognatiQ®, plus our Game Plan Blend and a measured electrolyte base."
+- **Subhead (DRAFT):** "Clarity+ supports faster, more accurate decisions under pressure.* Built on the full clinical 200mg dose of CognatiQ®, plus our Game Plan Focus Blend and a measured electrolyte base."
 - **Trust row:** unchanged. When `SHOW_NSF_BADGE` is true, the third item becomes "NSF Certified for Sport®." The guarantee stays in the announcement bar and buy box.
 
 **Proof strip (6.3) — built on `/science` per 9.0**
@@ -561,8 +561,8 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
   - "Is that dose in the stick?" → "All of it. Every stick." (`{{CONFIRM_DOSE_200MG}}`)
 - **Three tiers, stacked**, each with a small uppercase label:
   - **Tier 1 — The proof.** CognatiQ® card (full width, 1px navy border, burgundy "200mg"). Body (DRAFT): "The full clinically studied dose. Disclosed. Never shorted to make room for anything else."
-  - **Tier 2 — The playbook.** Game Plan Blend card (white, 1px `--line`).
-    - Name: `focusBlend.name` = "Game Plan Blend" (DRAFT, one field). Must match the label: `{{CONFIRM_BLEND_NAME_MATCHES_LABEL}}`.
+  - **Tier 2 — The playbook.** Game Plan Focus Blend card (white, 1px `--line`).
+    - Name: `focusBlend.name` = "Game Plan Focus Blend" (DRAFT, one field). Must match the label: `{{CONFIRM_BLEND_NAME_MATCHES_LABEL}}`.
     - Total weight: `{{BLEND_TOTAL_MG}}` mg, as declared on the label.
     - Pull line (Cormorant Garamond, DRAFT): "You don't publish the details to your game plan, neither do we." Body (DRAFT): "Our own formula, built to provide exactly what you need when you need it."
     - Roster cards: ingredient name + one-line descriptor. **No doses. No benefit claims.** 2 columns on mobile, 3 on desktop. Only ingredients confirmed in `{{FINAL_FORMULA}}`, in label order; until then, 6 placeholder cards. Descriptors (DRAFT, factual only): D-Ribose — A naturally occurring sugar · Alpha Lipoic Acid — A compound the body also makes on its own · N-Acetyl Cysteine — A form of the amino acid cysteine (`{{CONFIRM_NAC_STATUS}}`) · Beet root powder — A whole-food root powder · Alpha-GPC — A source of choline · Rhodiola rosea — A botanical root extract · L-Theanine — An amino acid found in tea.
@@ -584,7 +584,7 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
 >
 > I wanted something built for decision-making under pressure. Not caffeine. Not a guess. A clinically studied ingredient at its full studied dose.
 >
-> That could have been enough. I kept going: our own Game Plan Blend, and a measured electrolyte base.
+> That could have been enough. I kept going: our own Game Plan Focus Blend, and a measured electrolyte base.
 >
 > That's Clarity+. Try it for your next few rounds. If it's not for you, I'll make it right.
 
@@ -593,8 +593,8 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
 
 **FAQ (6.11)**
 - **"Is it safe for tournament play?"** When `SHOW_NSF_BADGE`: (DRAFT) "Clarity+ is NSF Certified for Sport®, tested for `{{NSF_SUBSTANCE_COUNT}}`+ substances banned in sport. Check the listing: `{{NSF_LISTING_URL}}`." Otherwise `{{COMPETITION_SAFE_STATEMENT}}`.
-- **"What's in it?"** (DRAFT) "The full clinical 200mg dose of CognatiQ®, our Game Plan Blend, and a measured electrolyte base. Every ingredient is on the label." + link to `#inside`.
-- **New, after "What's in it?": "Why is the Game Plan Blend proprietary?"** (DRAFT) "Every ingredient is on the label, along with the blend's total weight. The exact recipe stays ours. You don't publish the details to your game plan, neither do we. What we always publish: the full clinical 200mg dose of CognatiQ®." When `SHOW_NSF_BADGE`, append: "And NSF Certified for Sport® independently verifies what's in it."
+- **"What's in it?"** (DRAFT) "The full clinical 200mg dose of CognatiQ®, our Game Plan Focus Blend, and a measured electrolyte base. Every ingredient is on the label." + link to `#inside`.
+- **New, after "What's in it?": "Why is the Game Plan Focus Blend proprietary?"** (DRAFT) "Every ingredient is on the label, along with the blend's total weight. The exact recipe stays ours. You don't publish the details to your game plan, neither do we. What we always publish: the full clinical 200mg dose of CognatiQ®." When `SHOW_NSF_BADGE`, append: "And NSF Certified for Sport® independently verifies what's in it."
 - **New: "How does it taste?"** (DRAFT) "`{{FLAVORS}}`, and not too sweet: `{{SUGAR_G}}`g sugar, sweetened with `{{SWEETENER}}`. Mixes in seconds in plain water."
 - "Round days only, or every day?" stays `{{USAGE_FREQUENCY_GUIDANCE}}`. Note: the study showed results within an hour of one dose *and* sustained improvement with daily use over 28 days. Daily use also supports the subscription.
 - FAQPage JSON-LD picks up the new questions automatically (answers still holding placeholders are left out until filled).
@@ -605,7 +605,7 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
 ### 9.8 NSF Certified for Sport® (Nov 4, gated by `SHOW_NSF_BADGE`)
 - **Hero:** under the primary CTA, a badge: NSF mark `{{NSF_MARK}}` + "NSF Certified for Sport®" + (DRAFT) "Independently tested for substances banned in sport." + text link "What that means" → `#nsf`.
 - **Section `#nsf`** (white, after Founder's note, before Reviews). All copy DRAFT, pending `{{CONFIRM_NSF_COPY}}`:
-  - Eyebrow "Independently verified." Heading: "Our recipe is private. What's in it is verified." Intro: "The Game Plan Blend stays our recipe. NSF Certified for Sport® means an independent lab knows exactly what's in Clarity+, and checks it on your behalf." Mark + "Look us up" → `{{NSF_LISTING_URL}}`.
+  - Eyebrow "Independently verified." Heading: "Our recipe is private. What's in it is verified." Intro: "The Game Plan Focus Blend stays our recipe. NSF Certified for Sport® means an independent lab knows exactly what's in Clarity+, and checks it on your behalf." Mark + "Look us up" → `{{NSF_LISTING_URL}}`.
   - **Why it matters on the course:** "If you play competitively, what goes in your bottle matters as much as what's in your bag. NSF Certified for Sport® is the supplement standard athletes and sports organizations look for when banned substances are on the line." + optional "Recommended by `{{CONFIRM_NSF_PGA_WORDING}}`."
   - **What the testing checks** (4 tiles): Banned substances — "Screened for `{{NSF_SUBSTANCE_COUNT}}`+ substances banned in sport." · Label accuracy — "What's on the label is what's in the stick." · Contaminants — "Tested for contaminants such as heavy metals." · Ongoing audits — "The facility is audited and the product is retested on an ongoing basis."
   - **What that says about Clarity+** (navy-outline panel): "Clean: nothing in it that shouldn't be." · "Honest: the label matches the product." · "Consistent: checked again, not just once."
@@ -617,7 +617,7 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
 - [ ] No full-disclosure language renders anywhere on the page.
 - [ ] Both proof charts render. Placebo sits beside every CognatiQ® figure. The impulse-chart timepoint tag shows until confirmed.
 - [ ] Burgundy fills and figures appear only on CognatiQ® figures (both charts, 200mg card). None in `#taste`.
-- [ ] Game Plan Blend shows ingredient names in label order and total weight. No individual doses. No per-ingredient benefit claims.
+- [ ] Game Plan Focus Blend shows ingredient names in label order and total weight. No individual doses. No per-ingredient benefit claims.
 - [ ] With `SHOW_NSF_BADGE` false, the NSF mark and the word "certified" appear nowhere on the rendered page. With it true, the tile, trust-row item, FAQ answers, and listing link appear.
 - [ ] Comparisons stay hidden unless `SHOW_COMPARISONS` is true. Headlines and footnotes are generated from data. Real competitor names appear only when `NAME_COMPETITORS` is true.
 - [ ] Golf moments shows four cards correctly at 375px and 1440px.
