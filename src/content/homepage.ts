@@ -308,7 +308,7 @@ export const moments = {
     {
       icon: "split",
       eyebrow: "Par 5 · Second shot",
-      title: "Go or lay up.",
+      title: "Feel like you can reach in 2 but not positive?",
       body: { text: "The hero shot is calling. Stick to the game plan.", draft: true } as Copy,
       tag: "Supports cognitive impulse control*",
     },
@@ -316,7 +316,7 @@ export const moments = {
       icon: "clubs",
       eyebrow: "Approach · Club select",
       title: "Between clubs.",
-      body: { text: "Hold the number, the wind, the line. Choose, commit, swing.", draft: true } as Copy,
+      body: { text: "Every yardage feels great. Choose the club and commit easily.", draft: true } as Copy,
       tag: "Supports working memory*",
     },
     {
