@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { brand, faq, seo } from "@/content/homepage";
 import { SITE_URL } from "@/lib/site";
-import logo from "@/assets/gp-wordmark-navy.png";
+import logo from "@/assets/gp-wordmark-navy.svg";
 import { isPlaceholder } from "@/lib/home";
 import { Hero } from "@/components/home/Hero";
 import { GolfMoments } from "@/components/home/GolfMoments";

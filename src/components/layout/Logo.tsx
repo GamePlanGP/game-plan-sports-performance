@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import logo from "@/components/layout/game-plan-logo.png";
+import logo from "@/assets/gp-wordmark-white.svg";
 
 interface LogoProps {
   className?: string;

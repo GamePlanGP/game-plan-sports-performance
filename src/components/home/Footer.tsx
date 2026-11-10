@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { FDA_DISCLAIMER, brand, footer } from "@/content/homepage";
-import logo from "@/assets/gp-wordmark-white.png";
+import logo from "@/assets/gp-wordmark-white.svg";
 import { Txt } from "./ui/Txt";
 import { isPlaceholder, placeholderId } from "@/lib/home";
 import { Placeholder } from "./ui/Placeholder";

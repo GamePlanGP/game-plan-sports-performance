@@ -14,8 +14,8 @@ const SILVER = "#C4CED4";
 const BURGUNDY = "#8C1515";
 
 export default function OpengraphImage() {
-  const wordmark = readFileSync(join(process.cwd(), "src/assets/gp-wordmark-white.png"));
-  const logoSrc = `data:image/png;base64,${wordmark.toString("base64")}`;
+  const wordmark = readFileSync(join(process.cwd(), "src/assets/gp-wordmark-white.svg"));
+  const logoSrc = `data:image/svg+xml;base64,${wordmark.toString("base64")}`;
 
   return new ImageResponse(
     (
@@ -32,7 +32,7 @@ export default function OpengraphImage() {
           borderTop: `10px solid ${BURGUNDY}`,
         }}
       >
-        <img src={logoSrc} width={199} height={110} alt="" />
+        <img src={logoSrc} width={196} height={120} alt="" />
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ width: 64, height: 4, background: BURGUNDY, marginBottom: 28 }} />
           <div style={{ fontSize: 92, fontWeight: 700, letterSpacing: "0.04em", lineHeight: 1 }}>CLARITY+</div>

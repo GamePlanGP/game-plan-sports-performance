@@ -77,6 +77,8 @@
 - Load all three with `next/font/google`.
 
 ### Logos
+> **Update (Nov 2026):** final wordmark supplied as SVG and now live: `src/assets/gp-wordmark-navy.svg` (white header) and `src/assets/gp-wordmark-white.svg` (navy footer, legacy pages, OG image). Both are transparent; the notch between the P and "lan" is a mask cut-out, so no white fill is baked in. The GP mark for the favicon is still outstanding.
+
 Ryan will provide final logo exports later: `{{LOGO_WORDMARK_NAVY}}` (script wordmark, #0C234B, transparent, for the white header), `{{LOGO_WORDMARK_WHITE}}` (script wordmark, #FFFFFF, transparent, for the navy footer), and `{{LOGO_MARK}}` (GP mark for the favicon). SVG preferred.
 
 **For Phase 1:** look for the existing GamePlan script wordmark in the repo. If it's a single-color image on a transparent background, make navy (#0C234B) and white versions from it. If you can't find one, or can't recolor it cleanly, show a labeled placeholder box at logo size. Never use gold versions.
