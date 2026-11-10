@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { brand, nav } from "@/content/homepage";
-import logo from "@/assets/gp-wordmark-navy.png";
+import logo from "@/assets/gp-wordmark-navy.svg";
 import { LaunchCta } from "./ui/LaunchCta";
 import { CloseIcon, MenuIcon } from "./ui/Icons";
 

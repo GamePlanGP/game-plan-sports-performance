@@ -693,7 +693,7 @@ export const footer = {
  * asterisks in the snippet). Title ~60 chars max, description ~155.
  */
 export const seo = {
-  title: { text: "Clarity+ | Decision-Making Drink Mix for Golfers", draft: true } as Copy,
+  title: { text: "Clarity+ | Ultimate Cognitive Drink Mix", draft: true } as Copy,
   description: {
     text: "A non-stimulant drink mix for golfers, built around a clinically studied 200mg dose of CognatiQ®.",
     draft: true,
