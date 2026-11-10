@@ -9,9 +9,9 @@ export const alt = seo.shareImageAlt;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-const NAVY = "#002D62";
+const NAVY = "#0C234B";
 const SILVER = "#C4CED4";
-const BURGUNDY = "#862633";
+const BURGUNDY = "#8C1515";
 
 export default function OpengraphImage() {
   const wordmark = readFileSync(join(process.cwd(), "src/assets/gp-wordmark-white.png"));

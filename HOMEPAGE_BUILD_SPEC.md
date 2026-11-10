@@ -31,17 +31,17 @@
 ```css
 :root {
   /* Brand */
-  --navy: #002D62;      /* primary: headlines, body text, logo, outlines, navy bands */
+  --navy: #0C234B;      /* primary: headlines, body text, logo, outlines, navy bands */
   --silver: #C4CED4;    /* primary: button fills, tints, hairlines, accents on navy */
-  --burgundy: #862633;  /* highlight: clinical proof only */
+  --burgundy: #8C1515;  /* highlight: clinical proof only */
   --white: #FFFFFF;     /* foundation */
 
   /* Derived tints of the brand colors (not new colors) */
   --tint: #F0F3F4;      /* silver at 25% on white: alternating light sections */
   --tint-2: #E4E9EC;    /* silver at 45%: skeleton bars, image placeholders */
   --line: #D3DADF;      /* silver at 75%: hairlines + card borders on light sections */
-  --ink-soft: #4C6C91;  /* navy at 70%: secondary text on white/tint */
-  --navy-2: #0A3A72;    /* raised surface on navy (success panel, placeholder stripes) */
+  --ink-soft: #556581;  /* navy at 70%: secondary text on white/tint */
+  --navy-2: #1A335D;    /* raised surface on navy (success panel, placeholder stripes) */
   --navy-line: rgba(196, 206, 212, .26); /* hairlines + card outlines on navy */
 }
 ```
@@ -58,14 +58,14 @@
 ### Contrast rules (checked)
 | Pairing | Ratio | Use |
 |---|---|---|
-| Navy on white | 13.5:1 | Default text |
-| White on navy | 13.5:1 | Text on navy bands |
-| Navy on silver | 8.5:1 | Button labels |
-| Silver on navy | 8.5:1 | Secondary text, icons, tags on navy |
-| Burgundy on white / tint | 9.0:1 / 8.1:1 | Proof figures only |
-| `--ink-soft` on white / tint | 5.4:1 / 4.9:1 | Secondary text on light sections |
+| Navy on white | 15.5:1 | Default text |
+| White on navy | 15.5:1 | Text on navy bands |
+| Navy on silver | 9.7:1 | Button labels |
+| Silver on navy | 9.7:1 | Secondary text, icons, tags on navy |
+| Burgundy on white / tint | 9.4:1 / 8.4:1 | Proof figures only |
+| `--ink-soft` on white / tint | 5.9:1 / 5.3:1 | Secondary text on light sections |
 | **Silver on white** | **1.6:1** | **Never as text.** Fills and hairlines only. A silver button on a light section always has its navy outline. |
-| **Burgundy on navy** | **1.5:1** | **Never for text or fills.** Burgundy sits on white or `--tint`; the one rule beside navy is the 2px line under the announcement bar. |
+| **Burgundy on navy** | **1.6:1** | **Never for text or fills.** Burgundy sits on white or `--tint`; the one rule beside navy is the 2px line under the announcement bar. |
 
 - Focus rings: 2px navy on light sections, 2px white on navy sections.
 
@@ -77,9 +77,9 @@
 - Load all three with `next/font/google`.
 
 ### Logos
-Ryan will provide final logo exports later: `{{LOGO_WORDMARK_NAVY}}` (script wordmark, #002D62, transparent, for the white header), `{{LOGO_WORDMARK_WHITE}}` (script wordmark, #FFFFFF, transparent, for the navy footer), and `{{LOGO_MARK}}` (GP mark for the favicon). SVG preferred.
+Ryan will provide final logo exports later: `{{LOGO_WORDMARK_NAVY}}` (script wordmark, #0C234B, transparent, for the white header), `{{LOGO_WORDMARK_WHITE}}` (script wordmark, #FFFFFF, transparent, for the navy footer), and `{{LOGO_MARK}}` (GP mark for the favicon). SVG preferred.
 
-**For Phase 1:** look for the existing GamePlan script wordmark in the repo. If it's a single-color image on a transparent background, make navy (#002D62) and white versions from it. If you can't find one, or can't recolor it cleanly, show a labeled placeholder box at logo size. Never use gold versions.
+**For Phase 1:** look for the existing GamePlan script wordmark in the repo. If it's a single-color image on a transparent background, make navy (#0C234B) and white versions from it. If you can't find one, or can't recolor it cleanly, show a labeled placeholder box at logo size. Never use gold versions.
 
 ### Look and feel
 Clean, high-end, heritage. White space does the work.
@@ -452,7 +452,7 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
 | `PRO_TESTIMONIALS` | Pro quotes + written permission | Reviews | When ready |
 | `MIN_REVIEWS_FOR_RATING` | Review count before showing a rating | Hero, Buy | Phase 3 |
 | **Media** | | | |
-| `LOGO_WORDMARK_NAVY` | Script wordmark in #002D62, transparent (stopgap allowed — see Section 3) | Header | Phase 3 |
+| `LOGO_WORDMARK_NAVY` | Script wordmark in #0C234B, transparent (stopgap allowed — see Section 3) | Header | Phase 3 |
 | `LOGO_WORDMARK_WHITE` | Script wordmark in #FFFFFF, transparent (stopgap allowed) | Footer | Phase 3 |
 | `LOGO_MARK` | GP mark in the new palette | Favicon | Phase 3 |
 | `HERO_IMAGE` | Hero photo, desktop + mobile crops | Hero | Phase 3 |

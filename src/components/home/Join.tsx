@@ -97,7 +97,7 @@ export function Join() {
                 type="checkbox"
                 checked={sms}
                 onChange={(e) => setSms(e.target.checked)}
-                className="mt-1 h-4 w-4 shrink-0 rounded-hp accent-[#c4ced4]"
+                className="mt-1 h-4 w-4 shrink-0 rounded-hp accent-[#C4CED4]"
               />
               <span>
                 <Txt v={join.smsConsent} />

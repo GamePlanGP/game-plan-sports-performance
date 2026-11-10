@@ -86,17 +86,17 @@ html {
    ------------------------------------------------------------------ */
 :root {
   /* Brand */
-  --navy: #002d62;
-  --silver: #c4ced4;
-  --burgundy: #862633;
+  --navy: #0C234B;
+  --silver: #C4CED4;
+  --burgundy: #8C1515;
   --white: #ffffff;
 
   /* Derived tints of the brand colors (not new colors) */
   --tint: #f0f3f4;
   --tint-2: #e4e9ec;
   --line: #d3dadf;
-  --ink-soft: #4c6c91;
-  --navy-2: #0a3a72;
+  --ink-soft: #556581;
+  --navy-2: #1A335D;
   --navy-line: rgba(196, 206, 212, 0.26);
 }
 
