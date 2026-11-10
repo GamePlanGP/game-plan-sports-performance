@@ -315,16 +315,16 @@ export const moments = {
     {
       icon: "clubs",
       eyebrow: "Approach · Club select",
-      title: "Between clubs.",
+      title: "Between clubs?",
       body: { text: "Every yardage feels great. Choose the club and commit easily.", draft: true } as Copy,
       tag: "Supports working memory*",
     },
     {
       icon: "hole",
       eyebrow: "Hole 17 · 3 ft",
-      title: "The 3-footer on 17.",
+      title: "That 3-footer on 17 for birdie.",
       body: {
-        text: "Match on the line. Read the break, trust your line, and make a confident stroke.",
+        text: "See the line clearly, trust the read and make your confident stroke.",
         draft: true,
       } as Copy,
       tag: "Supports accuracy under pressure*",

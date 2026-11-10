@@ -263,8 +263,8 @@ export const hero = {
 - Three outline-only cards (1px `--navy-line`, no fill), each with: silver line icon, scorecard eyebrow, title, one line, benefit tag. Tags: silver outline, uppercase.
   *Revised Nov 3, 2026 (Ryan): Hole 1 = composure / no first-tee jitters; Between clubs = decisiveness; Hole 17 = performance under pressure (not stamina — a second stick will be promoted as optional).*
   1. Eyebrow "Hole 1 · Tee box" — **The first tee.** (DRAFT) "Everyone's watching. Breathe, pick your target, and swing with a clear head — no stimulant jitters." — Tag: "Supports cognitive control*"
-  2. Eyebrow "Approach · Club select" — **Between clubs.** (DRAFT) "7 or 8? Read the yardage, make the call, and commit to it." — Tag: "Supports decisiveness*"
-  3. Eyebrow "Hole 17 · 3 ft" — **The 3-footer on 17.** (DRAFT) "Match on the line. Read the break, trust your line, and make a confident stroke." — Tag: "Supports accuracy under pressure*"
+  2. Eyebrow "Approach · Club select" — **Between clubs?** (DRAFT) "7 or 8? Read the yardage, make the call, and commit to it." — Tag: "Supports decisiveness*"
+  3. Eyebrow "Hole 17 · 3 ft" — **That 3-footer on 17 for birdie.** (DRAFT) "See the line clearly, trust the read and make your confident stroke." — Tag: "Supports accuracy under pressure*"
 - CTA under the cards: primary button **"Get Clarity+"** → `#buy` (silver border on navy).
 - **Why:** translates lab language into what golfers feel on the course.
 
@@ -485,7 +485,7 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
 
 ### 9.0 Ryan's decisions on conflicts with the build (these win)
 - **Proof charts live on `/science` only.** The homepage has no clinical section (removed Nov 3). Everything in 9.5 "Proof strip" is built on `/science`: both charts, the four stat tiles, "How it works," the footnote, and the Robinson et al. (2024) citation.
-- **Golf moments copy:** "The first tee" and "The 3-footer on 17" keep the Nov 3 copy in 6.4, **not** the v1.0 lines the update repeated. "Four hours in" is out. The new "Feel like you can reach in 2 but not positive?" card and the new "Between clubs" line come from 9.5. "Between clubs" is tagged "Supports working memory*" so it doesn't duplicate Hole 17's accuracy tag.
+- **Golf moments copy:** "The first tee" and "That 3-footer on 17 for birdie" keep the Nov 3 copy in 6.4, **not** the v1.0 lines the update repeated. "Four hours in" is out. The new "Feel like you can reach in 2 but not positive?" card and the new "Between clubs" line come from 9.5. "Between clubs" is tagged "Supports working memory*" so it doesn't duplicate Hole 17's accuracy tag.
 - **Guarantee:** "Better decision-making or your money back" stays as DRAFT pending FutureCeuticals' review.
 - **Burgundy accent lines (Oct 20) stay** on the other light sections. Per 9.4, none in `#taste`: it uses silver hairlines and a navy heading rule instead.
 - **NSF (Nov 4):** certification arrives at launch. The NSF hero badge and the new `#nsf` section (9.8) are built now behind `SHOW_NSF_BADGE` (off) and switch on with the certificate. The hero trust row keeps the guarantee, since NSF has its own hero badge (overrides 9.5 Hero). The Quality section's NSF tile is replaced by `#nsf`.
@@ -547,8 +547,8 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
 **Golf moments (6.4)** — four cards: 1 column at 375px, 2×2 at 768px, 4 across at 1280px+. Copy per 9.0:
 1. "Hole 1 · Tee box" — **The first tee.** (Nov 3 copy)
 2. **New:** "Par 5 · Second shot" — **Feel like you can reach in 2 but not positive?** (DRAFT) "The hero shot is calling. Stick to the game plan." — Tag: "Supports cognitive impulse control*"
-3. "Approach · Club select" — **Between clubs.** (DRAFT) "Every yardage feels great. Choose the club and commit easily." — Tag: "Supports working memory*"
-4. "Hole 17 · 3 ft" — **The 3-footer on 17.** (Nov 3 copy)
+3. "Approach · Club select" — **Between clubs?** (DRAFT) "Every yardage feels great. Choose the club and commit easily." — Tag: "Supports working memory*"
+4. "Hole 17 · 3 ft" — **That 3-footer on 17 for birdie.** (Nov 3 copy)
 
 **Buy box (6.5)**
 - **Price anchor (DRAFT):** under the prices, `{{PRICE_ANCHOR_LINE}}` (must not assume one stick per round; see 9.0). Fill once pricing locks. Remove if it isn't true.
