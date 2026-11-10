@@ -309,7 +309,7 @@ export const moments = {
       icon: "split",
       eyebrow: "Par 5 · Second shot",
       title: "Feel like you can reach in 2 but not positive?",
-      body: { text: "The hero shot is calling. Stick to the game plan.", draft: true } as Copy,
+      body: { text: "No indecision, stick to the Game Plan easily and execute the correct shot.", draft: true } as Copy,
       tag: "Supports cognitive impulse control*",
     },
     {

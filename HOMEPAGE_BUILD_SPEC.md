@@ -546,7 +546,7 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
 
 **Golf moments (6.4)** — four cards: 1 column at 375px, 2×2 at 768px, 4 across at 1280px+. Copy per 9.0:
 1. "Hole 1 · Tee box" — **The first tee.** (Nov 3 copy)
-2. **New:** "Par 5 · Second shot" — **Feel like you can reach in 2 but not positive?** (DRAFT) "The hero shot is calling. Stick to the game plan." — Tag: "Supports cognitive impulse control*"
+2. **New:** "Par 5 · Second shot" — **Feel like you can reach in 2 but not positive?** (DRAFT) "No indecision, stick to the Game Plan easily and execute the correct shot." — Tag: "Supports cognitive impulse control*"
 3. "Approach · Club select" — **Between clubs?** (DRAFT) "Every yardage feels great. Choose the club and commit easily." — Tag: "Supports working memory*"
 4. "Hole 17 · 3 ft" — **That 3-footer on 17 for birdie.** (Nov 3 copy)
 
