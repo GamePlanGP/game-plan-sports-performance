@@ -65,7 +65,7 @@ export function ProductHero() {
                     className={cn(
                       "overflow-hidden rounded-xl border-2 transition-all duration-200",
                       activeThumb === idx
-                        ? "border-gold-500 ring-2 ring-gold-500/20"
+                        ? "border-silver-500 ring-2 ring-silver-500/20"
                         : "border-transparent hover:border-white/20"
                     )}
                   >
@@ -86,11 +86,11 @@ export function ProductHero() {
             <div className="flex flex-col gap-6">
               {/* Coming Soon Badge */}
               <div>
-                <Badge variant="gold">Coming Soon</Badge>
+                <Badge variant="accent">Coming Soon</Badge>
               </div>
 
               {/* Product Name */}
-              <h1 className="text-3xl font-bold text-warm-white sm:text-4xl lg:text-5xl">
+              <h1 className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
                 <ProductName />
               </h1>
 
@@ -99,7 +99,7 @@ export function ProductHero() {
                 <StarRating rating={PRODUCT.rating} />
                 <a
                   href="#reviews"
-                  className="text-sm text-silver transition-colors hover:text-gold-500"
+                  className="text-sm text-silver transition-colors hover:text-silver-500"
                 >
                   {PRODUCT.rating} ({PRODUCT.reviewCount} reviews)
                 </a>
@@ -111,7 +111,7 @@ export function ProductHero() {
               </p>
 
               {/* Format + Count */}
-              <div className="flex items-center gap-4 text-sm text-warm-white">
+              <div className="flex items-center gap-4 text-sm text-white">
                 <span className="font-medium">
                   {PRODUCT.format} &middot; {PRODUCT.count}
                 </span>
@@ -139,9 +139,9 @@ export function ProductHero() {
                   {PRODUCT.trustBadges.map((badge) => (
                     <span
                       key={badge}
-                      className="inline-flex items-center gap-1.5 rounded-full border border-gold-500/20 bg-gold-500/10 px-3 py-1.5 text-xs font-medium text-gold-400"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-silver-500/20 bg-silver-500/10 px-3 py-1.5 text-xs font-medium text-silver-400"
                     >
-                      <CheckIcon className="h-3.5 w-3.5 text-gold-500" />
+                      <CheckIcon className="h-3.5 w-3.5 text-silver-500" />
                       {badge}
                     </span>
                   ))}

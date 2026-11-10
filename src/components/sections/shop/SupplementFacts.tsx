@@ -7,9 +7,9 @@ export function SupplementFacts() {
       <Container size="narrow">
         <div className="mx-auto max-w-md">
           {/* Supplement Facts Label */}
-          <div className="overflow-hidden rounded-lg border-2 border-charcoal bg-warm-white">
+          <div className="overflow-hidden rounded-lg border-2 border-charcoal bg-white">
             {/* Header */}
-            <div className="border-b-8 border-charcoal bg-warm-white px-4 pb-1 pt-2">
+            <div className="border-b-8 border-charcoal bg-white px-4 pb-1 pt-2">
               <h2 className="text-2xl font-black tracking-tight text-charcoal">
                 Supplement Facts
               </h2>

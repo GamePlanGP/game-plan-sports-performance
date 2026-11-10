@@ -12,7 +12,7 @@ export function AnnouncementBar() {
   }
 
   return (
-    <div className="relative bg-gold-500 py-2 text-navy-950">
+    <div className="relative bg-silver-500 py-2 text-navy-950">
       <div className="mx-auto flex max-w-7xl items-center justify-center px-4 sm:px-6 lg:px-8">
         <p className="pr-8 text-center text-sm font-medium">
           <span aria-hidden="true">&#10022; </span>

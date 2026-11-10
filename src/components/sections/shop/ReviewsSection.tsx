@@ -29,7 +29,7 @@ function RatingSummary() {
     <div className="flex flex-col items-center gap-8 sm:flex-row sm:items-start">
       {/* Average Rating */}
       <div className="flex flex-col items-center text-center">
-        <span className="text-6xl font-bold text-warm-white">
+        <span className="text-6xl font-bold text-white">
           {PRODUCT.rating}
         </span>
         <StarRating rating={PRODUCT.rating} size="md" className="mt-2" />
@@ -47,7 +47,7 @@ function RatingSummary() {
             </span>
             <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-white/10">
               <div
-                className="h-full rounded-full bg-gold-500 transition-all duration-500"
+                className="h-full rounded-full bg-silver-500 transition-all duration-500"
                 style={{ width: `${percentage}%` }}
               />
             </div>
@@ -93,7 +93,7 @@ function ReviewCard({
         </div>
 
         {/* Title */}
-        <h3 className="font-semibold text-warm-white">{review.title}</h3>
+        <h3 className="font-semibold text-white">{review.title}</h3>
 
         {/* Date */}
         <p className="text-xs text-silver">
@@ -106,7 +106,7 @@ function ReviewCard({
         </p>
 
         {/* Reviewer Name */}
-        <p className="text-sm font-medium text-warm-white">{review.name}</p>
+        <p className="text-sm font-medium text-white">{review.name}</p>
       </div>
     </Card>
   );
@@ -153,7 +153,7 @@ export function ReviewsSection() {
                 Write a Review
               </Button>
               <Badge
-                variant="gold"
+                variant="accent"
                 className="absolute -right-3 -top-3"
               >
                 Soon

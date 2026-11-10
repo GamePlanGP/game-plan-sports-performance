@@ -15,7 +15,7 @@ const categoryToKey: Record<string, string> = {
 const pillarIcons: Record<string, React.ReactNode> = {
   brain: (
     <svg
-      className="h-10 w-10 text-gold-400"
+      className="h-10 w-10 text-silver-400"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
@@ -35,7 +35,7 @@ const pillarIcons: Record<string, React.ReactNode> = {
   ),
   droplet: (
     <svg
-      className="h-10 w-10 text-gold-400"
+      className="h-10 w-10 text-silver-400"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
@@ -50,7 +50,7 @@ const pillarIcons: Record<string, React.ReactNode> = {
   ),
   leaf: (
     <svg
-      className="h-10 w-10 text-gold-400"
+      className="h-10 w-10 text-silver-400"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
@@ -123,7 +123,7 @@ export function ScienceBehind() {
                     <ul className="mt-6 flex-1 space-y-3 border-t border-white/10 pt-6">
                       {categoryIngredients.map((ing) => (
                         <li key={ing.name} className="flex items-center gap-3">
-                          <span className="flex h-2 w-2 shrink-0 rounded-full bg-gold-400" />
+                          <span className="flex h-2 w-2 shrink-0 rounded-full bg-silver-400" />
                           <span className="text-sm text-white/80">
                             {ing.name}
                             <span className="ml-1.5 text-xs text-white/40">
@@ -138,7 +138,7 @@ export function ScienceBehind() {
                   {/* Plus sign connector between pillars (visible on md+) */}
                   {!isLast && (
                     <div className="hidden items-center md:flex">
-                      <div className="flex h-10 w-10 -mr-5 ml-1 items-center justify-center rounded-full border border-gold-500/30 bg-navy-900 text-xl font-bold text-gold-400 lg:-mr-3 lg:ml-3">
+                      <div className="flex h-10 w-10 -mr-5 ml-1 items-center justify-center rounded-full border border-silver-500/30 bg-navy-900 text-xl font-bold text-silver-400 lg:-mr-3 lg:ml-3">
                         +
                       </div>
                     </div>
@@ -147,7 +147,7 @@ export function ScienceBehind() {
                   {/* Plus sign connector for mobile (between stacked cards) */}
                   {!isLast && (
                     <div className="flex items-center justify-center md:hidden">
-                      <div className="absolute -bottom-3 left-1/2 z-10 flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full border border-gold-500/30 bg-navy-900 text-lg font-bold text-gold-400">
+                      <div className="absolute -bottom-3 left-1/2 z-10 flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full border border-silver-500/30 bg-navy-900 text-lg font-bold text-silver-400">
                         +
                       </div>
                     </div>
@@ -161,7 +161,7 @@ export function ScienceBehind() {
         {/* Conclusion: equals peak performance */}
         <FadeIn direction="up" delay={0.4}>
           <div className="mt-16 text-center">
-            <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full border-2 border-gold-500 bg-gold-500/10 text-2xl font-bold text-gold-400">
+            <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full border-2 border-silver-500 bg-silver-500/10 text-2xl font-bold text-silver-400">
               =
             </div>
             <h3 className="font-display text-3xl font-bold text-white sm:text-4xl">
@@ -172,7 +172,7 @@ export function ScienceBehind() {
               get more than the sum of their parts — you get a competitive edge
               that lasts the entire competition.
             </p>
-            <div className="mx-auto mt-6 h-px w-24 bg-gradient-to-r from-transparent via-gold-500 to-transparent" />
+            <div className="mx-auto mt-6 h-px w-24 bg-gradient-to-r from-transparent via-silver-500 to-transparent" />
           </div>
         </FadeIn>
       </Container>

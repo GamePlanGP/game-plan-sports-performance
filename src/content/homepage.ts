@@ -271,8 +271,12 @@ export const announcement = {
 export const hero = {
   eyebrow: "Clarity+ by Game Plan Sports Performance",
   headline: { text: "Commit to every shot.", draft: true } as Copy,
+  lead: {
+    text: "Remember the round where everything clicked? Clear target. No second-guessing. That’s the zone. Clarity+ supports the focus and decisiveness it’s built on.*",
+    draft: true,
+  } as Copy,
   subhead: {
-    text: `Clarity+ supports faster, more accurate decisions under pressure.* Built on the full clinical 200mg dose of CognatiQ®, plus our ${focusBlend.name} and a measured electrolyte base.`,
+    text: "Built on the full clinical 200mg dose of CognatiQ®, plus our proprietary Game Plan Focus Blend with a measured electrolyte foundation.",
     draft: true,
     dependsOn: ["{{CONFIRM_DOSE_200MG}}", "{{CONFIRM_NON_STIMULANT}}"],
   } as Copy,

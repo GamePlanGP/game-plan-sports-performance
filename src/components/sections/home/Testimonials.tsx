@@ -71,7 +71,7 @@ export function Testimonials() {
           aria-label="Scroll left"
         >
           <svg
-            className="h-5 w-5 text-warm-white"
+            className="h-5 w-5 text-white"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -96,7 +96,7 @@ export function Testimonials() {
           aria-label="Scroll right"
         >
           <svg
-            className="h-5 w-5 text-warm-white"
+            className="h-5 w-5 text-white"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -130,12 +130,12 @@ export function Testimonials() {
             >
               <Card hover padding="lg" className="flex h-full flex-col">
                 <StarRating rating={testimonial.rating} />
-                <blockquote className="mt-4 flex-1 text-warm-white leading-relaxed">
+                <blockquote className="mt-4 flex-1 text-white leading-relaxed">
                   &ldquo;{testimonial.text}&rdquo;
                 </blockquote>
                 <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-4">
                   <div>
-                    <p className="font-semibold text-warm-white">
+                    <p className="font-semibold text-white">
                       {testimonial.name}
                     </p>
                     <p className="text-sm text-silver">

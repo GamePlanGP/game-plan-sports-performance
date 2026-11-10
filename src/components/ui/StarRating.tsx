@@ -24,7 +24,7 @@ function Star({
   if (fill === "full") {
     return (
       <svg
-        className={cn(sizeClass, "text-gold-500")}
+        className={cn(sizeClass, "text-silver-500")}
         viewBox="0 0 20 20"
         fill="currentColor"
         aria-hidden="true"
@@ -53,7 +53,7 @@ function Star({
         <path
           d={starPath}
           fill="currentColor"
-          className="text-gold-500"
+          className="text-silver-500"
           clipPath={`url(#${clipId})`}
         />
       </svg>

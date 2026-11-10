@@ -58,7 +58,7 @@ export const INGREDIENTS = [
     description:
       "Clinically shown to increase BDNF (Brain-Derived Neurotrophic Factor) by up to 143%. Enhances learning, memory, and cognitive processing speed.",
     benefits: ["Enhanced focus", "Improved memory", "Faster decision-making"],
-    color: "gold",
+    color: "silver",
   },
   {
     name: "Alpha-GPC",
@@ -69,7 +69,7 @@ export const INGREDIENTS = [
     description:
       "A premium choline source that crosses the blood-brain barrier to support acetylcholine production \u2014 the neurotransmitter essential for focus and muscle coordination.",
     benefits: ["Mental clarity", "Mind-muscle connection", "Sustained attention"],
-    color: "gold",
+    color: "silver",
   },
   {
     name: "Rhodiola Rosea",
@@ -80,7 +80,7 @@ export const INGREDIENTS = [
     description:
       "An elite adaptogen used by athletes and military personnel to combat fatigue and enhance mental performance under stress.",
     benefits: ["Stress resilience", "Anti-fatigue", "Mental endurance"],
-    color: "gold",
+    color: "silver",
   },
   {
     name: "Electrolyte Complex",
@@ -91,7 +91,7 @@ export const INGREDIENTS = [
     description:
       "A balanced blend of electrolytes to support hydration and help prevent the performance decline that comes with fluid loss during competition.",
     benefits: ["Hydration", "Muscle function", "Cramp prevention"],
-    color: "gold",
+    color: "silver",
   },
 ];
 

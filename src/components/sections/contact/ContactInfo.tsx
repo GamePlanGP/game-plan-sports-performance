@@ -14,9 +14,9 @@ export function ContactInfo() {
       <Card padding="lg" className="space-y-8">
         {/* Email */}
         <div className="flex items-start gap-4">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold-500/10">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-silver-500/10">
             <svg
-              className="h-5 w-5 text-gold-500"
+              className="h-5 w-5 text-silver-500"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
@@ -31,10 +31,10 @@ export function ContactInfo() {
             </svg>
           </div>
           <div>
-            <h3 className="font-semibold text-warm-white">Email Us</h3>
+            <h3 className="font-semibold text-white">Email Us</h3>
             <a
               href={`mailto:${SITE_CONFIG.email}`}
-              className="mt-1 block text-gold-500 transition-colors hover:text-gold-400"
+              className="mt-1 block text-silver-500 transition-colors hover:text-silver-400"
             >
               {SITE_CONFIG.email}
             </a>
@@ -43,9 +43,9 @@ export function ContactInfo() {
 
         {/* Response Time */}
         <div className="flex items-start gap-4">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold-500/10">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-silver-500/10">
             <svg
-              className="h-5 w-5 text-gold-500"
+              className="h-5 w-5 text-silver-500"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
@@ -60,7 +60,7 @@ export function ContactInfo() {
             </svg>
           </div>
           <div>
-            <h3 className="font-semibold text-warm-white">Response Time</h3>
+            <h3 className="font-semibold text-white">Response Time</h3>
             <p className="mt-1 text-silver">
               We typically respond within 24 hours
             </p>
@@ -69,9 +69,9 @@ export function ContactInfo() {
 
         {/* Business Hours */}
         <div className="flex items-start gap-4">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold-500/10">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-silver-500/10">
             <svg
-              className="h-5 w-5 text-gold-500"
+              className="h-5 w-5 text-silver-500"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
@@ -86,7 +86,7 @@ export function ContactInfo() {
             </svg>
           </div>
           <div>
-            <h3 className="font-semibold text-warm-white">Business Hours</h3>
+            <h3 className="font-semibold text-white">Business Hours</h3>
             <p className="mt-1 text-silver">
               Monday &ndash; Friday, 9am &ndash; 5pm EST
             </p>
@@ -98,14 +98,14 @@ export function ContactInfo() {
 
         {/* Social Links */}
         <div>
-          <h3 className="mb-4 font-semibold text-warm-white">Follow Us</h3>
+          <h3 className="mb-4 font-semibold text-white">Follow Us</h3>
           <div className="flex gap-3">
             {SOCIAL_LINKS.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 aria-label={link.name}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-500/10 text-sm font-semibold text-gold-500 transition-colors hover:bg-gold-500 hover:text-navy-950"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-silver-500/10 text-sm font-semibold text-silver-500 transition-colors hover:bg-silver-500 hover:text-navy-950"
               >
                 {link.label}
               </a>

@@ -11,7 +11,7 @@ interface PlaceholderImageProps {
 }
 
 function PlaceholderIcon({ icon, dark }: { icon: IconType; dark: boolean }) {
-  const color = dark ? "text-white/30" : "text-gold-500/30";
+  const color = dark ? "text-white/30" : "text-silver-500/30";
 
   const icons: Record<IconType, React.ReactNode> = {
     product: (
@@ -131,7 +131,7 @@ export function PlaceholderImage({
         <span
           className={cn(
             "mt-3 text-sm font-medium",
-            dark ? "text-white/40" : "text-gold-500/40",
+            dark ? "text-white/40" : "text-silver-500/40",
           )}
         >
           {label}

@@ -36,7 +36,7 @@ export function BrandStory() {
             </FadeIn>
 
             <FadeIn direction="up" delay={0.2}>
-              <div className="mt-8 border-l-4 border-gold-500 pl-6">
+              <div className="mt-8 border-l-4 border-silver-500 pl-6">
                 <p className="text-lg font-medium leading-relaxed text-white/90 sm:text-xl">
                   {firstParagraph}
                 </p>
@@ -53,14 +53,14 @@ export function BrandStory() {
               ))}
             </div>
 
-            {/* Decorative gold accent */}
+            {/* Decorative accent */}
             <FadeIn direction="up" delay={0.6}>
               <div className="mt-10 flex items-center gap-4">
-                <div className="h-px flex-1 bg-gradient-to-r from-gold-500 to-transparent" />
-                <span className="text-sm font-semibold uppercase tracking-widest text-gold-500">
+                <div className="h-px flex-1 bg-gradient-to-r from-silver-500 to-transparent" />
+                <span className="text-sm font-semibold uppercase tracking-widest text-silver-500">
                   Est. 2025
                 </span>
-                <div className="h-px flex-1 bg-gradient-to-l from-gold-500 to-transparent" />
+                <div className="h-px flex-1 bg-gradient-to-l from-silver-500 to-transparent" />
               </div>
             </FadeIn>
           </div>

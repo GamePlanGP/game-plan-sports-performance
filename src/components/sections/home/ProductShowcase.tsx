@@ -6,9 +6,9 @@ import { StaggerChildren } from "@/components/animations/StaggerChildren";
 import { BENEFITS } from "@/lib/constants";
 
 const benefitIcons: Record<string, { emoji: string; bg: string }> = {
-  focus: { emoji: "\uD83C\uDFAF", bg: "bg-gold-500/10 text-gold-500" },
-  energy: { emoji: "\u26A1", bg: "bg-gold-500/10 text-gold-500" },
-  hydration: { emoji: "\uD83D\uDCA7", bg: "bg-navy-800 text-gold-400" },
+  focus: { emoji: "\uD83C\uDFAF", bg: "bg-silver-500/10 text-silver-500" },
+  energy: { emoji: "\u26A1", bg: "bg-silver-500/10 text-silver-500" },
+  hydration: { emoji: "\uD83D\uDCA7", bg: "bg-navy-800 text-silver-400" },
 };
 
 export function ProductShowcase() {
@@ -38,7 +38,7 @@ export function ProductShowcase() {
               {BENEFITS.map((benefit, index) => {
                 const iconData = benefitIcons[benefit.icon] ?? {
                   emoji: "\u2728",
-                  bg: "bg-gold-500/10 text-gold-500",
+                  bg: "bg-silver-500/10 text-silver-500",
                 };
 
                 // Desktop positioning: cards float around the central image
@@ -56,7 +56,7 @@ export function ProductShowcase() {
                       >
                         {iconData.emoji}
                       </div>
-                      <h3 className="text-lg font-bold text-warm-white">
+                      <h3 className="text-lg font-bold text-white">
                         {benefit.title}
                       </h3>
                       <p className="mt-2 text-sm leading-relaxed text-silver">

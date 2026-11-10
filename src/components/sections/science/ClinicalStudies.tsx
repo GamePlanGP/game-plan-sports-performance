@@ -32,7 +32,7 @@ export function ClinicalStudies() {
                     </Badge>
 
                     {/* Study title */}
-                    <h3 className="mt-4 text-lg font-semibold text-warm-white">
+                    <h3 className="mt-4 text-lg font-semibold text-white">
                       {study.title}
                     </h3>
 
@@ -55,7 +55,7 @@ export function ClinicalStudies() {
         {/* CTA */}
         <FadeIn direction="up" delay={0.3}>
           <div className="mt-16 rounded-2xl bg-white/5 border border-white/10 p-8 text-center sm:mt-20 sm:p-12">
-            <h3 className="font-display text-2xl font-bold text-warm-white sm:text-3xl">
+            <h3 className="font-display text-2xl font-bold text-white sm:text-3xl">
               Have Questions About Our Formula?
             </h3>
             <p className="mx-auto mt-3 max-w-lg text-base text-silver">

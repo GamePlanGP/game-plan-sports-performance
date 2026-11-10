@@ -57,13 +57,13 @@ export function Header() {
                 className={cn(
                   "relative px-4 py-2 text-sm font-medium transition-colors",
                   isActive
-                    ? "text-gold-500"
+                    ? "text-silver-500"
                     : "text-white/80 hover:text-white"
                 )}
               >
                 {item.label}
                 {isActive && (
-                  <span className="absolute right-4 bottom-0 left-4 h-0.5 rounded-full bg-gold-500" />
+                  <span className="absolute right-4 bottom-0 left-4 h-0.5 rounded-full bg-silver-500" />
                 )}
               </Link>
             );
@@ -72,7 +72,7 @@ export function Header() {
           {/* CTA button */}
           <Link
             href="/#waitlist"
-            className="ml-4 rounded-lg bg-gold-500 px-5 py-2.5 text-sm font-semibold text-navy-950 transition-colors hover:bg-gold-400"
+            className="ml-4 rounded-lg bg-silver-500 px-5 py-2.5 text-sm font-semibold text-navy-950 transition-colors hover:bg-silver-400"
           >
             Join Waitlist
           </Link>

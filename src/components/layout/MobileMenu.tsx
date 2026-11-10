@@ -86,7 +86,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   className={cn(
                     "rounded-lg px-4 py-3 text-2xl font-medium transition-colors",
                     isActive
-                      ? "bg-white/10 text-gold-500"
+                      ? "bg-white/10 text-silver-500"
                       : "text-white/80 hover:bg-white/5 hover:text-white"
                   )}
                 >
@@ -101,7 +101,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             <Link
               href="/#waitlist"
               onClick={onClose}
-              className="block w-full rounded-lg bg-gold-500 px-6 py-4 text-center text-lg font-semibold text-navy-950 transition-colors hover:bg-gold-400"
+              className="block w-full rounded-lg bg-silver-500 px-6 py-4 text-center text-lg font-semibold text-navy-950 transition-colors hover:bg-silver-400"
             >
               Join Waitlist
             </Link>
