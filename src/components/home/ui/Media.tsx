@@ -11,11 +11,13 @@ type Props = {
   tone?: "light" | "navy";
   priority?: boolean;
   sizes?: string;
+  /** CSS object-position for the cover crop (default: centered). */
+  position?: string;
   className?: string;
 };
 
 /** A real next/image once `src` is a path; otherwise a labeled placeholder. */
-export function Media({ src, alt, label, ratio, size, tone, priority, sizes, className = "" }: Props) {
+export function Media({ src, alt, label, ratio, size, tone, priority, sizes, position, className = "" }: Props) {
   if (isPlaceholder(src)) {
     return (
       <ImagePlaceholder
@@ -33,7 +35,7 @@ export function Media({ src, alt, label, ratio, size, tone, priority, sizes, cla
       style={{ aspectRatio: ratio }}
       className={`relative w-full overflow-hidden rounded-hp border border-hp-line ${className}`}
     >
-      <Image src={src} alt={alt} fill priority={priority} sizes={sizes ?? "(min-width: 1024px) 50vw, 100vw"} className="object-cover" />
+      <Image src={src} alt={alt} fill priority={priority} sizes={sizes ?? "(min-width: 1024px) 50vw, 100vw"} className="object-cover" style={position ? { objectPosition: position } : undefined} />
     </div>
   );
 }

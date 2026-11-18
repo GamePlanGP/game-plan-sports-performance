@@ -10,6 +10,12 @@
  *    list, "supports" + asterisk for Clarity+ itself.
  */
 
+import stickTrio from "@/assets/clarity/stick-trio.webp";
+import stickPair from "@/assets/clarity/stick-pair.webp";
+import stickCallouts from "@/assets/clarity/stick-callouts.webp";
+import stickGolf from "@/assets/clarity/stick-golf.webp";
+import stickPattern from "@/assets/clarity/stick-pattern.webp";
+
 export type Copy = {
   text: string;
   draft?: boolean;
@@ -283,9 +289,10 @@ export const hero = {
   /** NSF has its own hero badge (gated), so the trust row keeps the guarantee. */
   trust: ["200mg CognatiQ®", "Non-stimulant", offer.guaranteeShort] as (string | Copy)[],
   rating: "{{JUDGEME_RATING}}",
+  /** Stick mock-up (three packs). Swap for course photography when it's shot. */
   image: {
-    src: "{{HERO_IMAGE}}",
-    alt: "Clarity+ on the course",
+    src: stickTrio.src,
+    alt: "Three Clarity+ stick packs",
     label: "Hero photo: product on the course, or a golfer over a putt",
     size: "1600×1200 desktop · 800×1000 mobile crop",
   },
@@ -335,14 +342,23 @@ export const moments = {
 export const buy = {
   title: "Clarity+",
   subline: { text: "Decision-making drink mix for golfers.", draft: true } as Copy,
+  /**
+   * Stick mock-ups, 16:9 originals shown in a 4:3 frame. `position` is the CSS
+   * object-position that keeps the product in the crop. Bag front and the
+   * Supplement Facts panel join the gallery when that art exists.
+   */
   gallery: {
-    src: "{{PRODUCT_IMAGES}}",
-    size: "1200×1200",
+    size: "1600×1200",
     slides: [
-      { alt: "Clarity+ bag, front", label: "Bag front" },
-      { alt: "Clarity+ stick pack", label: "Stick pack" },
-      { alt: "Clarity+ Supplement Facts panel", label: "Supplement Facts" },
-      { alt: "Clarity+ on the course", label: "Lifestyle" },
+      { src: stickPair.src, position: "85% 50%", alt: "Two Clarity+ stick packs", label: "Stick packs" },
+      {
+        src: stickCallouts.src,
+        position: "50% 50%",
+        alt: "A Clarity+ stick with callouts: 200 mg clinical dose of CognatiQ®, the Focus Blend, and the electrolyte blend",
+        label: "What's in each stick",
+      },
+      { src: stickGolf.src, position: "50% 50%", alt: "Clarity+ sticks with golf balls and tees", label: "On the course" },
+      { src: stickPattern.src, position: "50% 50%", alt: "A repeating pattern of Clarity+ sticks", label: "Stick pattern" },
     ],
   },
   /** Under the prices. Fill once pricing locks; remove if it isn't true. */
