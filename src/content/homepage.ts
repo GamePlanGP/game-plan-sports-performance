@@ -278,7 +278,7 @@ export const hero = {
   eyebrow: "Clarity+ by Game Plan Sports Performance",
   headline: { text: "Commit to every shot.", draft: true } as Copy,
   lead: {
-    text: "Remember the round where everything clicked? Clear target. No second-guessing. That’s the zone. Clarity+ supports the focus and decisiveness it’s built on.*",
+    text: "Remember the round where everything clicked? Clear targets. Perfect yardages. No second-guessing on the reads. That’s the zone. Clarity+ supports the focus and decisiveness it’s built on.*",
     draft: true,
   } as Copy,
   subhead: {
