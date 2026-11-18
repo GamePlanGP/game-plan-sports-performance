@@ -87,7 +87,7 @@ function Gallery() {
         })}
       </div>
 
-      <div className="mt-3 grid grid-cols-4 gap-3">
+      <div className="mt-3 grid gap-3" style={{ gridTemplateColumns: `repeat(${slides.length}, minmax(0, 1fr))` }}>
         {slides.map((slide, i) => (
           <button
             key={slide.label}

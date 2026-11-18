@@ -13,7 +13,6 @@
 import stickTrio from "@/assets/clarity/stick-trio.webp";
 import stickPair from "@/assets/clarity/stick-pair.webp";
 import stickCallouts from "@/assets/clarity/stick-callouts.webp";
-import stickGolf from "@/assets/clarity/stick-golf.webp";
 import bagFront from "@/assets/clarity/bag-front.webp";
 import bagBack from "@/assets/clarity/bag-back.webp";
 
@@ -354,7 +353,6 @@ export const buy = {
       { src: bagFront.src, position: "50% 50%", alt: "Front of the Clarity+ bag, 10 on-the-go sticks", label: "Bag front" },
       { src: stickPair.src, position: "85% 50%", alt: "Two Clarity+ stick packs", label: "Stick pack" },
       { src: bagBack.src, position: "50% 50%", alt: "Back of the Clarity+ bag with how to use and the Supplement Facts panel", label: "Supplement Facts" },
-      { src: stickGolf.src, position: "50% 50%", alt: "Clarity+ sticks with golf balls and tees", label: "Lifestyle" },
     ],
   },
   /** Under the prices. Fill once pricing locks; remove if it isn't true. */
