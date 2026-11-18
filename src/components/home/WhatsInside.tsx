@@ -92,6 +92,10 @@ export function WhatsInside() {
         <Txt v={inside.subline} />
       </p>
 
+      <div className="mx-auto mt-10 max-w-4xl">
+        <Media {...inside.diagram} ratio="16 / 9" sizes="(min-width: 1024px) 896px, 100vw" />
+      </div>
+
       <div className="mt-10">
         <p className={tierLabel}>{ask.eyebrow}</p>
         <dl className="mt-4 grid gap-6 md:grid-cols-3">
@@ -175,8 +179,8 @@ export function WhatsInside() {
           {labelOpen ? inside.label.close : inside.label.open}
         </button>
         {labelOpen ? (
-          <div id="hp-label-panel" className="mt-5 max-w-md">
-            <Media {...inside.label.image} ratio="3 / 4" />
+          <div id="hp-label-panel" className="mt-5 max-w-xl">
+            <Media {...inside.label.image} ratio="16 / 17" />
           </div>
         ) : null}
       </div>

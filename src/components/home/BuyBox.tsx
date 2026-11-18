@@ -63,7 +63,7 @@ function Gallery() {
               aria-label={`${i + 1} of ${slides.length}`}
               className="w-full shrink-0 snap-center"
             >
-              <Media src={slide.src} alt={slide.alt} label={slide.label} position={slide.position} ratio="4 / 3" size={size} priority={i === 0} sizes="(min-width: 1024px) 560px, 100vw" />
+              <Media src={slide.src} alt={slide.alt} label={slide.label} position={slide.position} ratio="1 / 1" size={size} priority={i === 0} sizes="(min-width: 1024px) 560px, 100vw" />
             </div>
           ))}
         </div>
@@ -95,7 +95,7 @@ function Gallery() {
             onClick={() => go(i)}
             aria-label={`Show image ${i + 1}: ${slide.label}`}
             aria-current={i === index}
-            className={`relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-hp border bg-hp-tint-2 text-[0.62rem] font-semibold tracking-[0.12em] text-hp-ink-soft uppercase ${
+            className={`relative flex aspect-square items-center justify-center overflow-hidden rounded-hp border bg-hp-tint-2 text-[0.62rem] font-semibold tracking-[0.12em] text-hp-ink-soft uppercase ${
               i === index ? "border-hp-navy shadow-[inset_0_0_0_1px_var(--navy)]" : "border-hp-line"
             }`}
           >

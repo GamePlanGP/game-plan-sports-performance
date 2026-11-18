@@ -14,7 +14,8 @@ import stickTrio from "@/assets/clarity/stick-trio.webp";
 import stickPair from "@/assets/clarity/stick-pair.webp";
 import stickCallouts from "@/assets/clarity/stick-callouts.webp";
 import stickGolf from "@/assets/clarity/stick-golf.webp";
-import stickPattern from "@/assets/clarity/stick-pattern.webp";
+import bagFront from "@/assets/clarity/bag-front.webp";
+import bagBack from "@/assets/clarity/bag-back.webp";
 
 export type Copy = {
   text: string;
@@ -343,22 +344,17 @@ export const buy = {
   title: "Clarity+",
   subline: { text: "Decision-making drink mix for golfers.", draft: true } as Copy,
   /**
-   * Stick mock-ups, 16:9 originals shown in a 4:3 frame. `position` is the CSS
-   * object-position that keeps the product in the crop. Bag front and the
-   * Supplement Facts panel join the gallery when that art exists.
+   * Mock-ups in a square frame. The stick shots are 16:9 originals, so
+   * `position` is the CSS object-position that keeps the product in the crop.
+   * The annotated stick diagram is wider than a square; it lives in #inside.
    */
   gallery: {
-    size: "1600×1200",
+    size: "1200×1200",
     slides: [
-      { src: stickPair.src, position: "85% 50%", alt: "Two Clarity+ stick packs", label: "Stick packs" },
-      {
-        src: stickCallouts.src,
-        position: "50% 50%",
-        alt: "A Clarity+ stick with callouts: 200 mg clinical dose of CognatiQ®, the Focus Blend, and the electrolyte blend",
-        label: "What's in each stick",
-      },
-      { src: stickGolf.src, position: "50% 50%", alt: "Clarity+ sticks with golf balls and tees", label: "On the course" },
-      { src: stickPattern.src, position: "50% 50%", alt: "A repeating pattern of Clarity+ sticks", label: "Stick pattern" },
+      { src: bagFront.src, position: "50% 50%", alt: "Front of the Clarity+ bag, 10 on-the-go sticks", label: "Bag front" },
+      { src: stickPair.src, position: "85% 50%", alt: "Two Clarity+ stick packs", label: "Stick pack" },
+      { src: bagBack.src, position: "50% 50%", alt: "Back of the Clarity+ bag with how to use and the Supplement Facts panel", label: "Supplement Facts" },
+      { src: stickGolf.src, position: "50% 50%", alt: "Clarity+ sticks with golf balls and tees", label: "Lifestyle" },
     ],
   },
   /** Under the prices. Fill once pricing locks; remove if it isn't true. */
@@ -402,6 +398,12 @@ export const how = {
 };
 
 export const inside = {
+  /** Annotated stick diagram (16:9) shown under the subline. */
+  diagram: {
+    src: stickCallouts.src,
+    alt: "A Clarity+ stick with callouts: 200 mg clinical dose of CognatiQ®, the Focus Blend, and the electrolyte blend",
+    label: "Annotated stick",
+  },
   heading: { text: "Studied first. Then stacked.", draft: true } as Copy,
   subline: { text: "We could have stopped at the clinical dose. We didn't.", draft: true } as Copy,
   ask: {
@@ -450,8 +452,8 @@ export const inside = {
     open: "View full label",
     close: "Hide full label",
     image: {
-      src: "{{SUPPLEMENT_FACTS_IMAGE}}",
-      alt: "Clarity+ Supplement Facts panel",
+      src: bagBack.src,
+      alt: "Back of the Clarity+ bag with how to use and the Supplement Facts panel",
       label: "Supplement Facts panel",
       size: "final label art",
     },
