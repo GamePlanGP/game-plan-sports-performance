@@ -550,51 +550,44 @@ export const faq = {
   contactPrompt: "Still unsure? Email",
   contactEmail: "{{CONTACT_EMAIL}}",
   items: [
-    { id: "caffeine", question: "Does Clarity+ have caffeine?", answer: { text: "{{ANSWER_CAFFEINE}}" } },
+    {
+      id: "caffeine",
+      question: "Does Clarity+ have caffeine?",
+      answer: {
+        text: "A trace. Clarity+ has about 1.7mg of caffeine, which comes naturally from CognatiQ® (whole coffee cherry extract). That's less than a piece of dark chocolate.",
+        draft: true,
+        dependsOn: ["{{CONFIRM_NON_STIMULANT}}"],
+      },
+    },
     {
       id: "when",
       question: "When should I take it?",
-      answer: { text: "{{USAGE_TIMING}}" },
+      answer: {
+        text: "We recommend mixing one stick when you get to the course, around your warmup. Some golfers take a second stick at the turn.",
+        draft: true,
+      },
     },
     {
       id: "frequency",
       question: "Round days only, or every day?",
-      answer: { text: "{{USAGE_FREQUENCY_GUIDANCE}}" },
+      answer: {
+        text: "Either works. Clarity+ can be taken daily if you'd like. In studies, CognatiQ® showed sustained improvement in cognitive performance with daily use.*",
+        draft: true,
+      },
     },
     {
       id: "feel",
       question: "Will I feel it?",
       answer: {
-        text: "Not as a buzz. Clarity+ isn't built to jolt you — it's built to support clear, decisive thinking.*",
+        text: "Not as a buzz. Clarity+ is built to support focus and decision-making during your round.* There's no tingling, no jolt, and no high while you drink it.",
         draft: true,
       },
     },
     {
       id: "competition",
       question: "Is it safe for tournament play?",
-      answer: flags.SHOW_NSF_BADGE
-        ? {
-            text: "Clarity+ is NSF Certified for Sport®, tested for {{NSF_SUBSTANCE_COUNT}}+ substances banned in sport. Check the listing: {{NSF_LISTING_URL}}",
-            draft: true,
-          }
-        : { text: "{{COMPETITION_SAFE_STATEMENT}}" },
-    },
-    {
-      id: "inside",
-      question: "What's in it?",
       answer: {
-        text: `The full clinical 200mg dose of CognatiQ®, our ${focusBlend.name}, and a measured electrolyte base. Every ingredient is on the label.`,
-        draft: true,
-      },
-      link: { label: "See what's inside", href: "/#inside" },
-    },
-    {
-      id: "blend",
-      question: `Why is the ${focusBlend.name} proprietary?`,
-      answer: {
-        text:
-          "Every ingredient is on the label, along with the blend's total weight. The exact recipe stays ours. You don't publish the details to your game plan, neither do we. What we always publish: the full clinical 200mg dose of CognatiQ®." +
-          (flags.SHOW_NSF_BADGE ? " And NSF Certified for Sport® independently verifies what's in it." : ""),
+        text: "Clarity+ is NSF Certified for Sport®, tested for {{NSF_SUBSTANCE_COUNT}}+ substances banned in sport. Check the listing: {{NSF_LISTING_URL}}",
         draft: true,
       },
     },
@@ -602,17 +595,28 @@ export const faq = {
       id: "taste",
       question: "How does it taste?",
       answer: {
-        text: "{{FLAVORS}}, and not too sweet: {{SUGAR_G}}g sugar, sweetened with {{SWEETENER}}. Mixes in seconds in plain water.",
+        text: "Early testers describe it as refreshing: not too sweet, and not bland. It mixes in seconds in plain water.",
         draft: true,
       },
     },
-    { id: "guarantee", question: "What's your guarantee?", answer: { text: "{{GUARANTEE_TERMS}}" } },
+    {
+      id: "guarantee",
+      question: "What's your guarantee?",
+      answer: {
+        text: "If it's not for you, we'll make it right. Clarity+ is backed by our 100% satisfaction guarantee, with a 30-day return window.",
+        draft: true,
+      },
+    },
     {
       id: "subscription",
       question: "Can I skip, pause, or cancel my subscription?",
       answer: { text: "Yes. Anytime, from your account.", draft: true, dependsOn: ["{{CONFIRM_SUB_TERMS}}"] },
     },
-    { id: "shipping", question: "How fast does it ship?", answer: { text: "{{SHIPPING_TERMS}}" } },
+    {
+      id: "shipping",
+      question: "How fast does it ship?",
+      answer: { text: "Fast. Many orders ship from our warehouse the same day or the next day.", draft: true },
+    },
     {
       id: "medication",
       question: "Can I take it with medication?",

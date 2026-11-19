@@ -596,6 +596,17 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
 - **New: "How does it taste?"** (DRAFT) "`{{FLAVORS}}`, and not too sweet: `{{SUGAR_G}}`g sugar, sweetened with `{{SWEETENER}}`. Mixes in seconds in plain water."
 - "Round days only, or every day?" stays `{{USAGE_FREQUENCY_GUIDANCE}}`. Note: the study showed results within an hour of one dose *and* sustained improvement with daily use over 28 days. Daily use also supports the subscription.
 - FAQPage JSON-LD picks up the new questions automatically (answers still holding placeholders are left out until filled).
+- **FAQ update (Nov 19, 2026), supersedes the answers above where they differ** (all DRAFT):
+  - Removed: "What's in it?" and "Why is the Game Plan Focus Blend proprietary?"
+  - Caffeine: about 1.7mg, naturally from CognatiQ®, less than a piece of dark chocolate (`{{CONFIRM_NON_STIMULANT}}` still open for the "Non-stimulant" trust-row claim).
+  - When: one stick when you get to the course, around your warmup; some golfers take a second at the turn.
+  - Frequency: either works; daily is fine; CognatiQ® showed sustained improvement in cognitive performance with daily use.*
+  - Feel: no buzz; built to support focus and decision-making during your round.* No tingling, no jolt, no high. (Confirm nothing in the formula causes tingling.)
+  - Tournament play: written as NSF Certified for Sport® regardless of `SHOW_NSF_BADGE` (Ryan's call, Nov 19), with `{{NSF_SUBSTANCE_COUNT}}` and `{{NSF_LISTING_URL}}` still open. This is a known exception to the rule that "certified" appears nowhere while the flag is off; revisit before launch.
+  - Taste: early testers describe it as refreshing, not too sweet, not bland; no flavor or sweetener detail.
+  - Guarantee: "If it's not for you, we'll make it right," 100% satisfaction guarantee, 30-day return window (start date and claim process still open).
+  - Shipping: many orders ship from our warehouse the same day or next day (no "guaranteed").
+  - Unchanged: subscription, medication, wholesale.
 
 **Footer (6.13)**
 - **Trademark line (prefilled, DRAFT):** "CognatiQ® is a registered trademark of VDF FutureCeuticals, Inc. Pat. fcpatent.com" — from FutureCeuticals' claims sheet. Confirm it's their required wording.
