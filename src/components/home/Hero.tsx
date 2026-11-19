@@ -92,7 +92,7 @@ export function Hero() {
 
         <div>
           <div className="md:hidden">
-            <Media {...image} ratio="4 / 5" priority sizes="100vw" />
+            <Media {...image} ratio="1 / 1" priority sizes="100vw" />
           </div>
           <div className="hidden md:block">
             <Media {...image} ratio="4 / 3" priority sizes="(min-width: 1024px) 560px, 50vw" />

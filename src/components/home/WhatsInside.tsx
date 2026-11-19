@@ -81,7 +81,7 @@ function ElectrolyteTable() {
 
 export function WhatsInside() {
   const [labelOpen, setLabelOpen] = useState(false);
-  const { ask, proof, playbook, plus, cleanLabel } = inside;
+  const { proof, playbook, plus, cleanLabel } = inside;
   const showUnconfirmed = LAUNCH_MODE !== "live";
   const items = cleanLabel.items.filter((item) => cleanLabelFlags[item.id] || showUnconfirmed);
 
@@ -92,18 +92,8 @@ export function WhatsInside() {
         <Txt v={inside.subline} />
       </p>
 
-      <div className="mt-10">
-        <p className={tierLabel}>{ask.eyebrow}</p>
-        <dl className="mt-4 grid gap-6 md:grid-cols-3">
-          {ask.rows.map((row) => (
-            <div key={row.question} className="border-t border-hp-line pt-4">
-              <dt className="font-display text-xl leading-snug font-semibold">{row.question}</dt>
-              <dd className="mt-2 text-sm leading-relaxed">
-                <Txt v={row.answer} />
-              </dd>
-            </div>
-          ))}
-        </dl>
+      <div className="mx-auto mt-10 max-w-4xl">
+        <Media {...inside.diagram} ratio="16 / 9" sizes="(min-width: 1024px) 896px, 100vw" />
       </div>
 
       {/* Tier 1 — the proof */}
@@ -175,8 +165,8 @@ export function WhatsInside() {
           {labelOpen ? inside.label.close : inside.label.open}
         </button>
         {labelOpen ? (
-          <div id="hp-label-panel" className="mt-5 max-w-md">
-            <Media {...inside.label.image} ratio="3 / 4" />
+          <div id="hp-label-panel" className="mt-5 max-w-xl">
+            <Media {...inside.label.image} ratio="16 / 17" />
           </div>
         ) : null}
       </div>

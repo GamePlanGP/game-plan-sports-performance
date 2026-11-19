@@ -556,11 +556,7 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
 - **Price anchor (DRAFT):** under the prices, `{{PRICE_ANCHOR_LINE}}` (must not assume one stick per round; see 9.0). Fill once pricing locks. Remove if it isn't true.
 
 **What's inside (6.7, rebuilt)**
-- **Heading (DRAFT):** "Studied first. Then stacked." **Subline (DRAFT):** "We could have stopped at the clinical dose. We didn't."
-- **"Ask any focus mix" row** (3 items, hairline above each):
-  - "Was it tested in humans?" → "Yes. A randomized, double-blind, placebo-controlled trial of CognatiQ®."
-  - "At what dose?" → "200mg."
-  - "Is that dose in the stick?" → "All of it. Every stick." (`{{CONFIRM_DOSE_200MG}}`)
+- **Heading (DRAFT):** "CognatiQ® earned its place. So we built around it." **Subline (DRAFT):** "Our own proprietary Game Plan Focus Blend and just enough electrolytes take this to the next level." (Updated Nov 19, 2026; replaces "Studied first. Then stacked." / "We could have stopped at the clinical dose. We didn't.")
 - **Three tiers, stacked**, each with a small uppercase label:
   - **Tier 1 — The proof.** CognatiQ® card (full width, 1px navy border, burgundy "200mg"). Body (DRAFT): "The full clinically studied dose. Disclosed. Never shorted to make room for anything else."
   - **Tier 2 — The playbook.** Game Plan Focus Blend card (white, 1px `--line`).
@@ -600,6 +596,17 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
 - **New: "How does it taste?"** (DRAFT) "`{{FLAVORS}}`, and not too sweet: `{{SUGAR_G}}`g sugar, sweetened with `{{SWEETENER}}`. Mixes in seconds in plain water."
 - "Round days only, or every day?" stays `{{USAGE_FREQUENCY_GUIDANCE}}`. Note: the study showed results within an hour of one dose *and* sustained improvement with daily use over 28 days. Daily use also supports the subscription.
 - FAQPage JSON-LD picks up the new questions automatically (answers still holding placeholders are left out until filled).
+- **FAQ update (Nov 19, 2026), supersedes the answers above where they differ** (all DRAFT):
+  - Removed: "What's in it?" and "Why is the Game Plan Focus Blend proprietary?"
+  - Caffeine: about 1.7mg, naturally from CognatiQ®, less than a piece of dark chocolate (`{{CONFIRM_NON_STIMULANT}}` still open for the "Non-stimulant" trust-row claim).
+  - When: one stick when you get to the course, around your warmup; some golfers take a second at the turn.
+  - Frequency: either works; daily is fine; CognatiQ® showed sustained improvement in cognitive performance with daily use.*
+  - Feel: no buzz; built to support focus and decision-making during your round.* No tingling, no jolt, no high. (Confirm nothing in the formula causes tingling.)
+  - Tournament play: written as NSF Certified for Sport® regardless of `SHOW_NSF_BADGE` (Ryan's call, Nov 19), with `{{NSF_SUBSTANCE_COUNT}}` and `{{NSF_LISTING_URL}}` still open. This is a known exception to the rule that "certified" appears nowhere while the flag is off; revisit before launch.
+  - Taste: early testers describe it as refreshing, not too sweet, not bland; no flavor or sweetener detail.
+  - Guarantee: "If it's not for you, we'll make it right," 100% satisfaction guarantee, 30-day return window (start date and claim process still open).
+  - Shipping: many orders ship from our warehouse the same day or next day (no "guaranteed").
+  - Unchanged: subscription, medication, wholesale.
 
 **Footer (6.13)**
 - **Trademark line (prefilled, DRAFT):** "CognatiQ® is a registered trademark of VDF FutureCeuticals, Inc. Pat. fcpatent.com" — from FutureCeuticals' claims sheet. Confirm it's their required wording.

@@ -10,6 +10,12 @@
  *    list, "supports" + asterisk for Clarity+ itself.
  */
 
+import stickTrio from "@/assets/clarity/stick-trio.webp";
+import stickPair from "@/assets/clarity/stick-pair.webp";
+import stickCallouts from "@/assets/clarity/stick-callouts.webp";
+import bagFront from "@/assets/clarity/bag-front.webp";
+import bagBack from "@/assets/clarity/bag-back.webp";
+
 export type Copy = {
   text: string;
   draft?: boolean;
@@ -272,7 +278,7 @@ export const hero = {
   eyebrow: "Clarity+ by Game Plan Sports Performance",
   headline: { text: "Commit to every shot.", draft: true } as Copy,
   lead: {
-    text: "Remember the round where everything clicked? Clear target. No second-guessing. That’s the zone. Clarity+ supports the focus and decisiveness it’s built on.*",
+    text: "Remember the round where everything clicked? Clear targets. Perfect yardages. No second-guessing on the reads. That’s the zone. Clarity+ supports the focus and decisiveness it’s built on.*",
     draft: true,
   } as Copy,
   subhead: {
@@ -283,9 +289,10 @@ export const hero = {
   /** NSF has its own hero badge (gated), so the trust row keeps the guarantee. */
   trust: ["200mg CognatiQ®", "Non-stimulant", offer.guaranteeShort] as (string | Copy)[],
   rating: "{{JUDGEME_RATING}}",
+  /** Stick mock-up (three packs). Swap for course photography when it's shot. */
   image: {
-    src: "{{HERO_IMAGE}}",
-    alt: "Clarity+ on the course",
+    src: stickTrio.src,
+    alt: "Three Clarity+ stick packs",
     label: "Hero photo: product on the course, or a golfer over a putt",
     size: "1600×1200 desktop · 800×1000 mobile crop",
   },
@@ -335,14 +342,17 @@ export const moments = {
 export const buy = {
   title: "Clarity+",
   subline: { text: "Decision-making drink mix for golfers.", draft: true } as Copy,
+  /**
+   * Mock-ups in a square frame. The stick shots are 16:9 originals, so
+   * `position` is the CSS object-position that keeps the product in the crop.
+   * The annotated stick diagram is wider than a square; it lives in #inside.
+   */
   gallery: {
-    src: "{{PRODUCT_IMAGES}}",
     size: "1200×1200",
     slides: [
-      { alt: "Clarity+ bag, front", label: "Bag front" },
-      { alt: "Clarity+ stick pack", label: "Stick pack" },
-      { alt: "Clarity+ Supplement Facts panel", label: "Supplement Facts" },
-      { alt: "Clarity+ on the course", label: "Lifestyle" },
+      { src: bagFront.src, position: "50% 50%", alt: "Front of the Clarity+ bag, 10 on-the-go sticks", label: "Bag front" },
+      { src: stickPair.src, position: "85% 50%", alt: "Two Clarity+ stick packs", label: "Stick pack" },
+      { src: bagBack.src, position: "50% 50%", alt: "Back of the Clarity+ bag with how to use and the Supplement Facts panel", label: "Supplement Facts" },
     ],
   },
   /** Under the prices. Fill once pricing locks; remove if it isn't true. */
@@ -386,25 +396,14 @@ export const how = {
 };
 
 export const inside = {
-  heading: { text: "Studied first. Then stacked.", draft: true } as Copy,
-  subline: { text: "We could have stopped at the clinical dose. We didn't.", draft: true } as Copy,
-  ask: {
-    eyebrow: "Ask any focus mix",
-    rows: [
-      {
-        question: "Was it tested in humans?",
-        answer: {
-          text: "Yes. A randomized, double-blind, placebo-controlled trial of CognatiQ®.",
-          draft: true,
-        } as Copy,
-      },
-      { question: "At what dose?", answer: { text: "200mg.", draft: true } as Copy },
-      {
-        question: "Is that dose in the stick?",
-        answer: { text: "All of it. Every stick.", draft: true, dependsOn: ["{{CONFIRM_DOSE_200MG}}"] } as Copy,
-      },
-    ],
+  /** Annotated stick diagram (16:9) shown under the subline. */
+  diagram: {
+    src: stickCallouts.src,
+    alt: "A Clarity+ stick with callouts: 200 mg clinical dose of CognatiQ®, the Focus Blend, and the electrolyte blend",
+    label: "Annotated stick",
   },
+  heading: { text: "CognatiQ® earned its place. So we built around it.", draft: true } as Copy,
+  subline: { text: "Our own proprietary Game Plan Focus Blend and just enough electrolytes take this to the next level.", draft: true } as Copy,
   proof: {
     tier: "The proof",
     name: "CognatiQ®",
@@ -434,8 +433,8 @@ export const inside = {
     open: "View full label",
     close: "Hide full label",
     image: {
-      src: "{{SUPPLEMENT_FACTS_IMAGE}}",
-      alt: "Clarity+ Supplement Facts panel",
+      src: bagBack.src,
+      alt: "Back of the Clarity+ bag with how to use and the Supplement Facts panel",
       label: "Supplement Facts panel",
       size: "final label art",
     },
@@ -551,51 +550,44 @@ export const faq = {
   contactPrompt: "Still unsure? Email",
   contactEmail: "{{CONTACT_EMAIL}}",
   items: [
-    { id: "caffeine", question: "Does Clarity+ have caffeine?", answer: { text: "{{ANSWER_CAFFEINE}}" } },
+    {
+      id: "caffeine",
+      question: "Does Clarity+ have caffeine?",
+      answer: {
+        text: "A trace. Clarity+ has about 1.7mg of caffeine, which comes naturally from CognatiQ® (whole coffee cherry extract). That's less than a piece of dark chocolate.",
+        draft: true,
+        dependsOn: ["{{CONFIRM_NON_STIMULANT}}"],
+      },
+    },
     {
       id: "when",
       question: "When should I take it?",
-      answer: { text: "{{USAGE_TIMING}}" },
+      answer: {
+        text: "We recommend mixing one stick when you get to the course, around your warmup. Some golfers take a second stick at the turn.",
+        draft: true,
+      },
     },
     {
       id: "frequency",
       question: "Round days only, or every day?",
-      answer: { text: "{{USAGE_FREQUENCY_GUIDANCE}}" },
+      answer: {
+        text: "Either works. Clarity+ can be taken daily if you'd like. In studies, CognatiQ® showed sustained improvement in cognitive performance with daily use.*",
+        draft: true,
+      },
     },
     {
       id: "feel",
       question: "Will I feel it?",
       answer: {
-        text: "Not as a buzz. Clarity+ isn't built to jolt you — it's built to support clear, decisive thinking.*",
+        text: "Not as a buzz. Clarity+ is built to support focus and decision-making during your round.* There's no tingling, no jolt, and no high while you drink it.",
         draft: true,
       },
     },
     {
       id: "competition",
       question: "Is it safe for tournament play?",
-      answer: flags.SHOW_NSF_BADGE
-        ? {
-            text: "Clarity+ is NSF Certified for Sport®, tested for {{NSF_SUBSTANCE_COUNT}}+ substances banned in sport. Check the listing: {{NSF_LISTING_URL}}",
-            draft: true,
-          }
-        : { text: "{{COMPETITION_SAFE_STATEMENT}}" },
-    },
-    {
-      id: "inside",
-      question: "What's in it?",
       answer: {
-        text: `The full clinical 200mg dose of CognatiQ®, our ${focusBlend.name}, and a measured electrolyte base. Every ingredient is on the label.`,
-        draft: true,
-      },
-      link: { label: "See what's inside", href: "/#inside" },
-    },
-    {
-      id: "blend",
-      question: `Why is the ${focusBlend.name} proprietary?`,
-      answer: {
-        text:
-          "Every ingredient is on the label, along with the blend's total weight. The exact recipe stays ours. You don't publish the details to your game plan, neither do we. What we always publish: the full clinical 200mg dose of CognatiQ®." +
-          (flags.SHOW_NSF_BADGE ? " And NSF Certified for Sport® independently verifies what's in it." : ""),
+        text: "Clarity+ is NSF Certified for Sport®, tested for {{NSF_SUBSTANCE_COUNT}}+ substances banned in sport. Check the listing: {{NSF_LISTING_URL}}",
         draft: true,
       },
     },
@@ -603,17 +595,28 @@ export const faq = {
       id: "taste",
       question: "How does it taste?",
       answer: {
-        text: "{{FLAVORS}}, and not too sweet: {{SUGAR_G}}g sugar, sweetened with {{SWEETENER}}. Mixes in seconds in plain water.",
+        text: "Early testers describe it as refreshing: not too sweet, and not bland. It mixes in seconds in plain water.",
         draft: true,
       },
     },
-    { id: "guarantee", question: "What's your guarantee?", answer: { text: "{{GUARANTEE_TERMS}}" } },
+    {
+      id: "guarantee",
+      question: "What's your guarantee?",
+      answer: {
+        text: "If it's not for you, we'll make it right. Clarity+ is backed by our 100% satisfaction guarantee, with a 30-day return window.",
+        draft: true,
+      },
+    },
     {
       id: "subscription",
       question: "Can I skip, pause, or cancel my subscription?",
       answer: { text: "Yes. Anytime, from your account.", draft: true, dependsOn: ["{{CONFIRM_SUB_TERMS}}"] },
     },
-    { id: "shipping", question: "How fast does it ship?", answer: { text: "{{SHIPPING_TERMS}}" } },
+    {
+      id: "shipping",
+      question: "How fast does it ship?",
+      answer: { text: "Fast. Many orders ship from our warehouse the same day or the next day.", draft: true },
+    },
     {
       id: "medication",
       question: "Can I take it with medication?",

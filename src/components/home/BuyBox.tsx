@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import {
   LAUNCH_MODE,
   buy,
@@ -29,7 +30,7 @@ function initialOption(): PurchaseOptionId {
 function Gallery() {
   const trackRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
-  const { slides, src, size } = buy.gallery;
+  const { slides, size } = buy.gallery;
 
   const go = (i: number) => {
     const el = trackRef.current;
@@ -62,7 +63,7 @@ function Gallery() {
               aria-label={`${i + 1} of ${slides.length}`}
               className="w-full shrink-0 snap-center"
             >
-              <Media src={src} alt={slide.alt} label={slide.label} ratio="1 / 1" size={size} priority={i === 0} sizes="(min-width: 1024px) 560px, 100vw" />
+              <Media src={slide.src} alt={slide.alt} label={slide.label} position={slide.position} ratio="1 / 1" size={size} priority={i === 0} sizes="(min-width: 1024px) 560px, 100vw" />
             </div>
           ))}
         </div>
@@ -86,7 +87,7 @@ function Gallery() {
         })}
       </div>
 
-      <div className="mt-3 grid grid-cols-4 gap-3">
+      <div className="mt-3 grid gap-3" style={{ gridTemplateColumns: `repeat(${slides.length}, minmax(0, 1fr))` }}>
         {slides.map((slide, i) => (
           <button
             key={slide.label}
@@ -94,11 +95,22 @@ function Gallery() {
             onClick={() => go(i)}
             aria-label={`Show image ${i + 1}: ${slide.label}`}
             aria-current={i === index}
-            className={`flex aspect-square items-center justify-center rounded-hp border bg-hp-tint-2 text-[0.62rem] font-semibold tracking-[0.12em] text-hp-ink-soft uppercase ${
+            className={`relative flex aspect-square items-center justify-center overflow-hidden rounded-hp border bg-hp-tint-2 text-[0.62rem] font-semibold tracking-[0.12em] text-hp-ink-soft uppercase ${
               i === index ? "border-hp-navy shadow-[inset_0_0_0_1px_var(--navy)]" : "border-hp-line"
             }`}
           >
-            {i + 1}
+            {isPlaceholder(slide.src) ? (
+              i + 1
+            ) : (
+              <Image
+                src={slide.src}
+                alt=""
+                fill
+                sizes="140px"
+                className="object-cover"
+                style={{ objectPosition: slide.position }}
+              />
+            )}
           </button>
         ))}
       </div>
