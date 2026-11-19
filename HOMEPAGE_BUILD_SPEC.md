@@ -557,10 +557,6 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
 
 **What's inside (6.7, rebuilt)**
 - **Heading (DRAFT):** "CognatiQ® earned its place. So we built around it." **Subline (DRAFT):** "Our own proprietary Game Plan Focus Blend and just enough electrolytes take this to the next level." (Updated Nov 19, 2026; replaces "Studied first. Then stacked." / "We could have stopped at the clinical dose. We didn't.")
-- **"Ask any focus mix" row** (3 items, hairline above each):
-  - "Was it tested in humans?" → "Yes. A randomized, double-blind, placebo-controlled trial of CognatiQ®."
-  - "At what dose?" → "200mg."
-  - "Is that dose in the stick?" → "All of it. Every stick." (`{{CONFIRM_DOSE_200MG}}`)
 - **Three tiers, stacked**, each with a small uppercase label:
   - **Tier 1 — The proof.** CognatiQ® card (full width, 1px navy border, burgundy "200mg"). Body (DRAFT): "The full clinically studied dose. Disclosed. Never shorted to make room for anything else."
   - **Tier 2 — The playbook.** Game Plan Focus Blend card (white, 1px `--line`).

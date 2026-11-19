@@ -404,23 +404,6 @@ export const inside = {
   },
   heading: { text: "CognatiQ® earned its place. So we built around it.", draft: true } as Copy,
   subline: { text: "Our own proprietary Game Plan Focus Blend and just enough electrolytes take this to the next level.", draft: true } as Copy,
-  ask: {
-    eyebrow: "Ask any focus mix",
-    rows: [
-      {
-        question: "Was it tested in humans?",
-        answer: {
-          text: "Yes. A randomized, double-blind, placebo-controlled trial of CognatiQ®.",
-          draft: true,
-        } as Copy,
-      },
-      { question: "At what dose?", answer: { text: "200mg.", draft: true } as Copy },
-      {
-        question: "Is that dose in the stick?",
-        answer: { text: "All of it. Every stick.", draft: true, dependsOn: ["{{CONFIRM_DOSE_200MG}}"] } as Copy,
-      },
-    ],
-  },
   proof: {
     tier: "The proof",
     name: "CognatiQ®",
