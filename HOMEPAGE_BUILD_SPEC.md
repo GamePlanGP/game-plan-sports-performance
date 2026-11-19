@@ -556,7 +556,7 @@ Real photos, final copy approved, FutureCeuticals sign-off, `check:placeholders`
 - **Price anchor (DRAFT):** under the prices, `{{PRICE_ANCHOR_LINE}}` (must not assume one stick per round; see 9.0). Fill once pricing locks. Remove if it isn't true.
 
 **What's inside (6.7, rebuilt)**
-- **Heading (DRAFT):** "Studied first. Then stacked." **Subline (DRAFT):** "We could have stopped at the clinical dose. We didn't."
+- **Heading (DRAFT):** "CognatiQ® earned its place. So we built around it." **Subline (DRAFT):** "Our own Game Plan Focus Blend and just enough electrolytes, added on top." (Updated Nov 19, 2026; replaces "Studied first. Then stacked." / "We could have stopped at the clinical dose. We didn't.")
 - **"Ask any focus mix" row** (3 items, hairline above each):
   - "Was it tested in humans?" → "Yes. A randomized, double-blind, placebo-controlled trial of CognatiQ®."
   - "At what dose?" → "200mg."

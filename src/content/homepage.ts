@@ -402,8 +402,8 @@ export const inside = {
     alt: "A Clarity+ stick with callouts: 200 mg clinical dose of CognatiQ®, the Focus Blend, and the electrolyte blend",
     label: "Annotated stick",
   },
-  heading: { text: "Studied first. Then stacked.", draft: true } as Copy,
-  subline: { text: "We could have stopped at the clinical dose. We didn't.", draft: true } as Copy,
+  heading: { text: "CognatiQ® earned its place. So we built around it.", draft: true } as Copy,
+  subline: { text: "Our own Game Plan Focus Blend and just enough electrolytes, added on top.", draft: true } as Copy,
   ask: {
     eyebrow: "Ask any focus mix",
     rows: [
