@@ -403,7 +403,7 @@ export const inside = {
     label: "Annotated stick",
   },
   heading: { text: "CognatiQ® earned its place. So we built around it.", draft: true } as Copy,
-  subline: { text: "Our own Game Plan Focus Blend and just enough electrolytes added on top.", draft: true } as Copy,
+  subline: { text: "Our own proprietary Game Plan Focus Blend and just enough electrolytes take this to the next level.", draft: true } as Copy,
   ask: {
     eyebrow: "Ask any focus mix",
     rows: [
